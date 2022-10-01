@@ -1,0 +1,680 @@
+% !TeX root = foundation.tex
+
+\section{因果}
+\label{sec:因果}
+
+因果とは何かについての有力な立場として，D.ルイスの反事実的条件法による因果の分析がある．本稿ではこの分析を改造して用いるが，「因果」の日常的な用法との可及的一致を目指すような概念分析は意図しない．本稿での因果の概念は，規制の概念の一部として，（規範の同一性の基準を確立し，それを解析的に記述する枠組みを与えるという）特定の目的のために作られる技術的装置でしかない．日常的用法との一致はその目的を果たすのに必要な範囲でのみ要求される．ルイスの分析を借用する理由は，その直観性と形式化への適応性の他，若干の改造を施せば本稿の目的と前提に適合させられることによる．まず\ref{ssec:反事実的条件法による因果の分析}でルイスの分析を要約する．次に，\ref{ssec:改造}で改造箇所を説明した上で，\ref{ssec:論理式とその解釈}以降で定式化を行う．因果の概念から派生する蓋然性の表現もそこで定義される．
+
+\subsection{反事実的条件法による因果の分析}
+\label{ssec:反事実的条件法による因果の分析}
+
+% 因果とは何かについての有力な立場として，D.ルイスの反事実的条件法による因果の分析がある．本稿の因果概念はこの分析を改造したものである．
+Lewis~\cite{Lewis}によると，まず，反事実的条件文の真理条件は可能世界の比較類似性によって与えられる．
+「もし$A$ならば$B$だろう」を「$ A\text{□→}B$」と書き，これの「$A$」「$B$」にそれぞれ文$p_1,p_2$を代入した結果を$p$と置く．すると，$p$が（世界$w$において）真であるのは，次のいずれかであるときまたそのときに限られる．
+\begin{enumerate}[label=(\arabic*)]
+    \item $p_1$が真であるような（$ w $から）到達可能な世界が存在しない（$p$は空虚に真）,
+    \item $p_1$と$p_2$が共に真である（$ w $から）到達可能な世界$w'$が存在して，$ w' $の方が，$p_1$が真で$p_2$が偽であるどの世界よりも，$ w $に類似している．
+\end{enumerate}
+次に，\kagi{$Oe$}を「（出来事）$e$が生起する」と読むことにすると，出来事間の因果的依存関係は，
+\[
+    \text{
+        「$e_2$は$e_1$に因果的に依存する」は\kagi{$Oe_1\text{□→}Oe_2\con{1}\neg Oe_1\text{□→}\neg Oe_2$}を表わす，
+    }
+\]
+と規定される．そして，因果関係に推移性を持たせるために，$\mathcal{D}=\classab{\orp{e_1,e_2}:\text{$e_2$は$e_1$に因果的に依存する}}$そのものではなく，同一性を除外したそれの祖先関係$\mathcal{D}\resl\ance{\mathcal{D}}$を因果関係とする．
+
+\subsection{改造}
+\label{ssec:改造}
+
+ルイスの分析を改造する箇所は以下の通りである．
+
+\begin{enumerate}
+    \item \ref{ssec:原初的言語}の原初的言語は反事実的条件法の演算子「\text{□→}」を持たない．また，それを真理関数と量化による標準的な記法に直接還元する方法はない．したがって，反事実的条件文$p$をバイパスして，それを構成する2個の文$p_1,p_2$の間に成立する反事実的依存関係だけを考える．
+    \item 反事実的依存関係を定義するのに\ref{ssec:反事実的条件法による因果の分析}の(2)を用いるが，本稿は様相概念を還元する等の動機を持たないため「可能世界」の概念を必要としない．代わりに論理式（文の論理形式を表わす図式）を解釈するモデルを使えば足りる．それに伴い，反事実的依存性が成り立つ対象も文ではなく論理式に置き換える．
+    \item 比較類似性の支点となる$w$と類似性の尺度及び到達可能性を解釈空間という関数にまとめて，反事実的依存関係を明示的に解釈空間に相対化する．解釈空間は論理式のモデルに対して数を割り当てる関数であり，それが$0$を割り当てる唯一のモデルが比較類似性の支点$w$の役割を果たす．そして，関数の値である数は$\breve{\epsilon}\fap 0$への類似性の指標となる（小さいほど$\breve{\epsilon}\fap 0$に類似する）．
+    \item 出来事間の因果ではなく，$a\in x$であることが$b\in y$であることを因果的に決定するような関係を規定する必要があるため，因果的依存関係を出来事ではなく任意の順序対の間の関係として再構成する．そして，このように因果的依存関係を拡張する代わりに，反事実的依存関係を限定する．すなわち，$p_1$が真で$p_2$が偽となるモデル$w\in\breve{\epsilon}\img\univ$が存在するという条件を追加して，これと矛盾する\ref{ssec:反事実的条件法による因果の分析}の(1)を廃棄する．この追加条件は，$p_1$と$p_2$から作られる条件法が（最終的に想定される解釈空間において）論理的／数学的真理となるケースを除外する機能を持つ．
+\end{enumerate}
+
+以上を踏まえると，\ref{ssec:論理式とその解釈}以降で定式化される因果概念は次のようなものになる．
+まず，解釈空間$\epsilon$に相対的に論理式$p_2$が論理式$p_1$に反事実的に依存するのは，次の両方が成立するときまたそのときに限られる．
+\begin{enumerate}[label=(\arabic*)]
+    \item $p_1$と$p_2$が共に真であるモデル$w'\in\breve{\epsilon}\img\univ$が存在して，$p_1$が真で$p_2$が偽である任意のモデル$w\in\breve{\epsilon}\img\univ$について，$ \epsilon\fap w'<\epsilon\fap w$，
+    \item $p_1$が真で$p_2$が偽であるモデル$w''\in\breve{\epsilon}\img\univ$が存在する．
+\end{enumerate}
+次に，$\epsilon$に相対的に$\orp{b,y}$が$\orp{a,x}$に因果的に依存するのは，下記の条件※を充たす論理式$p_1,p_2$が存在して，$p_2,\mathbf{N}(p_2)$がそれぞれ$p_1,\mathbf{N}(p_1)$に反事実的に依存するときまたそのときに限られる．ただし，論理式$\zeta$の否定を\kagi{$\mathbf{N}\zeta$}と書く．
+\begin{enumerate}
+    \item [※] モデル$\breve{\epsilon}\fap 0$において，$p_1$は$a\in x$であることを記述し，$p_2$は$b\in y$であることを記述する．
+\end{enumerate}
+そして，因果的依存関係を
+\[
+    \mathcal{D}^{\epsilon}=\classab{\orp{\orp{a,x},\orp{b,y}}:\text{$\epsilon$に相対的に$\orp{b,y}$が$\orp{a,x}$に因果的に依存する}}
+\]
+とすると，因果関係は$\mathcal{C}^{\epsilon}$である．また，\kagi{$\orp{\orp{\alpha,\beta},\orp{\gamma,\delta}}\in \mathcal{C}^{\epsilon}$}を省略して，
+\[
+    \orp{\alpha,\beta}\to_{\epsilon}\orp{\gamma,\delta}
+\]
+と書く．これは「$\epsilon$において，$\alpha\in\beta$であることが$\gamma\in\delta$であることを因果的に決定する」と読まれる．
+
+\subsection{論理式とその解釈}
+\label{ssec:論理式とその解釈}
+
+論理式は文の論理形式を表わす図式であり，述語記号に変項を結合して作られる原子式\kagi{$Fxy$}，\kagi{$Gy$}，\kagi{$Hz$}等と，これらから真理関数と量化によって構成されうる複合的表現が含まれる．
+原初的言語と同じ文法構造を持つ言語の文はすべて，ある論理式からその中の述語記号に代入を行うことによって得られる．
+今，すべての述語記号について，何らかの方法により
+\footnote{
+    例えば，述語記号を「 $ (F')\text{，}(F',)\text{，}(F'{,\!,})\text{，}\dots\text{，}(F'')
+    \text{，}(F'',)\text{，}(F''{,\!,})\text{，}\dots
+    $ 」として，\kagi{$'$}の数が$n$，\kagi{$,$}の数が$i$であるとき，$n$項述語記号の$i$番目とする．
+}，$\Lambda \neq n$項述語記号の$i$番目等の指定がされていると仮定する（それゆえ，述語記号を$ \orp{n,i} $と同一視してもよい）．
+また，\kagi{$'$}の数が$\alpha$である変項を\kagi{$\boldsymbol{v}(\alpha)$}と書く．
+すると，$ n $項数列$ k $について，$n$項述語記号の$i$番目に，$n$個の変項$\boldsymbol{v}(k {`}0),\dots ,\boldsymbol{v}(k{`}(\Breve{\mathrm{S}}{`}n)) $が後続する原子式は，$ \orp{0,\orp{n,i},k} $と同一視できる．したがって，原子式のクラスは，
+
+\begin{df}
+\label{df:原子式のクラス}
+\kagi{$
+    \mathrm{Atm}
+$}は\kagi{$
+    \classab{\orp{0,\orp{n,i},k}:
+        i\in\mathbb{N}\con{1}\Lambda\neq n=\arg k\con{1}
+        k\in\classab{x:x\subseteq\mathbb{N}\uphl\univ}\cap\mathrm{Seq}
+    }
+$}を表わす，
+\end{df}
+
+\noindent と規定することができる．また，任意の論理式$x,y$と$i\in \mathbb{N}$について，$x$の否定は$\langle 1,x \rangle$，前件$x$と後件$y$による条件法は$ \langle 2,x,y \rangle $，変項$ \boldsymbol{v}_i $に関する$x$の普遍量化は，$\langle 3,i,x \rangle$と同一視できる．そして，論理式のクラス$\mathrm{L}$は，原子式を含み，メンバーの否定，条件法，普遍量化もメンバーであるようなすべてのクラスの共通部分であるから，
+
+\begin{df}
+\label{df:論理式のクラス}
+\kagi{$
+    \mathrm{L}
+$}は\kagi{$
+    \intersect{
+        \classab{z:
+            \mathrm{Atm}\subseteq z\con{1}
+            (x)(y)(i)(
+                x,y\in z\con{1}i\in\mathbb{N}\case{1}{1}{1}
+                \\\hfill
+                \orp{1,x},\orp{2,x,y},\orp{3,i,x}\in z
+            )
+        }
+    }
+$}を表わす．
+\end{df}
+
+これ以降，以下のより直観的な記法で論理式を指示する．
+
+\begin{df}[原子式]
+\label{df:原子式}
+\kagi{$
+    \mathbf{F}^{\alpha}_{\gamma}\beta
+$}は\kagi{$
+    \orp{0,\orp{\alpha,\gamma},\beta}
+$}を表わす，
+\end{df}
+
+\begin{df}[否定]
+\label{df:否定}
+\kagi{$
+    \mathbf{N}\alpha
+$}は\kagi{$
+    \orp{1,\alpha}
+$}を表わす，
+\end{df}
+
+\begin{df}[条件法]
+\label{df:条件法}
+\kagi{$
+    \mathbf{C}\alpha\beta
+$}は\kagi{$
+    \orp{2,\alpha,\beta}
+$}を表わす，
+\end{df}
+
+\begin{df}[普遍量化]
+\label{df:普遍量化}
+\kagi{$
+    \mathbf{G}_\alpha\beta
+$}は\kagi{$
+    \orp{3,\alpha,\beta}
+$}を表わす．
+\end{df}
+
+\noindent 連言\kagi{$\mathbf{K}\alpha\beta$}は\kagi{$\mathbf{N}\mathbf{C}\alpha\mathbf{N}\beta$}であり，
+双条件法\kagi{$\mathbf{E}\alpha\beta$}は\kagi{$\mathbf{K}\mathbf{C}\alpha\beta\mathbf{C}\beta\alpha$}である．
+
+論理式はモデル$\orp{u,r}$によって解釈される．対象領域$u$は空でないクラスであり，解釈関数$r$は述語記号に対応する自然数の組$\orp{n,i}$に対して，$ u $上の$ n $項関係を割り当てる関数である\footnote{
+    \ref{ssec:論理式とその解釈}は，論理式とその解釈に関する標準的なモデル理論的定義（例えば，清水~\cite[pp.103-107]{清水}）を，\ref{ssec:原初的言語}の原初的言語で再記述したものである．
+}．
+$\beta$が$\alpha$上の$n$項関係であるというのは，$\beta$が$\alpha$のメンバーからなる$n$項順序対のクラスであることを意味するが，これは精密な規定を要する\footnote{
+    $\alpha$上の$n$項関係であるという条件だけならば，それは，$m=\breve{S}\fap n$について，$ \iter{(\lambda_z(\alpha\times z))}{m}\fap \alpha $の部分クラスであるということである．しかし，この規定は$\alpha$が存在しないケースでは有効ではない．
+}．
+
+まず，順序対の左成分と右成分のそれぞれ一方を抽出する関数を定義する．
+\begin{df}
+\label{df:左成分}
+\kagi{$
+    \mathcal{L}
+$}は\kagi{$
+    \lambda_z(\imath x)(x\in\intersect{z})
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:右成分}
+\kagi{$
+    \mathcal{R}
+$}は\kagi{$
+    \lambda_z(\imath x)(x\in\union{z}\cap\barl{\intersect{z}})
+$}を表わす．
+\end{df}
+
+\noindent 次に，$\alpha{`}\beta$を$\gamma$に交換した$\alpha$である$ \alpha \tbinom{\beta}{\gamma} $を，
+\begin{df}
+\label{df:系列要素の変換}
+\kagi{$
+    \alpha\tbinom{\beta}{\gamma}
+$}は\kagi{$
+    (\alpha\uphr\barl{\classab{\beta}})\cup\classab{\orp{\gamma,\beta}}
+$}を表わす，
+\end{df}
+\noindent と定義する．そして，$ n $ 項系列にそれに対応する $ n $ 項順序対を与える関数$ \mathcal{O} $を導入する．
+
+\begin{df}
+\label{df:系列から順序対へ}
+\kagi{$
+    \mathcal{O}
+$}は\kagi{$
+    \classab{\orp{y,x}:\Lambda\neq x\in\mathrm{Seq}\con{1}
+        (\exists m)(
+            m = \breve{S}\fap\arg{x}\con{1}
+            x = \lambda_z(\mathcal{L}\fap(\iter{\mathcal{R}}{z}\fap y))\tbinom{m}{\iter{\mathcal{R}}{m}\fap y}
+        )
+    }
+$}を表わす．
+\end{df}
+
+\noindent $\func{\mathcal{O}}$であるが，$\func{\breve{\mathcal{O}}}$ではない．$n$項系列$x$の最終要素が順序対である場合，$\mathcal{O}\fap x$は$n$項順序対であり，かつ，$n+1$項順序対である．したがって，$m=\breve{S}\fap n$について，
+\[
+    x'= x\tbinom{m}{\mathcal{L}\fap(x\fap m)}\cup\classab{\orp{\mathcal{R}\fap(x\fap m),n}}
+\]
+とすると，$x'$も$\mathcal{O}\fap x$に対して$\breve{\mathcal{O}}$を持つ．
+$y$が$n$項順序対であるということは，$(\exists x)(\arg{x}=n\con{1}\mathcal{O}\fap x=y)$ということに帰着する．D \ref{df:系列から順序対へ}は$n=1$の場合でも有意味であるが，その場合，$x$の唯一の系列要素が順序対でない限り$y$は順序対そのものではない．
+
+$\alpha$の要素からなる$\gamma$項順序対をすべて集めたクラスは次のように定義できる．
+
+\begin{df}
+\label{df:直積の反復}
+\kagi{$
+    \timex{\alpha}{\gamma}
+$}は\kagi{$
+    \classab{\mathcal{O}\fap x:
+        x\in\mathrm{Seq}\con{1}\arg x=\gamma\con{1}x\img\univ\subseteq\alpha
+    }
+$}を表わす．
+\end{df}
+
+\noindent $\timex{\alpha}{2}=\alpha\times\alpha$である．$\beta$が$\alpha$上の$n$項関係であることは，$\beta\subseteq\timex{\alpha}{n}$であることを意味する．すると，次の定義によってモデルのクラス$ \mathrm{MD} $が導入される．
+
+\begin{df}
+\label{df:モデル}
+\kagi{$
+    \mathrm{MD}
+$}は\kagi{$
+    \classab{\orp{x,y}:
+        x\neq\Lambda\con{1}\func{y}\con{1}\arg{y}=(\mathbb{N}\cap\barl{\classab{\Lambda}})\times\mathbb{N}\con{1}
+        \\\hfill
+        (n)(i)(
+            \Lambda\neq n\case{1}{1}{1}y\fap\orp{n,i}\subseteq\timex{x}{n}
+        )
+    }
+$}を表わす．
+\end{df}
+
+さて，モデルに相対的に論理式を解釈するということは，モデルに相対的にその論理式の真理条件を述べるということを意味する．そして，$\delta\in\mathrm{MD}$において真である論理式の集合$ \mathrm{T}^{\delta} $は，$\delta$における充足関係$\mathrm{SR}^{\delta}$によって規定することができる．$\mathrm{SR}^{\delta}$は，$\mathcal{L}\fap\delta$上の対象列とそれが$\delta$において充足する論理式との関係である．この点，ある対象列が論理式の無限クラスのすべてのメンバーを充足すると言う場合，そこでは無限個の変項が出現し得るから，有限系列では足りなくなる．そこで最初に，$\alpha$上の対象列として，$\alpha$のメンバーからなる無限系列を導入する．
+\begin{df}
+\label{df:対象列}
+\kagi{$
+\mathrm{seq}^\alpha
+$}は\kagi{$
+    \classab{s:\func{s}\con{1}s\img\univ\subseteq\alpha\con{1}\arg s=\mathbb{N}}
+$}を表わす．
+\end{df}
+
+\noindent 次に，原子式，真理関数，普遍量化のそれぞれについて，充足関係の断片を定義する．
+
+\begin{df}
+\label{df:原子式の充足関係}
+\kagi{$
+    \mathrm{sra}^\delta
+$}は\kagi{$
+    \classab{\orp{s,\mathbf{F}^n_{i}k}:
+        \mathcal{O}\fap(s\resl k)\in (\mathcal{R}\fap\delta)\fap\orp{n,i}
+    }
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:真理関数の充足関係}
+\kagi{$
+    \mathrm{srt}\,\gamma
+$}は\kagi{$
+    \classab{\orp{s,\mathbf{N}x}:\orp{s,x}\notin \gamma}\cup\classab{\orp{s,\mathbf{C}xy}:\orp{s,x}\in\gamma\case{1}{1}{1}\orp{s,y}\in\gamma}
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:普遍量化の充足関係}
+\kagi{$
+    \mathrm{srg}^\delta\,\gamma
+$}は\kagi{$
+    \classab{\orp{s,\mathbf{G}_ix}:
+        (a)(a\in \mathcal{L}\fap\delta\case{1}{1}{1}\orp{s\tbinom{i}{a},x}\in\gamma)
+    }
+$}を表わす．
+\end{df}
+
+\noindent これらの断片を繋ぎ合わせて充足関係を定義する．
+
+\begin{df}
+\label{df:充足関係}
+\kagi{$
+    \mathrm{SR}^\delta
+$}は\kagi{$
+    \intersect{\classab{z:
+        (\mathrm{seq}^{(\mathcal{L}\fap\delta)}\times\mathrm{L})\cap
+        (\mathrm{sra}^{\delta} \cup \mathrm{srt}\,z \cup 
+        \mathrm{srg}^{\delta}\,z)\subseteq z
+    }}
+$}を表わす．
+\end{df}
+
+\noindent モデル$\delta$における真理は，$\delta$の対象領域のすべての対象列によって充足される論理式である．したがって，
+
+\begin{df}
+\label{df:真理集合}
+\kagi{$
+    \mathrm{T}^\delta
+$}は\kagi{$
+    \classab{x:
+        (s)(
+            s\in\mathrm{seq}^{(\mathcal{L}\fap\delta)}\case{1}{1}{1}
+            \orp{s,x}\in \mathrm{SR}^\delta
+        )
+    }
+$}を表わす．
+\end{df}
+
+\noindent 関連して，論理式の集合が論理式を論理的に含意する関係は，
+\begin{df}
+\label{df:論理的含意関係}
+\kagi{$
+    \mathrm{imp}
+$}は\kagi{$
+    \classab{\orp{x,y}:x\subseteq\mathrm{L}\con{1}y\in\mathrm{L}\con{1}
+        (m)(s)(m\in\mathrm{MD}\con{1}s\in\mathrm{seq}^{(\mathcal{L}\fap m)}\case{1}{1}{1}
+        \\\hfill
+        (l)(l\in x\case{1}{1}{1}\orp{s,l}\in \mathrm{SR}^m)\case{1}{0}{1}\orp{s,y}\in \mathrm{SR}^m
+        )
+    }
+$}を表わす，
+\end{df}
+\noindent と規定できる．すると妥当式（すべてのモデルのすべての対象列によって充足される論理式）は，$ \brevel{\mathrm{imp}}\img\classab{\Lambda} $のメンバーであり，1個の論理式が含意する関係は，$ \brevel{\lambda_x\classab{x}}\resl\mathrm{imp} $である．
+
+$\mathrm{SR}^\delta$を使って，モデル$\delta$において開放論理式$\beta$が言及するクラス（$\delta$における$\beta$の外延）という概念を規定することができる．
+まず，変項$ \boldsymbol{v}(\alpha) $が自由出現する論理式のクラスを，
+\begin{df}
+\label{df:開放論理式のクラス}
+\kagi{$
+    \mathrm{L}^\alpha
+$}は\kagi{$
+    \union{
+        \classab{z:
+            (x)(x\in\mathrm{Atm}\con{1}\alpha\in (\iter{\mathcal{R}}{2}\fap x)\img\univ\case{1}{1}{1}x\in z)\con{1}
+            \\\hfill
+            (x)(y)(i)(
+                x\in z\con{1}y\in\mathrm{L}\con{1}\alpha\neq i\in\mathbb{N}
+                \case{1}{1}{1}\mathbf{N}x,\mathbf{C}xy,\mathbf{C}yx,\mathbf{G}_ix\in z
+            )
+        }
+    }
+$}を表わす，
+\end{df}
+\noindent と定義する．次に，論理式$ \beta $に自由出現する変項の「~$'$~」の数を小さい順に並べた系列を導入する．
+
+\begin{df}
+\label{df:変項列}
+\kagi{$
+    \mathrm{var}\,\beta
+$}は\kagi{$
+    (\imath z)(z\in\mathrm{Seq}\con{1}
+        z\img\univ = \mathbb{N}\cap\classab{x:\beta\in\mathrm{L}^x}\con{1}
+        z\resl \breve{\mathrm{S}}\resl \breve{z}\subseteq \mathfrak{E}
+    )
+$}を表わす．
+\end{df}
+
+\noindent すると，$\delta\in\mathrm{MD}$において$\beta\in\mathrm{L}$が言及するクラス$\delta\exten\beta$は，
+
+\begin{df}
+\label{df:}
+\kagi{$
+    \delta\exten\beta
+$}は\kagi{$
+    \classab{\mathcal{O}\fap(s\resl v):\Lambda\neq v= \mathrm{var}\,\beta\con{1}
+        \orp{s,\beta}\in\mathrm{SR}^\delta
+    }
+$}を表わす，
+\end{df}
+
+\noindent と規定することができる．$\delta\exten\beta$は，$\delta$で解釈された$\beta$が$x$について真であるような対象$x$のクラスである．
+
+\subsection{因果と蓋然性}
+\label{ssec:因果と蓋然性}
+
+因果がそれに相対化される解釈空間の特徴づけを確定しよう．クラス$\epsilon$が解釈空間であるとき，$\epsilon$はモデルに数を与える関数であるが，それが$0$を与える唯一のモデル$\breve{\epsilon}\fap \Lambda$を「開始点」と呼ぶ．単純化のため，任意の$m_1,m_2\in\arg\epsilon$について，それらの対象領域は同一であるとする（$\mathcal{L}\fap m_1 = \mathcal{L}\fap m_2$）．
+これは$\arg\epsilon$の左域が単一クラスであることを意味するが，その唯一のメンバーを指示するために，
+\begin{df}
+\label{df:トライアングル}
+\kagi{$
+    \trgl{\alpha}
+$}は\kagi{$
+    (\imath x)(\alpha\img\univ = \classab{x})
+$}を表わす，
+\end{df}
+\noindent とすると，単に，$ \trgl{\arg\epsilon}\neq \Lambda $ということである．この点と関連して，$m_1,m_2$はいずれも，$2$項述語記号の$0$番目に対して同一の解釈を，対象領域上の要素関係を与えるものとする．すなわち，
+\[
+    (\mathcal{R}\fap m_1)\fap \orp{2,0} = (\mathcal{R}\fap m_2)\fap \orp{2,0} = \mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}.
+\]
+したがって，$ \mathcal{W}\fap 2\subseteq\trgl{\arg\epsilon} $である限り，\kagi{$ \in $}を$ \mathbf{F}^2_0 $に置き換えた\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が，したがって，自然科学に必要な全ての数学的真理（の図式化）が$m_1,m_2$において真となる．
+
+また，「$m_1$の方が$m_2$よりも$\epsilon$の開始点に類似する」を，\kagi{$ m_1 \prec_{\epsilon} m_2 $}と書くことにすると，任意の$m_1,m_2\in\arg\epsilon$について，
+\[
+   m_1 \prec_{\epsilon} m_2 \case{3}{1}{1} \epsilon\fap m_1 < \epsilon\fap m_2.
+\]
+つまり，開始点への類似性に関する$\arg\epsilon$のメンバーの大小関係は，$\epsilon$がそれに付与する数の大小関係に帰着する．再び単純化のため，この数は差し当たり自然数であるとする\footnote{
+    もし類似性の大小関係$\alpha$を稠密化（$\alpha\subseteq\alpha\resl\alpha$）するなら，$\epsilon\img\univ$のメンバーとして，少なくとも有理数が要求される．また，非可算個のモデルに対して非可算個の類似性段階を設定するなら実数が必要になる．
+}．したがって，$\epsilon\img\univ\subseteq\mathbb{N}$．
+
+なお，$\epsilon$は有意な蓋然性のレベルを表わす指標を持っており，それは，$n$より小さい数はすべて$\epsilon\img\univ$のメンバーであるが，$n$自体はそのメンバーではないような唯一の数$n$である．すなわち，
+\begin{df}
+\label{df:有意指標}
+\kagi{$
+    \indx{\epsilon}
+$}は\kagi{$
+    (\imath n)(n\in\mathbb{N}\con{1}n\subseteq\epsilon\img\univ\con{1}n\notin\epsilon\img\univ)
+$}を表わす，
+\end{df}
+\noindent とすると，$\indx{\epsilon}\neq \Lambda$．さらに，任意の$i\in\epsilon\img\univ$について，$i$より小さい$\indx{\epsilon}$以外の数はすべて$\epsilon\img\univ$のメンバーとなる．
+
+以上から，$\epsilon$が解釈関数であることの定義は以下のようになる．
+\begin{df}
+\label{df:解釈空間}
+\kagi{$
+    \mathrm{sim}\,\epsilon
+$}は\kagi{$
+    \func \epsilon\con{1}
+    \arg\epsilon\subseteq\classab{x:x\in\mathrm{MD}\con{1}(\mathcal{R}\fap x)\fap \orp{2,0} = \mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}}\con{1}
+    \\\hfill
+    \trgl{\arg\epsilon}\neq\Lambda \neq \breve{\epsilon}\fap\Lambda \con{1}
+    \indx{\epsilon} \neq\Lambda\con{1}
+    (\barl{\classab{n}}\uphl\mathfrak{E})\img(\epsilon\img\univ)\subseteq (\epsilon\img\univ)
+$}を表わす．
+\end{df}
+
+\ref{ssec:改造}の時点では，解釈空間$\epsilon$に相対的に論理式$p_2$が論理式$p_1$に反事実的に依存するのは，\ref{ssec:改造}の(1)(2)の両方が成立するときとされていた．現在の記法で書くと，
+\begin{gather}
+    (\exists m)[
+        m\in\arg\epsilon\con{1}p_1,p_2\in \mathrm{T}^m\con{1}
+        (w)(w\in\arg \epsilon\con{1}p_1,\mathbf{N}p_2\in \mathrm{T}^w\case{1}{1}{1}\epsilon\fap m\in\epsilon\fap w)
+    ],\tag{1}\\
+    (\exists u)(u\in\arg\epsilon\con{1}p_1,\mathbf{N}p_2\in \mathrm{T}^u).\tag{2}
+\end{gather}
+
+\noindent さらに省略記法を追加する．$\beta$が真となる$\arg\epsilon$のメンバーの集合$ \epsilon\dagger\beta $を，
+\begin{df}
+\label{df:真理化する到達可能モデルの集合}
+\kagi{$
+    \epsilon\dagger\beta
+$}は\kagi{$
+    \classab{w:w\in\arg\epsilon\con{1}\beta\in\mathrm{T}^w}
+$}を表わす，
+\end{df}
+\noindent と規定する．すると次の定義によって，$\epsilon$に相対的に$t$が$s$に反事実的に依存する$\orp{s,t}$のクラス$\mathfrak{T}^\epsilon$が導入される．
+
+\begin{df}
+\label{df:反事実的依存関係}
+\kagi{$
+    \mathfrak{T}^\epsilon
+$}は\kagi{$
+    \classab{\orp{s,t}:
+        (\exists m)[
+            m\in(\epsilon\dagger\mathbf{K}st)\con{1}
+            \epsilon\fap m\in\intersect{
+                (\epsilon\img(\epsilon\dagger\mathbf{K}s\mathbf{N}t))
+            }
+        ]\con{1}
+        % \\\hfill
+        (\epsilon\dagger\mathbf{K}s\mathbf{N}t)\neq \Lambda
+    }
+$}を表わす．
+\end{df}
+
+続いて，モデル$\delta$において$ a\in x $を記述する論理式が，$ \orp{a,x} $に対して持つ関係$ \mathcal{K}^\delta $を導入する．
+まず，開放論理式の組$ \orp{p,q} $から結合図式を生成する関数$ \mathcal{S} $を，
+
+\begin{df}
+\label{df:結合図式}
+\kagi{$
+    \mathcal{S}
+$}は\kagi{$
+    \classab{\orp{z,\orp{p,q}}:p,q\in\mathrm{L}\con{1}
+        \mathrm{var}\,p = \classab{2,0}\con{1}\mathrm{var}\,q = \classab{1,0}\con{1}
+        \\\hfill
+        (\exists k)[k = \classab{\orp{2,0},\orp{1,1}}\con{1}
+            z = \mathbf{N}\mathbf{G}_1\mathbf{N}(\mathbf{K}(\mathbf{G}_2 \mathbf{E}\mathbf{F}^{2}_{0}k p) q)
+        ]
+    }
+$}を表わす，
+\end{df}
+
+\noindent と規定する．
+例えば，$ p = \text{\kagi{$Fx''$}}\con{1}q = \text{\kagi{$Gx'$}} $とすると，
+\[
+\mathcal{S}\fap\orp{p,q} = \text{\kagi{$ 
+    (\exists x')[(x'')(x''\in x' \case{3}{1}{0}Fx'')\con{1}Gx']
+$}}
+\]
+であり，これは\kagi{$ \classab{x''':Fx'''}\in\classab{x'''':Gx''''} $}と等値である．すると，
+
+\begin{df}
+\label{df:結合図式と順序対}
+\kagi{$
+    \mathcal{K}^\delta
+$}は\kagi{$
+    \classab{\orp{\mathcal{S}\fap\orp{p,q},\orp{x,y}}:
+        \delta\exten p = x\con{1}\delta\exten q = y\con{1}p,q\in\arg\mathcal{S}
+    }
+$}を表わす．
+\end{df}
+
+解釈関数$\epsilon$に相対的な因果的依存関係$\mathcal{D}^{\epsilon}$は，$\mathfrak{T}^\epsilon$と$\mathcal{K}^{(\breve{\epsilon}\fap\Lambda)}$に基づいて構成される．すなわち，
+
+\begin{df}
+\label{df:因果的依存関係}
+\kagi{$
+    \mathcal{D}^{\epsilon}
+$}は\kagi{$
+    \classab{\orp{x,y}:
+        \orp{s,x},\orp{t,y}\in \mathcal{K}^{(\breve{\epsilon}\fap\Lambda)}\con{1}
+        \orp{s,t},\orp{\mathbf{N}s,\mathbf{N}t}\in\mathfrak{T}^\epsilon
+    }
+$}を表わす．
+\end{df}
+
+\noindent $\orp{\orp{a,x},\orp{b,y}}\in\mathcal{D}^\epsilon$，すなわち，$ \orp{b,y} $が$ \orp{a,x} $に因果的に依存するのは，
+$ \breve{\epsilon}\fap\Lambda $において$ a\in x $を記述する論理式$ s $と，$ \breve{\epsilon}\fap\Lambda $において$ b\in y $を記述する論理式$ t $が存在して，
+$ t,\mathbf{N}t $がそれぞれ，$ s,\mathbf{N}s $に反事実的に依存するとき，かつ，そのときに限られる．
+
+そして，因果関係は因果的依存関係の（同一性を除外した）祖先関係である．因果関係を指示する記法と，因果関係に属することを記述する記法をそれぞれ導入する．
+
+\begin{df}
+\label{df:因果関係}
+\kagi{$
+    \mathcal{C}^\epsilon
+$}は\kagi{$
+    \mathcal{D}^\epsilon\resl\ance{(\mathcal{D}^\epsilon)}
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:因果記法}
+\kagi{$
+    \alpha\to_{\epsilon}\beta
+$}は\kagi{$
+    \mathrm{sim}\,\epsilon\con{1}\orp{\alpha,\beta}\in \mathcal{C}^{\epsilon}
+$}を表わす．
+\end{df}
+
+\noindent 因果の定義により，\ref{ssec:集合論の体系}の体系において以下の基本法則が証明可能である．
+\[
+    \textbf{因果の基本法則}\qquad 
+    \orp{a,x}\to_\epsilon\orp{b,y}\case{1}{1}{2}a\in x\case{3}{1}{1}b\in y.
+\]
+これによると，$a\in x\con{1}b\notin y$，または，$a\notin x\con{1}b\in y$であるとき，$a\in x$であることは$b\in y$であることを因果的に決定しない．
+
+ところで，ある条件が実際には実現しなかったがそれが実現する蓋然性があり，かつ，そのような蓋然的な状態それ自体が他の条件に因果的に依存している，と言うのが自然なケースがある．
+例えば，$a$が$b$を狙撃したが僅かに射線がそれて銃弾が$b$の至近距離に着弾した場合，$b$に銃弾が当たる危険が実在していて，かつ，その危険状況は$a$の行動に因果的に依存している（と言うのが自然である）．そこで，解釈空間$ \epsilon $に相対的に$ x $が$ x\in \alpha $である蓋然性を持つという事態を表現するために，記法\kagi{$x\in\alpha^{:\epsilon}$}を用いる．
+これは，$ x\in\alpha $であるか，または，
+\[
+   \text{
+        $ \breve{\epsilon}\fap\Lambda $において$ x\in\alpha $であることを記述する論理式$s$が存在して，$\epsilon\dagger s\neq\Lambda$
+   }
+\]
+であることを意味している．すなわち，
+
+\begin{df}
+    \label{df:蓋然性}
+    \kagi{$
+        \alpha^{:\epsilon}
+    $}は\kagi{$
+        \classab{x:x\in\alpha\case{2}{1}{0}
+            (\exists s)(
+                \orp{s,\orp{x,\alpha}}\in \mathcal{K}^{(\breve{\epsilon}\fap\Lambda)}\con{1}
+                \epsilon\dagger s\neq\Lambda
+            )
+        }\cap\trgl{\arg\epsilon}
+    $}を表わす\footnote{
+        $\trgl{\arg\epsilon}$への相対化は，後に蓋然性自体を因果の項として，$\breve{\epsilon}\fap\Lambda$において言及可能にするためである．なお，因果関係$\mathcal{C}^{\epsilon}$自体を例えば$ \timex{(\trgl{\arg\epsilon})}{2} $に相対化して，$\breve{\epsilon}\fap\Lambda$において言及可能にしても，おそらく$\mathcal{C}^{\epsilon}\notin\trgl{\arg\epsilon}$であろうから因果の項にはできない．それゆえ，因果自体を相対化しても意味はなく，$ \mathcal{C}^{\epsilon}\cap\timex{(\trgl{\arg\epsilon})}{2} $等を，相対化されていない因果の項にするしかない．
+    }．
+\end{df}
+
+もっとも，$\epsilon\dagger s$には開始点への類似性が極めて希薄なモデルも含まれ得るから，$\prob{\alpha}{\epsilon}$それ自体はまだ有意な蓋然性ではない．
+他方，$(\exists n)(\indx{\epsilon}\in n\in\epsilon\img\univ)$であり，それゆえ，$\indx{\epsilon} \neq \epsilon\img\univ$である場合，
+$(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度合いが一定レベル以上の（$\epsilon$による付値が$\indx{\epsilon}$より小さい）モデルのみが含まれる．この意味で，$ \indx{\epsilon} $は$ \epsilon $において有意な蓋然性のレベルを表わしている．
+したがって，指標$\indx{\epsilon}$またはより高いレベルの蓋然性を言う場合には，左域を$n\subseteq\indx{\epsilon}$で制限した$n\uphl\epsilon$における蓋然性$ \prob{\alpha}{(n\uphl\epsilon)} $を使う．
+なお極限的なケースとして，$ \alpha\subseteq\trgl{\arg\epsilon} $である限り，$ \prob{\alpha}{(1\uphl\epsilon)}=\alpha $である\footnote{
+    現に$x\in\alpha$であり，行動がなくても$x\in\alpha$だったであろうケースでは，行動がなくても$ x\in\prob{\alpha}{(\indx{\epsilon}\uphl\epsilon)} $だったであろうから，蓋然性に対しても因果関係はない．ただし，実際には生じていない別の結果，$x$と時間的空間的に近接する$x'$について，$x'\in\prob{\alpha}{(\indx{\epsilon}\uphl\epsilon)}$等に対しては，同一の行動が因果関係を持つかもしれない．
+}．
+ただし，D \ref{df:蓋然性}の\kagi{$ x\in\alpha\case{2}{1}{0} $}という条件を外すと，$\alpha$が非可算のケースでは（$\alpha$に言及不可能な対象が含まれるから）$ \alpha\nsubseteq \prob{\alpha}{(1\uphl\epsilon)} $となり，この同一性は成り立たなくなる．
+
+% $n\in\indx{\epsilon}$の場合，$\indx{(n\uphl\epsilon)}=n$であるから，$ \indx{(n\uphl\epsilon)}\uphl(n\uphl\epsilon)= n\uphl\epsilon $である．
+
+\subsection{解釈空間}
+\label{ssec:解釈空間}
+
+\subsubsection{解釈空間の選択}
+\label{sssec:解釈空間の選択}
+
+因果関係は解釈空間に相対的であり，どのような解釈空間を選択するかに応じて，可変的な内容を持つ．この意味で，因果概念は文脈依存的であるが，規制の概念を使用する通常のケースにおいては，下記の1〜3の条件を充たす解釈空間$ \epsilon $が想定されている．すなわち，規制の概念を使用する文脈において，仮に\kagi{$ \beta $}が解釈空間を表わす型文字として現れているなら，\kagi{$ \beta $}は条件1〜3を充たす解釈空間を指示するクラス抽象体の位置を表わしている．
+\begin{enumerate}
+    \item $ (\exists n)(\indx{\epsilon}\in n \in\epsilon\img\univ). $
+    \item $ (\imath n)(2\in n\in\mathbb{N}\con{1}\trgl{\arg{\epsilon}}=\mathcal{W}\fap n)\neq\Lambda. $
+    \item ある全体論的概念図式$g$が存在して，$\epsilon$は$g$に適合する．
+\end{enumerate}
+
+条件1により，$ \arg\epsilon $のメンバーには，開始点から，蓋然性の有意レベル$\mathfrak{h}\epsilon$を超えて遠ざかるモデルが存在する．この条件の機能は，同一の解釈空間の中で，有意なレベルの蓋然性とそれに至らない蓋然性を区別できるようにするということである．例えば，最初から解釈空間として$ \mathfrak{h}\epsilon\uphl\epsilon $を使う場合はこの区別ができない．
+
+条件2により，$ \arg\epsilon $のメンバーに共通する対象領域は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある有限段階$\mathcal{W}\fap n$である．これは規制の概念の存在論的前提，すなわち規制の概念の使用を含むような，ある規制体系に関連する言明が真であるために必要な対象を全て含む領域を表わしている．つまり$n\in\mathbb{N}$の値は当の文脈で扱われる規制体系に応じて異なる．これも解釈空間の文脈依存性の一要素であるが，規制類型の階層構造のため自然科学の存在論$\mathcal{W}\fap 2$よりも高階になる．この点については後述するが，$n$は，当該規制体系における階層構造の最大値を超える段階であれば何でもよい．
+
+条件3は，ある論理式の集合$g$について，①$g$が全体論的概念図式と言えるための条件と，②$\epsilon$が$g$に適合すると言えるための条件に分解される．
+
+\subsubsection{全体論的概念図式}
+\label{sssec:全体論的概念図式}
+
+論理式の集合$g$が全体論的概念図式であるということは，次のことを意味する．まず，\ref{ssec:原初的言語}の原初的言語に述語を（非限定的に）追加して拡張する．ただし，述語はすべて$ n \neq \Lambda $項述語の$ i $番目という形式でリスト化されていると想定する．要素関係を表わす\kagi{$\in$}は$2$項述語の$0$番目である．
+次に，この拡張言語の文について，対象領域$\kappa$に相対的な充足と真理を定義する．そして，$\trgl{\arg\epsilon}$に相対的に真である拡張言語の文の集合（真理集合）を考える．$g$は真理集合の図式化，つまりそのメンバーに出現する原子文を，$ n $項述語の$ i $番目を述語記号$ \orp{n,i} $に置換することによって，原子論理式に置換した集合である．
+
+まず，以下の要領で\ref{ssec:原初的言語}の原初的言語に述語を追加する\footnote{
+    述語が追加されても\ref{ssec:集合論の体系}の公理群は維持されるが，A \ref{axim:分出}の\kagi{$ \alpha $}は，変項または拡張言語の開放文で作られたクラス抽象体の位置を表わすものと再解釈される．したがって，拡張言語が述語「は人である」を持つならば，再解釈されたA \ref{axim:分出}によって，$ \classab{x:x\text{ は人である}}\cap\mathcal{P}(\timex{\mathbb{R}}{4})\in\univ $．
+}．ただし，追加される述語は最終的に有限個であると仮定する．
+
+\begin{enumerate}
+    \item 受容されている科学理論の公理とその技術的・補助的な前提の他，実験状況の要約や常識的一般化を表現するのに必要な述語を追加する．ただし，同一性述語\kagi{$ = $}と数学的述語は原初的言語で定義可能であるから追加されない．
+    \item 一般化された因果述語と蓋然性述語を追加する．すなわち，「$a\in x$であることは$b\in y$であることを因果的に決定する」や「$x$は$x\in y$であるレベル$n$の蓋然性を持つ」に相当する述語を追加する\footnote{
+        1で追加された述語だけでも，特定の条件$ \gamma,\delta $に係る因果構造$ \classab{\orp{x,y}:\orp{x,\gamma}\to_{\epsilon}\orp{y,\delta}} $や（確率に関する数的条件と相俟って）蓋然性$ \prob{\gamma}{\epsilon} $であれば，それに言及する開放文を構成できるかもしれない．しかし，あらゆる因果構造に言及できる保証はない．
+    }．
+    \item 因果関係の項になるような巨視的な物理的対象（出来事や人間など）を指示するために必要であれば，日常的な述語をいくつ追加してもよい\footnote{
+        対象$x$を指示する名前は，$x$についてのみ真である述語\kagi{$ A $}を導入して，単称記述\kagi{$ (\imath y)Ay $}で代用できる．あるいは，特別な述語を導入しなくても日付や位置座標等で指定可能な場合もある．
+    }．
+\end{enumerate}
+そして，以下の例のように，追加される述語の分だけ原子文の構成方法を追加する．
+\begin{align*}
+    &\text{「$\alpha$は人である」の\kagi{$ \alpha $}に変項を代入した結果は文である，}\\
+    &\text{「$\alpha$は$\beta$を愛する」の\kagi{$ \alpha $}と\kagi{$ \beta $}に変項を代入した結果は文である．}
+\end{align*}
+
+この拡張言語に対して，対象領域$\kappa$に相対化された充足と真理を（再帰的に）定義する\footnote{
+    $\kappa\in\univ$ならば，$\kappa$に相対化された充足と真理を直接的に定義することができる．ただし，追加される述語のリストが確定している必要がある．
+}．まず原子文の充足は，以下の例のように各述語ごとに定義される．
+\begin{enumerate}[label=(\arabic*)]
+    \item 任意の$ i,j\in\mathbb{N} $と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，「$\alpha\in\beta$」の\kagi{$ \alpha $}に変項$ \boldsymbol{v}(i) $を，\kagi{$ \beta $}に$ \boldsymbol{v}(j) $を代入した結果を充足するのは，$ s\fap i\in s\fap j $であるとき，かつそのときに限られる，
+    \item 任意の$ i\in\mathbb{N} $と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，「$\alpha$は人である」の\kagi{$ \alpha $}に$ \boldsymbol{v}(i) $を代入した結果を充足するのは，$ s\fap i $は人であるとき，かつそのときに限られる．
+\end{enumerate}
+次に，複合文の充足を再帰的に定義する．
+\begin{enumerate}[label=(\arabic*),start=3]
+    \item 任意の拡張言語の文$p$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ \neg P $}の\kagi{$ P $}に$p$を代入した結果を充足するのは，$ s $が$p$を充足しないとき，かつそのときに限られる，
+    \item 任意の拡張言語の文$p,q$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ P\supset Q $}の\kagi{$ P $}に$p$を，\kagi{$ Q $}に$q$を代入した結果を充足するのは，$ s $が$p$を充足するならば$s$が$q$を充足するとき，かつそのときに限られる，
+    \item 任意の拡張言語の文$p$と$ i\in\mathbb{N} $，及び$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ (\alpha)P $}の\kagi{$ \alpha $}に$ \boldsymbol{v}(i) $を，\kagi{$ P $}に$p$を代入した結果を充足するのは，すべての$ x\in \alpha $について，$s\tbinom{i}{x}$が$p$を充足するとき，かつそのときに限られる．
+\end{enumerate}
+そして，拡張言語の文$p$が領域$ \kappa $において真であるのは，すべての$s\in \mathrm{seq}^{\kappa}$について$s$が$p$を充足するとき，かつそのときに限られる．
+
+真理集合，すなわち領域$ \trgl{\arg\epsilon} $において真である拡張言語の文の集合を\kagi{$ \mathcal{T}^\epsilon $}で表わすと，$ \mathcal{T}^\epsilon $には\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．したがって，それらの図式化である論理式の集合$a$が存在して，$a\subseteq g$．\kagi{$\in$}は述語記号$\orp{2,0}$に置換され，また，解釈空間の定義上，任意の$m\in\arg\epsilon$について，
+\[
+    \mathcal{R}\fap m\fap\orp{2,0}=\mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}.
+\]
+したがって，$ a\subseteq\mathrm{T}^m $．さらに，$ \brevel{\mathrm{imp}}\img\classab{a}\subseteq\mathrm{T}^m $である．関連して，$ \orp{a,r}\in\mathrm{imp} $なる$r$が$p$を前件$q$後件とする条件法である場合，反事実的依存の定義により，$q$は$p$に反事実的に依存しない．つまり，数学的法則は因果関係に直結しない．
+
+\subsubsection{適合性の条件}
+\label{sssec:適合性の条件}
+
+解釈空間$ \epsilon $が全体論的概念図式$ g $に適合していると言えるためには，まず次の2個の条件を充たさなければならない．
+\begin{enumerate}[label=(\arabic*)]
+    \item $g\subseteq \mathrm{T}^{(\breve{\epsilon}\fap\Lambda)}$（$\breve{\epsilon}\fap\Lambda$ は$g$のモデル），
+    \item $g$のどのメンバーにも出現しない任意の述語記号$\orp{n,i}$について，\\\hfill
+    $(m)(m\in\arg\epsilon\case{1}{1}{1}(\mathcal{R}\fap m)\fap\orp{n,i}=\Lambda)$．
+\end{enumerate}
+\ref{sssec:全体論的概念図式}の$g$を構成する仕方によって，(1)は$\breve{\epsilon}\fap\Lambda$が現実を反映したモデルであることを，(2)は$g$に出現しない述語記号は$\breve{\epsilon}\fap\Lambda$の現実性と関係がなく比較類似性の基盤とならないこと，を表現している．
+
+$\epsilon$が$g$に適合していると言えるための他の条件として，$\breve{\epsilon}\fap\Lambda $は，$g$に含まれる因果述語と蓋然性述語の図式化をそれぞれ以下のように解釈する．
+因果述語が述語記号$\orp{2,i}$に図式化されるとすると，
+\[
+    \mathcal{R}\fap(\breve{\epsilon}\fap\Lambda)\fap\orp{2,i} = \classab{\orp{\orp{a,x},\orp{b,y}}:
+        \orp{a,x}\to_{\epsilon}\orp{b,y}
+    }\cap \timex{(\trgl{\arg\epsilon})}{2}.
+\]
+また，蓋然性述語が述語記号$\orp{3,j}$に図式化されるとすると，
+\[
+    \mathcal{R}\fap(\breve{\epsilon}\fap\Lambda)\fap\orp{3,j} = \classab{\orp{y,x,n}:
+        x\in\prob{y}{(n\uphl\epsilon)}
+    }\cap\trgl{\arg\epsilon}.
+\]
+
+さて，$\epsilon$が$g$に適合していると言えるための最後の条件として，$\epsilon$が与える開始点への類似性の尺度は，$g$（がそれの図式化である$\mathcal{T}^\epsilon$）の各要素が改訂圧力を受ける場合（それを含む文の集合が含意する予測が観察により反駁される場合）におけるその耐性値に相関している．
+
+すなわち，実験状況を要約するような一般化$p\in\mathcal{T}^\epsilon$が観察により反駁されたと仮定した場合，整合性を回復するためには，$p$を含意する最小単位$b\subseteq \mathcal{T}^\epsilon$（どの$b'\subset b$も$p$を含意しない）のメンバーのいずれかを偽とみなす必要が生じる．
+この場合，体系内の文の相互連間の中で$b$の各メンバーが占める位置が，どれを偽として捨てるかの選択を制御する．体系内の位置の相違によって，ある種類の文は他の種類の文よりも改訂され難い．そのような相違が改訂圧力への耐性の相違である．例えば，論理法則や数学的法則は改訂に対してほとんど免疫がある\footnote{
+    論理法則や数学的法則を含めたどの文も，他の文と連合して何らかの予測を含意することに関与するという意味で，経験的内容を分け持っている．原理的には論理法則や数学的法則の改訂もあり得る．クワイン~\cite[pp.\,2--4]{クワインb}を参照．
+}．基本的な物理法則の耐性値も非常に高いが，それが改訂されることはあり得る．さらに，物理法則の外側に，体系の周縁に向かって，他の自然科学的法則から経済学的一般化などの中間を経て，常識的な事実的一般化に至る配列が来る．この順番で改訂圧力への耐性値は下がっていく．
+
+そして，$\epsilon$が与える類似性尺度が改訂圧力への耐性値に相関するというのは，他の条件が同じであれば，改訂圧力への耐性値がより高い文（の図式化）がより多く偽となるようなモデルほど，開始点への類似性の度合いが低い，ということを意味している．言い換えれば，ある文が真理集合が表現する包括的体系にとって基本的なものであればあるほど（中心に近ければ近いほど），その図式化が偽となるモデルは開始点への類似性が低くなる．論理法則と数学的法則は体系の中心であり極限的なケースである．すなわち，論理法則は定義上すべてのモデルにおける真理であり，これが偽となる$m\in\arg\epsilon$はない．数学的法則もこれに準じて，解釈空間の定義により，すべての$m\in\arg\epsilon$において真である．
+

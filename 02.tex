@@ -1,0 +1,689 @@
+% !TeX root = foundation.tex
+
+\section{論理}
+\label{sec:論理}
+
+規制の概念を定式化するために，\ref{ssec:原初的言語}において形式化された
+% 述語論理に適合するように統制された
+原初的言語を，\ref{ssec:クラス}において集合またはクラスの概念に関わる一連の省略記法を導入する\footnote{記号法は大体において，クワイン~\cite{クワインa}とクワイン~\cite{クワインb}に依拠している．}．
+規制の概念は，定義を通じてこの原初的言語の記法に還元可能なように定式化される．それによって，（因果の概念が特定されない解釈空間に相対的である点を除けば）この概念に曖昧さがないことが示される．
+さらに，\ref{ssec:集合論の体系}においては，標準的な公理的集合論の体系を導入して基本的な存在論を確定する．
+
+\subsection{原初的言語}
+\label{ssec:原初的言語}
+
+この言語は，原子文の構成要素として，述語\kagi{$\in$}と，無限個の変項\kagi{$x$}，\kagi{$x'$}，\kagi{$x''$}などを持つ．
+また，原子文から複合文を構成する手段として，真理関数記号\kagi{$\neg$}及び\kagi{$\supset$}と，普遍量化子\kagi{$(x)$}，\kagi{$(x')$}，\kagi{$(x'')$}などを持つ．
+次に，この言語の文は次の３つの規則により，再帰的に記述できる．
+\begin{enumerate}[label=(\arabic*)]
+    \item \kagi{$\alpha\in\beta$}において，\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を入れた結果は文である．
+    \item \kagi{$\neg P$}と\kagi{$P\supset Q$}において，\kagi{$P$}と\kagi{$Q$}に任意の文を入れた結果は文である．
+    \item \kagi{$(\alpha)P$}において，\kagi{$\alpha$}に任意の変項を，\kagi{$P$}に任意の文を入れた結果は文である．
+\end{enumerate}
+原子文\kagi{$x\in x'$}は「~$x$は$x'$の要素である」と読まれる．\kagi{$\neg$}と\kagi{$\supset$}は，通常の初等論理における否定と条件法を表わす．普遍量化子\kagi{$(x)$}は「すべての$x$について」と読まれる．また，\kagi{$(\alpha)P$}という文脈における\kagi{$\alpha$}の位置に来る変項のすべての出現は「束縛出現」と呼ばれる．文における変項の出現が束縛出現ではないとき，その出現は「自由出現」と呼ばれる．そして，変項が自由出現しない文を「閉鎖文」，閉鎖文でない文（少なくとも1個の変項の自由出現を持つ文）を「開放文」と言う．
+
+ところで，他の真理関数は否定と条件法から定義できる．つまり，
+選言\kagi{$ (P\lor Q) $}は\kagi{$ (\neg P\supset Q) $}であり，
+連言\kagi{$ (P\con{1}Q) $}は\kagi{$ \neg(\neg P\lor\neg Q) $}である．
+双条件法\kagi{$ (P\equiv Q) $}は\kagi{$ (P\supset Q)\con{1}(Q\supset P) $}である．
+また，普遍量化子\kagi{$(x)$}と対をなす存在量化子\kagi{$(\exists x)$}は，普遍量化子から定義できる．すなわち，\kagi{$(\exists\alpha)P$}は\kagi{$\neg(\alpha)\neg P$}を表わす．
+
+この他，実用的な便法として，いくつかの記法を明示的な定義によらずに採用する．まず，変項は通常\kagi{$x$}，\kagi{$y$}，\kagi{$z$}等々で代用される．
+また，\kagi{$\notin$}や\kagi{$\neq$}における打ち消しを\kagi{$\neg$}の代わりに用いたり，連言を短縮して，\kagi{$x,y\in\alpha$}，\kagi{$x=y=z$}等と書くことがある．次に，文を単独で表示する場合の一番外側の括弧を省略する．その他の括弧は真理関数に点を付加することによって適当に省略する．すなわち，①点が付加された連言は，それより少数の点が（その連言の側に）付加された真理関数よりも大きな区切りを表わす．また，②点が付加された連言以外の真理関数は，点が付加された側にある，それより少数の点が（その真理関数の側に）付加された真理関数よりも大きな区切りを表わし，連言を表わす同数以下の点集団よりも大きな区切りを表わす\footnote{
+    クワイン~\cite[pp.\,26--28]{クワインb}を参照．
+}．この点記法によると，例えば，\kagi{$ ((P\supset(Q\lor R))\con{1}S) $}は\kagi{$ P\case{1}{0}{1}Q\lor R\con{2}S $}となり，
+\[
+    (S\lor(((P\con{1}(Q\supset R))\equiv((P\lor Q)\con{1}R))\con{1}T))
+\]
+は次のように書かれる．
+\[
+    S\case{2}{0}{2}P\con{1}Q\supset R\case{3}{1}{1}P\lor Q\con{1}R\con{2}T.
+\]
+% \kagi{$(S\lor(((P\con{1}(Q\supset R))\equiv((P\lor Q)\con{1}R))\con{1}T))$}は，\kagi{$S\case{2}{0}{2}P\con{1}Q\supset R\case{3}{1}{1}P\lor Q\con{1}R\con{2}T$}となる．
+
+\subsection{クラス}
+\label{ssec:クラス}
+
+集合は何らかのクラスの要素であるクラスであり，いかなるクラスの要素でもないクラス（究極クラス）と区別される．集合以外のクラスを持たない体系ではこの区別は消えるが，\ref{ssec:集合論の体系}で導入されるのもそうした体系である．したがって，本稿では「集合」と「クラス」を可換的に使用する．
+
+最初に，$Fx$である$x$のクラスを指示しようとするクラス抽象体\kagi{$\classab{x:Fx}$}を文脈的に定義する．
+
+\begin{df}
+\label{df:クラス抽象A}
+\kagi{$
+   y\in\classab{x:Fx}
+$}は\kagi{$
+   Fy
+$}を表わす．
+\end{df}
+
+本稿で定義を述べる際，代用変項\kagi{$x$}，\kagi{$y$}等は変項の位置を，文型\kagi{$Fx$}，\kagi{$Fy$}等は原初的言語の文の位置を表わしている．また，ギリシア文字\kagi{$\alpha$}，\kagi{$\beta$}等は，任意の変項またはクラス抽象体の位置を表わす型文字である．
+つまり，定義文は，被定義項の\kagi{$x$}，\kagi{$y$}等に変項を，\kagi{$F$}に原初的言語の開放文を，\kagi{$\alpha$}，\kagi{$\beta$}等に変項またはクラス抽象体を代入した結果は，定義項に同一の代入をした結果を表わす，ということを意味している．
+
+開放文$\phi$の代入は\kagi{$F$}とそれに続く$n$個の変項出現を文で置き換えることを意味するが，その文は，$\phi$における変項$v_0,v_1\dots v_n$の自由出現のすべてを\kagi{$F$}に続く変項で順次置換することにより得られる． ただし，$v$ は$\phi$に自由出現する変項を\kagi{$'$}の数が少ない順に$n$個並べた系列である\footnote{
+    さらに，変項の新たな束縛を防ぐために，次の①②のケースでは$\phi$は代入不可とする．①$v_0,v_1\dots v_n$以外で$\phi$に自由出現する変項$k$について，$\phi$が代入される文脈で$k$が量化子の変項であり，かつ，その射程内に代入するケース．②\kagi{$F$}に続く$i$番めの変項が$\phi$で量化子の変項であり，かつ，その射程内に$v_i$が自由出現するケース．クワイン~\cite[pp.\,154--156]{クワインb}を参照．
+}．
+
+次に，クラスのブール代数に属するよく知られた概念群を導入する．
+
+\begin{df}[部分クラス]
+\label{df:部分クラス}
+\kagi{$
+    \alpha\subseteq\beta
+$}は\kagi{$
+    (x)(x\in\alpha\case{1}{1}{1}x\in\beta)
+$}を表わす，
+\end{df}
+
+\begin{df}[真部分クラス]
+\label{df:真部分クラス}
+\kagi{$
+    \alpha\subset\beta
+$}は\kagi{$
+    \alpha\subseteq\beta\not\subseteq\alpha
+$}を表わす，
+\end{df}
+
+\begin{df}[合併]
+\label{df:合併}
+\kagi{$
+    \alpha \cup \beta
+$}は\kagi{$
+    \classab{x:x\in\alpha\case{2}{1}{1}x\in\beta}
+$}を表わす，
+\end{df}
+
+\begin{df}[共通部分]
+\label{df:共通部分}
+\kagi{$
+    \alpha \cap \beta
+$}は\kagi{$
+    \classab{x:x\in\alpha\con{1}x\in\beta}
+$}を表わす，
+\end{df}
+
+\begin{df}[補クラス]
+\label{df:補クラス}
+\kagi{$\bar{\alpha}$}あるいは\kagi{$\barl{\alpha}$}は，\kagi{$
+    \classab{x:x\notin\alpha}
+$}を表わす．
+\end{df}
+
+D \ref{df:部分クラス}〜D \ref{df:補クラス}のように，定義文が定義項にのみ出現する\kagi{$x$}，\kagi{$y$}等を持つ場合，被定義項を一義的に変換できない．そこで，定義項にのみ出現する\kagi{$x$}，\kagi{$y$}等への代入は，被定義項への代入結果に出現しない変項を，\kagi{$'$}の数が少ない順番に使って，アルファベット順に代入するものと決める\footnote{
+    さらに，変項の新たな束縛を防ぐために，代入される変項または代入される抽象体に自由出現する変項$v$について，次の①②のケースでは代入不可とする．①$v$が量化子の変項の位置に代入される場合で，その射程内に代入前から$v$が出現するケース．②代入前から$v$が量化子の変項であり，その射程内に代入するケース．
+}．
+
+次に，同一性とその関連概念を導入する．
+
+\begin{df}[同一性]
+\label{df:同一性}
+\kagi{$
+    \alpha = \beta
+$}は\kagi{$
+    \alpha\subseteq\beta\subseteq\alpha
+$}を表わす．
+\end{df}
+\noindent D \ref{df:同一性}の定義式は，\kagi{$(x)(x\in\alpha\case{3}{1}{1}x\in\beta)$}とも表せる．すなわち，クラスの同一性はその要素の同一性に帰着する．したがって，規範をクラスに還元できれば（クラスの同一性の基準は明確であるから）その同一性の問題は解消される．それに加えて，物理的対象を含むあらゆるものをクラスとみなすことができれば，さらに存在論を単純化できるだろう．この点については後述する．
+
+\begin{df}[空クラス]
+\label{df:空クラス}
+\kagi{$
+    \Lambda
+$}は\kagi{$
+    \classab{x:x\neq x}
+$}を表わす，
+\end{df}
+
+\begin{df}[普遍クラス]
+\label{df:普遍クラス}
+\kagi{$
+    \univ
+$}は\kagi{$
+    \classab{x:x=x}
+$}を表わす，
+\end{df}
+
+\begin{df}[単一クラス]
+\label{df:単一クラス}
+\kagi{$
+    \classab{\alpha}
+$}は\kagi{$
+    \classab{z:z=\alpha}
+$}を表わす，
+\end{df}
+
+\begin{df}[対クラス]
+\label{df:対クラス}
+\kagi{$
+    \classab{\alpha,\beta}
+$}は\kagi{$
+    \classab{\alpha}\cup\classab{\beta}
+$}を表わす．
+\end{df}
+
+次の定義は，D \ref{df:クラス抽象A}と相まって，クラス抽象体の文脈的定義を完成させる．
+
+\begin{df}
+\label{df:クラス抽象B}
+\kagi{$
+    \classab{x:Fx}\in\beta
+$}は\kagi{$
+    (\exists y)(y=\classab{x:Fx}\con{1}y\in\beta)
+$}を表わす．
+\end{df}
+\noindent\kagi{$y\in\classab{x:Fx}$}を肯定することは，D \ref{df:クラス抽象A}により，単に\kagi{$Fy$}を言うことだから，クラス$\classab{x:Fx}$が存在するとの含みはない．これに対して，$ \classab{x:Fx} $がメンバーになることを肯定することは，D \ref{df:クラス抽象B}により，$ \classab{x:Fx} $の存在を肯定することを含意する．
+
+次に，$\alpha$の合併と共通部分の概念．
+
+\begin{df}
+\label{df:クラスの合併}
+\kagi{$
+    \union{\alpha}
+$}は\kagi{$
+    \classab{x:(\exists y)(x\in y\con{1}y\in\alpha)}
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:クラスの共通部分}
+\kagi{$
+    \intersect{\alpha}
+$}は\kagi{$
+    \classab{x:(y)(y\in\alpha\case{1}{1}{1}x\in y)}
+$}を表わす．
+\end{df}
+
+次に，$ Fx $である唯一の対象$x$を指示しようとする単称記述\kagi{$(\imath x)Fx$}を，そのような$ x $が存在しないとき$ (\imath x)Fx=\Lambda $となるように定義する．
+
+\begin{df}
+\label{df:単称記述}
+\kagi{$
+    (\imath x)Fx
+$}は\kagi{$
+    \union{\classab{y:(x)(Fx\case{3}{0}{1}x=y)}}
+$}を表わす．
+\end{df}
+\noindent 単称記述に関して，次の2つの法則が量化論理学によって証明可能である．したがって，D \ref{df:単称記述}は意図された通りの意味を与える．
+\[
+    (x)(Fx\case{3}{0}{1}x=y)\case{1}{0}{1}(\imath x)Fx=y,\qquad \neg(\exists y)(x)(Fx\case{3}{0}{1}x=y)\case{1}{0}{1}(\imath x)Fx=\Lambda.
+\]
+
+次に，$Fxy$である$x$の$y$に対する関係を，$Fxy$なるすべての順序対$\langle x,y \rangle$のクラスとして導入する．
+
+\begin{df}[順序対]
+\label{df:順序対}
+\kagi{$
+    \orp{\alpha,\beta}
+$}は\kagi{$
+    \classab{\classab{\alpha},\classab{\alpha,\beta}}
+$}を表わす．
+\end{df}
+\noindent この定義により，順序対の概念に要求される法則\kagi{$\orp{x,y}=\orp{z,w}\case{3}{1}{1}x=z\con{1}y=w$}が成り立つ．
+なお，順序のある三つ組\kagi{$\orp{\alpha,\orp{\beta,\gamma}}$}は\kagi{$\orp{\alpha,\beta,\gamma}$}に，
+四つ組\kagi{$\orp{\alpha,\orp{\beta,\gamma,\delta}}$}は\kagi{$\orp{\alpha,\beta,\gamma,\delta}$}に省略されるものとする．五つ以上の組についても同様である．
+
+次の定義によって，クラス抽象体の表現を拡張する一般的な記法手段を導入する．\kagi{$\alpha(v_0v_1\dots v_n)$}を変項$ v_0,v_1,\dots v_n $のみが自由出現するクラス抽象体とすると，
+\begin{df}
+\label{df:クラス抽象C}
+\kagi{$
+    \classab{\alpha(v_0v_1\dots v_n):Fv_0v_1\dots v_n}
+$}は，\\\hfill\kagi{$
+    \classab{z:
+        (\exists v_0)(\exists v_1)\dots(\exists v_n)(Fv_0v_1\dots v_n\con{1}z=\alpha(v_0v_1\dots v_n))
+    }
+$}を表わす．
+\end{df}
+\noindent したがって，\kagi{$\alpha(v_0v_1\dots v_n)$}を，（クラス抽象体の省略形である）\kagi{$\orp{x,x'}$}にとれば，
+\[
+    \text{
+        \kagi{$
+            \classab{\orp{x,x'}:Fxx'}
+        $}は\kagi{$
+            \classab{x'':
+                (\exists x)(\exists x')(Fxx'\con{1}x''=\orp{x,x'})
+            }
+        $}を表わす
+    }
+\]
+が得られる．
+
+D \ref{df:クラス抽象C}により，関係の諸概念はクラス抽象体の省略形とみなせる．すなわち，
+
+\begin{df}[関係部分]
+\label{df:関係部分}
+\kagi{$
+    \dotl{\alpha}
+$}は\kagi{$
+    \classab{\orp{x,y}:\orp{x,y}\in\alpha}
+$}を表わす．
+\end{df}
+\noindent$\alpha$が関係であるのは，$\alpha=\dotl{\alpha} $であるときである．
+
+\begin{df}[同一性関係]
+\label{df:同一性関係}
+\kagi{$
+    I
+$}は\kagi{$
+    \classab{\orp{x,y}:x=y}
+$}を表わす，
+\end{df}
+
+\begin{df}[要素関係]
+\label{df:要素関係}
+\kagi{$
+    \mathfrak{E}
+$}は\kagi{$
+    \classab{\orp{x,y}:x\in y}
+$}を表わす，
+\end{df}
+
+\begin{df}[関係の逆]
+\label{df:関係の逆}
+\kagi{$\breve{\alpha}$}あるいは\kagi{$\brevel{\alpha}$}は，
+\kagi{$
+    \classab{\orp{y,x}:\orp{x,y}\in\alpha}
+$}を表わす，
+\end{df}
+
+\begin{df}[関係の像]
+\label{df:関係の像}
+\kagi{$
+    \alpha\img\beta
+$}は\kagi{$
+    \classab{x:(\exists y)(\orp{x,y}\in\alpha\con{1}y\in\beta)}
+$}を表わす．
+\end{df}
+\noindent $ \alpha\img\univ $を「~$\alpha$の左域」，$ \breve{\alpha}\img\univ $を「~$\alpha$の右域」と言う．
+
+\begin{df}[関係の積]
+\label{df:関係の積}
+\kagi{$
+\alpha\resl\beta
+$}は\kagi{$
+    \classab{\orp{x,z}:
+        (\exists y)(\orp{x,y}\in\alpha\con{1}\orp{y,z}\in\beta)
+    }
+$}を表わす，
+\end{df}
+
+\begin{df}[直積]
+\label{df:直積}
+\kagi{$
+    \alpha\times\beta
+$}は\kagi{$
+    \classab{\orp{x,y}:
+        x\in\alpha\con{1}y\in\beta
+    }
+$}を表わす，
+\end{df}
+
+\begin{df}[右域の制限]
+\label{df:右域の制限}
+\kagi{$
+    \alpha\uphr\beta
+$}は\kagi{$
+    \alpha\cup(\univ\times\beta)
+$}を表わす，
+\end{df}
+
+\begin{df}[左域の制限]
+\label{df:左域の制限}
+\kagi{$
+    \beta\uphl\alpha
+$}は\kagi{$
+    \alpha\cup(\beta\times\univ)
+$}を表わす．
+\end{df}
+
+次に，$ \orp{y,x}\in\alpha $である唯一の$y$が存在するとき，$x$を$\alpha$の独立変項と呼び，そのクラスは
+\begin{df}
+\label{df:独立変項}
+\kagi{$
+    \arg\alpha
+$}は\kagi{$
+    \classab{x:(\exists y)(\alpha\img\classab{x} =\classab{y})}
+$}を表わす，
+\end{df}
+\noindent と定義される．また，$y$は$\alpha$による$x$の値$\alpha\fap x$である．
+
+\begin{df}
+\label{df:関数適用}
+\kagi{$
+    \alpha\fap\beta
+$}は\kagi{$
+    (\imath y)(\orp{y,\beta}\in\alpha)
+$}を表わす．
+\end{df}
+
+\noindent さらに，どの二つの対象も同じ対象に対して関係$\alpha$を持つことがないならば，$\alpha$は関数である．つまり，
+
+\begin{df}
+\label{df:関数}
+\kagi{$
+    \func\alpha
+$}は\kagi{$
+    (x)(y)(z)(
+        \orp{x,z}\in\alpha\con{1}\orp{y,z}\in\alpha\case{1}{1}{1}x=y
+    )\con{1}\alpha=\dotl{\alpha}
+$}を表わす．
+\end{df}
+\noindent 例えば，$ \classab{\orp{x,y}:\text{$x$は$y$の遺伝的な父}} $は関数であるが，その逆（子の父に対する関係）は関数ではない．
+$ \alpha $が関数であるとき，$ \arg\alpha =\breve{\alpha}\img\univ $である．
+
+\kagi{$\dots x \dots$}が\kagi{$x$}に代入される変項，または，それが自由出現するクラス抽象体の位置を表わす場合，次の定義は，独立変項$x$の値が$ \dots x \dots $であるような関数を指示する記法（関数抽象）を導入する\footnote{\kagi{$\lambda_x$}の他，\kagi{$\barl{}$}，\kagi{$\brevel{}$}等の単項演算子の作用域は，それに続く文法的に可能な文字列の最小部分であると決める．}．
+
+\begin{df}
+\label{df:関数抽象}
+\kagi{$
+    \lambda_x(\dots x \dots)
+$}は\kagi{$
+    \classab{\orp{y,x}:y=\dots x \dots}
+$}を表わす．
+\end{df}
+
+次に，個々の自然数を，$ \Lambda $を含み，かつ後続者演算$\mathrm{S}$に関して閉じているような，すべてのクラスの共通のメンバーとして，自然数のクラス$\mathbb{N}$を定義する．
+
+\begin{df}
+\label{df:後続者関数}
+\kagi{$
+    \mathrm{S}
+$}は\kagi{$
+    \lambda_x(x\cup\classab{x})
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:自然数}
+\kagi{$
+    \mathbb{N}
+$}は\kagi{$
+    \intersect{\classab{z:\Lambda\in z\con{1}\mathrm{S}\img z\subseteq z}}
+$}を表わす．
+\end{df}
+\noindent したがって，自然数$ 0,1,2,3,\dots $は，$ \Lambda,\classab{\Lambda},\classab{\Lambda,\classab{\Lambda}},\classab{\Lambda,\classab{\Lambda},\classab{\Lambda,\classab{\Lambda}}},\dots $である\footnote{
+    自然数を表わす\kagi{$\Lambda$}，
+    \kagi{$\mathrm{S}\fap\Lambda$}，
+    \kagi{$\mathrm{S}\fap(\mathrm{S}\fap\Lambda)$}，
+    \kagi{$
+        \mathrm{S}\fap
+        (
+            \mathrm{S}\fap(\mathrm{S}\fap\Lambda)
+        )
+    $}等は，\kagi{$0$}，\kagi{$1$}，\kagi{$2$}，\kagi{$3$}等で省略される．
+}．自然数はそれより小さい自然数のクラスであり，その大小関係は\kagi{$\in$}または\kagi{$ \subset $}で表わせる．
+
+次に，対象$ a,b,c $をこの順番で並べた系列は，単に，$ \orp{a,0},\orp{b,1},\orp{c,2} $という$ 3 $個の順序対からなるクラスである．このような有限系列のクラスは次の定義による．
+\begin{df}
+    「\,$ \mathrm{Seq} $\,」は
+    「\,$ \{\,x:
+        \func x \con{1} \arg x\in \mathbb{N}
+    \,\} $\,」を表わす．
+    \label{df:有限系列}
+\end{df}
+\noindent$ z\in\mathrm{Seq} $であるとき，$ z $はちょうど$ \arg z $個の系列要素を持ち，任意の$ n\in \mathbb{N} $について，$z\uphr n$もまた系列になる．
+有限系列の概念を使って，$\alpha$の$\beta$回の反復$\iter{\alpha}{\beta}$を導入できる．
+
+\begin{df}
+\label{df:関係の反復}
+\kagi{$
+    \iter{\alpha}{\beta}
+$}は\kagi{$
+    \classab{\orp{x,y}:
+        (\exists z)(
+            \orp{x,\beta},\orp{y,\Lambda}\in z\in\mathrm{Seq}\con{1}z\resl(\mathrm{S}\resl\breve{z})\subseteq\alpha
+        )
+    }
+$}を表わす．
+\end{df}
+\noindent$\iter{\alpha}{\beta}$は，系列の後者が前者に$\alpha$を持つような有限系列$z$について，$z$の$\beta$番目が$0$番目に対して持つ関係である．
+
+関連して，$\alpha$の祖先関係$\ance{\alpha}$は，$x$が$y$に対して$\alpha$の反復を持つ$\orp{x,y}$のクラスである\footnote{
+    先に\kagi{$ \ance{\alpha} $}を\kagi{$ \classab{\orp{x,y}:x\in\intersect{\classab{z:y\in z\con{1}\alpha\img z\subseteq z}}} $}と定義してから，\kagi{$ \mathbb{N} $}を\kagi{$ \ance{\mathrm{S}}\img\classab{\Lambda} $}と定義する方法もある．クワイン~\cite[pp.\,93--95]{クワインa}を参照．
+}．すなわち，
+
+\begin{df}
+\label{df:祖先関係}
+\kagi{$
+    \ance{\alpha}
+$}は\kagi{$
+    \classab{w:(\exists z)(w\in\iter{\alpha}{z})}
+$}を表わす．
+\end{df}
+
+\noindent $\ance{\alpha}$は，$x=y$であるか，$\orp{x,y}\in\alpha$，または，$\orp{x,y}\in\alpha\resl\alpha$，または，$\orp{x,y}\in\alpha\resl(\alpha\resl\alpha)$，等々であるような$x$の$y$に対する関係である．
+例えば，$\alpha$を人の親子関係にとれば，人の祖先関係が得られる\footnote{
+$\ance{\alpha}$は$\alpha$を反復して$y$から$x$に遡及可能であるような$\orp{x,y}$のクラスである．定義上$ I\subseteq\ance{\alpha} $であるから$x$の祖先には$x$自身が含まれる．それでは困るケースでは$\alpha\resl\ance{\alpha}$を使う．そもそも$I\subseteq\alpha$のケースを考えると$\ance{\alpha}\cap\bar{I}$では微妙である．}．
+
+\subsection{集合論の体系}
+\label{ssec:集合論の体系}
+
+規制はクラスであり，その存在はクラス理論の公理によって決定される．いかなるクラスが存在するかという問題は，いかなるクラス理論を採用するかという問題である．
+以下では標準的と思われる体系ZF（ツェルメロ・フレンケル集合論）を導入する．公理の主要部分はクラスの存在仮定である．クラス$\alpha$が存在することを，\kagi{$ (\exists x)(x=\alpha) $}と等値な\kagi{$ \alpha\in\univ $}で表わす．また，次の省略記法を使う．
+\begin{df}[冪集合]
+\label{df:冪集合}
+\kagi{$
+    \mathcal{P}(\alpha)
+$}は\kagi{$
+    \classab{x:x\subseteq\alpha}
+$}を表わす．
+\end{df}
+
+\noindent すると，以下のA \ref{axim:外延性}〜A \ref{axim:正則性}の（自由出現する変項をすべて普遍量化した）普遍閉鎖体がZFの公理（型）である．
+
+\begin{axim}[外延性]
+\label{axim:外延性}
+$
+    x=y\con{1}x\in z\case{1}{1}{1}y\in z.
+$
+\end{axim}
+
+\begin{axim}[一対化，和，冪]
+\label{axim:一対化，和，冪}
+$
+    \classab{x,y},\:\union{x},\:\mathcal{P}(x)\in\univ.
+$
+\end{axim}
+
+\begin{axim}[無限]
+\label{axim:無限}
+$
+    \mathbb{N}\in\univ.
+$
+\end{axim}
+
+\begin{axim}[分出]
+\label{axim:分出}
+$
+    x\cap\alpha\in\univ.
+$
+\end{axim}
+
+\begin{axim}[置換]
+\label{axim:置換}
+$
+    \func\alpha\case{1}{1}{1}\alpha\img x\in\univ.
+$
+\end{axim}
+
+\begin{axim}[正則性]
+\label{axim:正則性}
+$
+    x\neq \Lambda \ld{.}\supset (\exists y)(y\in x\md{.}x\cap y=\Lambda).
+$
+\end{axim}
+
+定理は公理から量化論理学の演繹方法を適用して導出される．以下で公理以外の初等的な定理の例をいくつか示す．ただし，そこでの証明は正式な証明のステップを省略して非形式的に展開したものである\footnote{
+    T \ref{thm:単一クラス}によって，すべてのクラス$x$について，$x\in\classab{x}\in\univ$．したがって，$(\exists y)(x\in y)$．すなわち，すべてのクラスは集合であり，この体系においては究極クラスは存在しない．
+}．
+
+\begin{thm}[同一性の法則]
+\label{thm:同一性の法則}
+$
+    x=y\con{1}Fx\case{1}{1}{0}Fy.
+$
+\end{thm}
+\setcounter{equation}{0}
+\begin{pf}
+
+A \ref{axim:一対化，和，冪}により，$\classab{x,x}\in\univ$．つまり，$w = \classab{x,x}$なる$w$が存在する．D \ref{df:同一性}とD \ref{df:対クラス}により，
+\[
+    (y)(y\in w\case{3}{1}{2}y=x\case{2}{1}{1}y=x).
+\]
+\kagi{$ y $}を例化して，$x\in w\case{3}{1}{1}x = x$．すると，$x\in w$．他方，第2の仮定とD \ref{df:クラス抽象A}により，$ x\in\classab{z:Fz} $．したがって，
+\begin{equation}
+    x\in w\cap\classab{z:Fz}.
+\end{equation}
+
+次に，A \ref{axim:分出}によって，$w\cap \classab{z:Fz}\in\univ$．それゆえ，$v=w\cap \classab{z:Fz}$である$v$が存在する．すると，D \ref{df:同一性}により，
+\begin{equation}
+    (u)(u\in v\case{3}{1}{1}u\in w\cap\classab{z:Fz}).
+\end{equation}
+(1)(2)により$x\in v$．すると，T \ref{thm:同一性の法則}の第1の仮定とA \ref{axim:外延性}により，$y\in v$．
+(2)により$y\in w\cap\classab{z:Fz}$．D \ref{df:クラス抽象A}によって，$Fy$．
+\end{pf}
+
+\begin{thm}[空集合]
+\label{thm:空集合}
+$
+    \Lambda\in\univ.
+$
+\end{thm}
+\begin{pf}
+    A \ref{axim:分出}によって，$x\cap\Lambda\in\univ$だから，$ y = x\cap\Lambda $なる$y$が存在する．D \ref{df:同一性}により，$ \Lambda = x\cap\Lambda $．それゆえ，$ y = \Lambda $．すなわち，$ \Lambda\in\univ $．
+\end{pf}
+
+\begin{thm}[単一クラス]
+\label{thm:単一クラス}
+$
+    \classab{\alpha}\in\univ.
+$
+\end{thm}
+\begin{pf}
+    $\alpha\in\univ$を仮定すると，$x = \alpha$である$x$が存在する．それゆえ，$ \classab{x}=\classab{\alpha} $．また，A \ref{axim:一対化，和，冪}によって，$\classab{x}=\classab{x,x}\in\univ$．したがって，$\classab{\alpha}\in\univ$．
+    $\alpha\notin\univ$を仮定すると，$(x)(x\neq\alpha)$．それゆえ，$\classab{\alpha}=\Lambda$．T \ref{thm:空集合}により，$\classab{\alpha}\in\univ$．
+\end{pf}
+
+\begin{thm}[対クラス]
+\label{thm:対クラス}
+$
+    \classab{\alpha,\beta}\in\univ.
+$
+\end{thm}
+\begin{pf}
+    T \ref{thm:単一クラス}によって，$\classab{\alpha},\classab{\beta}\in\univ$．すなわち，$ x = \alpha\con{1}y = \beta $である$ x,y $が存在する．すると，A \ref{axim:一対化，和，冪}により，$\union{\classab{\classab{x},\classab{y}}}\in\univ$．D \ref{df:同一性}により，
+    \[
+        \classab{\alpha,\beta}=\classab{x,y}=\union{\classab{\classab{x},\classab{y}}}.
+    \]
+    したがって，$ \classab{\alpha,\beta}\in\univ $．
+\end{pf}
+
+\begin{thm}[部分クラス]
+\label{thm:部分クラス}
+$
+    \alpha\subseteq\beta\con{1}\beta\in\univ\case{1}{1}{1}\alpha\in\univ.
+$
+\end{thm}
+\begin{pf}
+    第2の仮定により，$ x = \beta $なる$ x $が存在する．すると第1の仮定により，$ \alpha = \alpha\cap x $．そして，A \ref{axim:分出}により$ \alpha\cap x\in\univ $．つまり，$ y = \alpha\cap x=\alpha $なる$ y $が存在する．したがって，$\alpha\in\univ$．
+\end{pf}
+
+\begin{thm}[合併]
+\label{thm:合併}
+$
+    x\cup y\in\univ.
+$
+\end{thm}
+\begin{pf}
+    定義により，$ x\cup y = \union{\classab{x,y}} $．
+    T \ref{thm:対クラス}により，$\classab{x,y}\in\univ$．A \ref{axim:一対化，和，冪}により，$ \union{\classab{x,y}}\in\univ $．
+    それゆえ，$ x\cup y\in\univ $．
+\end{pf}
+    
+\begin{thm}[直積]
+\label{thm:直積}
+$
+    x\times y\in\univ.
+$
+\end{thm}
+\setcounter{equation}{0}
+\begin{pf}
+    $ z\in x\times y $と仮定する．するとD \ref{df:直積}により，
+    \begin{equation}
+        a\in x\con{1}b\in y\con{1}z = \orp{a,b}
+    \end{equation}
+    となる$a,b$が存在する．それゆえ，$ \classab{a},\classab{a,b}\subseteq x\cup y $であるから，$ \classab{a},\classab{a,b}\in\mathcal{P}(x\cup y)$．したがって，
+    \[
+        \classab{\classab{a},\classab{a,b}}\subseteq\mathcal{P}(x\cup y).
+    \]
+    するとD \ref{df:順序対}により，$ \orp{a,b}\in\mathcal{P}(\mathcal{P}(x\cup y)) $．つまり，ある$ z' $が存在して，
+    \begin{equation}
+        z'=\orp{a,b}\con{1}z'\in \mathcal{P}(\mathcal{P}(x\cup y)).
+    \end{equation}
+    (1)と(2)から，T \ref{thm:同一性の法則}により，$ z\in\mathcal{P}(\mathcal{P}(x\cup y)) $．
+
+    以上から，$ x\times y\subseteq \mathcal{P}(\mathcal{P}(x\cup y)) $．そして，T \ref{thm:合併}により$x\cup y\in\univ$，A \ref{axim:一対化，和，冪}により$\mathcal{P}(\mathcal{P}(x\cup y))\in\univ$．したがって，T \ref{thm:部分クラス}によって，$x\times y\in\univ$．
+\end{pf}
+
+自然科学で必要とされるような数学的法則は，定義を通じてクラス理論の文に還元可能であり，それらは，上記のような証明を積み重ねて行くことで，\ref{ssec:集合論の体系}の公理から演繹可能である\footnote{
+    自然科学が要求する数学という目的にとっては，A \ref{axim:外延性}〜A \ref{axim:分出}だけで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}（の図式化）を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，A \ref{axim:外延性}〜A \ref{axim:分出}（の図式化）は真となる．この意味で，自然科学の総体が要求する存在論は$ \mathcal{W}\fap 2 $である．
+}．
+このことは，それらの定理が真であるために要求される対象が，それらの公理群によって供給されるということも意味している．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる．すると，個々の実数は$\mathbb{N}$の部分クラスであるから，T \ref{thm:部分クラス}によって存在が供給される．$\mathbb{R}$自体についても，A \ref{axim:無限}とA \ref{axim:一対化，和，冪}により，$ \mathcal{P}(\mathbb{N})\in\univ $だから，同様にT \ref{thm:部分クラス}により，$ \mathbb{R}\in\univ $．
+
+ところで，規制$ z $の内部構造，すなわちD \ref{df:クラスの内部構造}に基づく$ \trcl z $のメンバーには，人やその他の物理的対象が含まれる．したがって，物理的対象の存在も供給しなければならない．
+
+\begin{df}
+\label{df:クラスの内部構造}
+\kagi{$
+    \trcl\alpha
+$}は\kagi{$
+    \union{(
+        \ance{
+            (\lambda_x\union{x})
+        }\img\classab{\alpha}
+    )}
+$}を表わす．
+\end{df}
+
+\noindent この点については，$ \mathbb{R}\in\univ $であることから，T \ref{thm:直積}により，$ \timex{\mathbb{R}}{2},\timex{\mathbb{R}}{3},\timex{\mathbb{R}}{4}\in\univ $．そして，$ \timex{\mathbb{R}}{4} $を四次元時空と同一視すれば，その要素を時空点，その任意の部分クラスを時空領域とみなすことができる．
+すると，物理的対象が時空領域を占有する関係$\nu$は，$\nu\img\univ$がすべての物理的対象のクラスであり，$\breve{\nu}\img\univ\subseteq\timex{\mathbb{R}}{4}$であるような関係と考えられる．$\nu$は一対一対応，つまり，$ \func{\nu}\con{1}\func{\breve{\nu}} $であろうから，任意の$x\in\nu\img\univ$はそれが占有する時空領域$\breve{\nu}\fap x$と結局は同一視できる\footnote{
+    Quine~\cite{Quine}．
+}．任意の時空領域の存在は，$ \timex{\mathbb{R}}{4} $の部分クラスとして，T \ref{thm:部分クラス}によって供給されるから，これとは区別された物理的対象を用意する必要はない．
+
+次に，規制$x$の内部構造$\trcl x$に他の規制類型が含まれ得ることから，規制の存在論を明確化する必要が生じる．そのため\ref{ssec:存在論}である種の階層構造を設定するが，そこでは，$\mathcal{W}\fap 0 = \Lambda$であり，$ 0 \in n $について$\mathcal{W}\fap n$が，$\mathcal{W}\fap (\breve{\mathrm{S}}\fap n)$から冪集合演算を反復して得られるクラス全ての合併，であるような無限系列$\mathcal{W}$を使う\footnote{
+    $ \mathcal{W}\fap n $は，累積階層$ \mathrm{WF} $の$ n\cdot\omega $段階と同一である．すなわち，系列$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $は，$ \omega^{2} $未満の極限順序数に係る累積階層の系列$ \Lambda,\mathrm{WF}{`}(1\cdot\omega),\mathrm{WF}{`}(2\cdot\omega),\dots $と同一である．
+}．
+
+\begin{df}
+\label{df:冪集合演算}
+\kagi{$
+    \mathfrak{P}
+$}は\kagi{$
+    \lambda_x\mathcal{P}(x)
+$}を表わす，
+\end{df}
+
+\begin{df}
+\label{df:階層構造}
+\kagi{$
+    \mathcal{W}
+$}は\kagi{$
+(\imath z)(
+    \func{z}\con{1}\arg{z}=\mathbb{N}\con{1}z\fap\Lambda=\Lambda\con{1}z\resl(\mathrm{S}\resl\breve{z})\subseteq\lambda_x\union{(\ance{\mathfrak{P}}\img\classab{x})}
+)
+$}を表わす．
+\end{df}
+
+\noindent 規制の概念が要求する存在論は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある有限段階$ \mathcal{W}\fap n $であり，最大でも$\mathcal{W}$の各段階すべての合併$ \union{(\mathcal{W}\img\mathbb{N})} $である．
+この点，$\func{\mathcal{W}}$であることが証明可能であり，したがって，A \ref{axim:置換}とA \ref{axim:無限}により，$ \mathcal{W}\img\mathbb{N}\in\univ $．さらに，A \ref{axim:一対化，和，冪}により，$\union{(\mathcal{W}\img\mathbb{N})}\in\univ$．
+この場合，$\mathcal{W}$の各段階についても，任意の$\Lambda\neq n\in\mathbb{N}$に対して，$ \Lambda\neq \mathcal{W}\fap n\in\univ $．
+この点に関連して一般的に言えば，
+\[
+    \union{(\ance{\mathfrak{P}}\img\classab{x})}= \union{(\lambda_n(\iter{\mathfrak{P}}{n}\fap x)\img\mathbb{N})}.
+\]
+すると，$ \func{\lambda_n(\iter{\mathfrak{P}}{n}\fap x)} $であるから，A \ref{axim:無限}とA \ref{axim:置換}により，
+\[
+    \lambda_n(\iter{\mathfrak{P}}{n}\fap x)\img\mathbb{N}\in\univ.
+\]
+また，A \ref{axim:一対化，和，冪}により，$ \union{(\lambda_n(\iter{\mathfrak{P}}{n}\fap x)\img\mathbb{N})}\in\univ $．
+したがって，$ \union{(\ance{\mathfrak{P}}\img\classab{x})}\in\univ $．
+
