@@ -4,6 +4,8 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{newpxtext,newpxmath}
 \usepackage{enumitem} % 箇条書きのカスタマイズ
+\usepackage[absolute,overlay]{textpos} % 要素を絶対座標で指定
+\newcommand{\version}{v1.1} % バージョン情報
 \usepackage[luatex,unicode,pdfencoding=auto]{hyperref}
 \hypersetup{
   bookmarksnumbered=true,
@@ -11,7 +13,7 @@
   allcolors=blue,
   pdftitle={規制の概念とその論理的還元},
   pdfauthor={佐伯 一冴},
-  pdfsubject={},
+  pdfsubject={\version},
   pdfkeywords={}
 }
 % 定理環境
