@@ -91,7 +91,7 @@ $}を表わす．
 \begin{df}
 \label{df:合成系列}
     \kagi{$
-        \alpha\ast\beta
+        \alpha\diamond\beta
     $}は\kagi{$
         \lambda_n\orp{\alpha\fap n,\beta\fap n}\uphr\arg\alpha
     $}を表わす．
@@ -124,7 +124,7 @@ $\app{\epsilon}\delta$は，$x\in \arg\delta$と$ \trgl{\delta} $の合成系列
 \kagi{$
     \app{\epsilon} \delta
 $}は\kagi{$
-    \arg\delta\cap\classab{x:\iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta})\in\mathrm{Cseq}^\epsilon}
+    \arg\delta\cap\classab{x:\iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta})\in\mathrm{Cseq}^\epsilon}
 $}を表わす．
 \end{df}
 \noindent $ \orp{x,y}\in\app{\epsilon} y\times\mathrm{Reg} $であるような$ \orp{x,y} $を「規制要素」と言う．
@@ -151,7 +151,7 @@ $}を表わす．
 \subsection{執行可能性}
 \label{ssec:執行可能性}
 
-$x\in\app{\epsilon}\delta$について，$ \iter{\mathrm{E}}{2}\fap (x\ast\trgl{\delta})\in\mathrm{Cseq}^\epsilon $が実現しているとき，$x$は$\delta$の構成要件$\exe{\epsilon}\delta$に属する．
+$x\in\app{\epsilon}\delta$について，$ \iter{\mathrm{E}}{2}\fap (x\diamond\trgl{\delta})\in\mathrm{Cseq}^\epsilon $が実現しているとき，$x$は$\delta$の構成要件$\exe{\epsilon}\delta$に属する．
 
 \begin{df}
 \label{df:構成要件}
@@ -253,17 +253,17 @@ $}を表わす．
 
 \noindent したがって，$ \tildel{\trgl{\delta}}\fap 1 = \trgl{\delta}\fap 0 $の場合（$ \delta $がP類型），
 \begin{align*}
-    x\in\cs{\epsilon}\delta\con{1}x\in\app{\epsilon} \delta & \case{1}{1}{1}(x\ast\trgl{\delta})\fap 0\in\mathfrak{E}\\
-    &\:\, \case{1}{0}{1}(\iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta}))\img\univ\subseteq \mathfrak{E}.
+    x\in\cs{\epsilon}\delta\con{1}x\in\app{\epsilon} \delta & \case{1}{1}{1}(x\diamond\trgl{\delta})\fap 0\in\mathfrak{E}\\
+    &\:\, \case{1}{0}{1}(\iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta}))\img\univ\subseteq \mathfrak{E}.
 \end{align*}
-つまり，$ x\in\app{\epsilon}\delta $によって，$ \iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta}) $が実現される（促進的または正の制御構造）．
+つまり，$ x\in\app{\epsilon}\delta $によって，$ \iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta}) $が実現される（促進的または正の制御構造）．
 
 他方，$ \tildel{\trgl{\delta}}\fap 1 = \barl{(\trgl{\delta}\fap 0)}\cap\msec{(\arg\delta)}{0} $の場合（$ \delta $がS類型），
 \begin{align*}
-    x\in\cs{\epsilon}\delta\con{1}x\in\app{\epsilon} \delta & \case{1}{1}{1}(x\ast\trgl{\delta})\fap 0\in\barl{\mathfrak{E}}\\
-    &\:\, \case{1}{0}{1}(\iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta}))\img\univ\subseteq\barl{\mathfrak{E}}.
+    x\in\cs{\epsilon}\delta\con{1}x\in\app{\epsilon} \delta & \case{1}{1}{1}(x\diamond\trgl{\delta})\fap 0\in\barl{\mathfrak{E}}\\
+    &\:\, \case{1}{0}{1}(\iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta}))\img\univ\subseteq\barl{\mathfrak{E}}.
 \end{align*}
-つまり，$ x\in\app{\epsilon}\delta $によって，$ \iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta}) $の実現が阻止される（抑制的または負の制御構造）\footnote{
+つまり，$ x\in\app{\epsilon}\delta $によって，$ \iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta}) $の実現が阻止される（抑制的または負の制御構造）\footnote{
     適用条件の成立が検出されたときに問題の因果系列を起動する条件を遮断するような，システム$ \tilde{x}\fap 1 $内部のメカニズムを想定できる．$ \tilde{x}\fap 1 $に帰属可能な他の行動を起動するような条件を媒介として，この遮断が起きるケースもあると思われるが，必ずしもそうである必要はない．
 }．
 
@@ -309,7 +309,7 @@ $ \tilde{x}\fap 1 = \tilde{w}\fap 1 $である$w$と，$ \app{\epsilon}\delta\su
     \gamma & = \classab{x:\orp{x,y_1}\to_{\epsilon}\orp{\tilde{x}\fap 0,\tildel{\trgl{\delta}}\fap 1}}\cap\trgl{\arg\epsilon}\\ & = \prob{(\cs{\epsilon}\delta)}{n\uphl\epsilon}
 \end{align*}
 とみなすことができるケースがある\footnote{
-    有意レベルの蓋然性を認めるためには，$ \app{\epsilon}\delta $の部分条件のうち，どれが$y_1$において保存されていなければならないかという問題がある．すなわち，どの$ z\in\classab{z:\app{\epsilon}\delta\subseteq z} $について，$ y_1\subseteq z $であるかという問題．この点，少なくとも，結節点への行動帰属の条件や，因果系列の構成についての条件$ \classab{x:\iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta})\in\mathrm{Cseq}^\epsilon} $が保存されている必要があると思われる．
+    有意レベルの蓋然性を認めるためには，$ \app{\epsilon}\delta $の部分条件のうち，どれが$y_1$において保存されていなければならないかという問題がある．すなわち，どの$ z\in\classab{z:\app{\epsilon}\delta\subseteq z} $について，$ y_1\subseteq z $であるかという問題．この点，少なくとも，結節点への行動帰属の条件や，因果系列の構成についての条件$ \classab{x:\iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta})\in\mathrm{Cseq}^\epsilon} $が保存されている必要があると思われる．
 }．するとこの場合，
 \begin{align*}
     \orp{x,\exe{\epsilon}\delta\cap\enf{\epsilon}\delta}\to_{\epsilon}\orp{w,\gamma}
@@ -412,7 +412,7 @@ $}を表わす．
 \]
 ただし，$ \tildel{\trgl{w}}\fap 1 = \trgl{w}\fap 0 = \trgl{y}\fap 0 $．
 そして，因果系列の構成条件が異なるであろうから，$ \app{\epsilon} y \neq \app{\epsilon} w $であるとしても，事実上，
-$ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得る．また，$ (z\ast\trgl{w})\fap 0 $と$ (z\ast\trgl{w})\fap 1 $との間に，
+$ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得る．また，$ (z\diamond\trgl{w})\fap 0 $と$ (z\diamond\trgl{w})\fap 1 $との間に，
 \[
    \orp{z\fap 0,\trgl{w}\fap 0}\to_{\epsilon}\orp{x\fap 0,\tildel{\trgl{y}}\fap 1}\con{1}
     \orp{x\fap 0,\tildel{\trgl{y}}\fap 1}\to_{\epsilon}\orp{z\fap 1,\trgl{w}\fap 1}
@@ -454,7 +454,7 @@ $ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得�
     \item $d$は$ \tilde{x}\fap 1 $の業務執行権を持つ．$x\fap 0$は$ x\fap 0\subseteq d $なる刺激過程である．
     \item ある$y\in\mathrm{Reg}$と$z\in\app{\epsilon} y$が存在して，
     \[
-        \iter{\mathrm{E}}{2}\fap(x\ast\trgl{\delta}) = \iter{\mathrm{E}}{2}\fap(z\ast\trgl{y})
+        \iter{\mathrm{E}}{2}\fap(x\diamond\trgl{\delta}) = \iter{\mathrm{E}}{2}\fap(z\diamond\trgl{y})
         \con{1}\tilde{z}\fap 1 = d
         \con{1}\text{$z\in\exe{\epsilon} y$は$ \tilde{x}\fap 1 $の業務執行}.
     \]
