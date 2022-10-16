@@ -601,8 +601,14 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \subsubsection{全体論的概念図式}
 \label{sssec:全体論的概念図式}
 
-論理式の集合$g$が全体論的概念図式であるということは，次のことを意味する．まず，\ref{ssec:原初的言語}の原初的言語に述語を（非限定的に）追加して拡張する．ただし，述語はすべて$ n \neq \Lambda $項述語の$ i $番目という形式でリスト化されていると想定する．要素関係を表わす\kagi{$\in$}は$2$項述語の$0$番目である．
-次に，この拡張言語の文について，対象領域$\kappa$に相対的な充足と真理を定義する．そして，$\trgl{\arg\epsilon}$に相対的に真である拡張言語の文の集合（真理集合）を考える．$g$は真理集合の図式化，つまりそのメンバーに出現する原子文を，$ n $項述語の$ i $番目を述語記号$ \orp{n,i} $に置換することによって，原子論理式に置換した集合である．
+論理式の集合$g$が全体論的概念図式であるということは，次のことを意味する．まず，\ref{ssec:原初的言語}の原初的言語に述語を（非限定的に）追加して，拡張言語（の文の集合）$\mathfrak{L}$を構成する．ただし，述語はすべて$ n \neq \Lambda $項述語の$ i $番目という形式でリスト化されていると想定する．要素関係を表わす\kagi{$\in$}は$2$項述語の$0$番目である．
+次に，$\mathfrak{L}$の文について，対象領域$\kappa$に相対的な充足と真理を定義する．そして，$\trgl{\arg\epsilon}$に相対的に真である文の集合$ \mathcal{T}^\epsilon\subseteq\mathfrak{L} $を考える（真理集合）．$g$は$ \mathcal{T}^\epsilon $の図式化，つまりそのメンバーに出現する原子文を，$ n $項述語の$ i $番目を述語記号$ \orp{n,i} $に置換することによって，原子論理式に置換した集合である．
+すなわち，この置換条件を充たす変換$ f $が存在して，
+\[
+    \func f\con{1}\func\breve{f}\con{1}f\img\univ \subseteq\mathrm{L}\con{1}\breve{f}\img\univ = \mathfrak{L}\con{1}
+    f\img(\mathcal{T}^\epsilon) = g
+\]
+であるとき，かつそのときに限り，$ g $は全体論的概念図式である．
 
 まず，以下の要領で\ref{ssec:原初的言語}の原初的言語に述語を追加する\footnote{
     述語が追加されても\ref{ssec:集合論の体系}の公理群は維持されるが，A \ref{axim:分出}の\kagi{$ \alpha $}は，変項または拡張言語の開放文で作られたクラス抽象体の位置を表わすものと再解釈される．したがって，拡張言語が述語「は人である」を持つならば，再解釈されたA \ref{axim:分出}によって，$ \classab{x:x\text{ は人である}}\cap\mathcal{P}(\timex{\mathbb{R}}{4})\in\univ $．
@@ -623,7 +629,7 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
     &\text{「$\alpha$は$\beta$を愛する」の\kagi{$ \alpha $}と\kagi{$ \beta $}に変項を代入した結果は文である．}
 \end{align*}
 
-この拡張言語に対して，対象領域$\kappa$に相対化された充足と真理を（再帰的に）定義する\footnote{
+拡張言語$\mathfrak{L}$に対して，対象領域$\kappa$に相対化された充足と真理を（再帰的に）定義する\footnote{
     $\kappa\in\univ$ならば，$\kappa$に相対化された充足と真理を直接的に定義することができる．ただし，追加される述語のリストが確定している必要がある．
 }．まず原子文の充足は，以下の例のように各述語ごとに定義される．
 \begin{enumerate}[label=(\arabic*)]
@@ -632,13 +638,13 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \end{enumerate}
 次に，複合文の充足を再帰的に定義する．
 \begin{enumerate}[label=(\arabic*),start=3]
-    \item 任意の拡張言語の文$p$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ \neg P $}の\kagi{$ P $}に$p$を代入した結果を充足するのは，$ s $が$p$を充足しないとき，かつそのときに限られる，
-    \item 任意の拡張言語の文$p,q$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ P\supset Q $}の\kagi{$ P $}に$p$を，\kagi{$ Q $}に$q$を代入した結果を充足するのは，$ s $が$p$を充足するならば$s$が$q$を充足するとき，かつそのときに限られる，
-    \item 任意の拡張言語の文$p$と$ i\in\mathbb{N} $，及び$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ (\alpha)P $}の\kagi{$ \alpha $}に$ \boldsymbol{v}(i) $を，\kagi{$ P $}に$p$を代入した結果を充足するのは，すべての$ x\in \alpha $について，$s\tbinom{i}{x}$が$p$を充足するとき，かつそのときに限られる．
+    \item 任意の$p\in\mathfrak{L}$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ \neg P $}の\kagi{$ P $}に$p$を代入した結果を充足するのは，$ s $が$p$を充足しないとき，かつそのときに限られる，
+    \item 任意の$p,q\in\mathfrak{L}$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ P\supset Q $}の\kagi{$ P $}に$p$を，\kagi{$ Q $}に$q$を代入した結果を充足するのは，$ s $が$p$を充足するならば$s$が$q$を充足するとき，かつそのときに限られる，
+    \item 任意の$p\in\mathfrak{L}$と$ i\in\mathbb{N} $，及び$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ (\alpha)P $}の\kagi{$ \alpha $}に$ \boldsymbol{v}(i) $を，\kagi{$ P $}に$p$を代入した結果を充足するのは，すべての$ x\in \alpha $について，$s\tbinom{i}{x}$が$p$を充足するとき，かつそのときに限られる．
 \end{enumerate}
-そして，拡張言語の文$p$が領域$ \kappa $において真であるのは，すべての$s\in \mathrm{seq}^{\kappa}$について$s$が$p$を充足するとき，かつそのときに限られる．
+そして，$p\in\mathfrak{L}$が対象領域$ \kappa $において真であるのは，すべての$s\in \mathrm{seq}^{\kappa}$について$s$が$p$を充足するとき，かつそのときに限られる．
 
-真理集合，すなわち領域$ \trgl{\arg\epsilon} $において真である拡張言語の文の集合を\kagi{$ \mathcal{T}^\epsilon $}で表わすと，$ \mathcal{T}^\epsilon $には\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．したがって，それらの図式化である論理式の集合$a$が存在して，$a\subseteq g$．\kagi{$\in$}は述語記号$\orp{2,0}$に置換され，また，解釈空間の定義上，任意の$m\in\arg\epsilon$について，
+真理集合$ \mathcal{T}^\epsilon $には\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．したがって，それらの図式化である論理式の集合$a$が存在して，$a\subseteq g$．\kagi{$\in$}は述語記号$\orp{2,0}$に置換され，また，解釈空間の定義上，任意の$m\in\arg\epsilon$について，
 \[
     \mathcal{R}\fap m\fap\orp{2,0}=\mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}.
 \]

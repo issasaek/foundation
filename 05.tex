@@ -295,9 +295,9 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
 \label{sssec:規制表明}
 
 任意の$y\in\mathrm{Reg}$と$b$（付帯条件）について，$ \breve{\epsilon}\fap \Lambda $において$ \app{\epsilon} y\cap b \subseteq \enf{\epsilon}y $であることを記述する論理式を，$b$に制限された$y$の制定ルールと言う．同様に，$ \app{\epsilon} y\cap b \subseteq \barl{(\enf{\epsilon}y)} $であることを記述する論理式を，$b$に制限された$y$の廃止ルールと言う．そして，制定ルールと廃止ルールを併せて規制ルールと言う．
-典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示するクラス抽象体\footnote{
-    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体である．
-}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示するクラス抽象体を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
+典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示する抽象体型\footnote{
+    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体の型である．
+}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示する抽象体型を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
 \setcounter{equation}{0}
 \begin{align}
     &\textbf{制定ルールの一般形式}\qquad \app{\epsilon}\delta\cap\beta\in\mathcal{P}(\enf{\epsilon}\delta)\\
@@ -333,7 +333,7 @@ $}を表わす．
     \tilde{u}\fap 3 = \orp{d,b,y}\con{1}\tilde{u}\fap 2 = h\con{1}
     \tilde{u}\fap 0=\orp{z,y}\con{1}z\subseteq b
 \]
-なる$ h,d,b,z,y $が存在する．そして，$ \iter{\mathrm{E}}{2}\fap(u*\trgl{v}) $は，言語的トークンの集合$d$を生成して，公布範囲$h$のメンバーの結節点に対して，ある$c\in d$について$c \in \gamma$であることを蓋然的に認知させる因果系列である．ただし，ここでの$\gamma$は，$b$に制限された$y$の規制ルールを含意する式に解釈される言語的タイプについて，それのトークンのクラスとする．
+なる$ h,d,b,z,y $が存在する．そして，$ \iter{\mathrm{E}}{2}\fap(u\diamond\trgl{v}) $は，言語的トークンの集合$d$を生成して，公布範囲$h$のメンバーの結節点に対して，ある$c\in d$について$c \in \gamma$であることを蓋然的に認知させる因果系列である．ただし，ここでの$\gamma$は，$b$に制限された$y$の規制ルールを含意する式に解釈される言語的タイプについて，それのトークンのクラスとする．
 
 規制表明型のこの特徴づけは，原初的言語には還元できないにしても，もう少し精密化できる．
 まず，型文字\kagi{$ \tau $}で，$e$が言語的タイプ$p$のトークンであるような$ \orp{e,p} $のクラスを指示する抽象体の位置を表わすものとする．ただし，$ \tau\img\univ\subseteq \mathcal{P}(\timex{\mathbb{R}}{4}) $，そして，任意の$ p\in \breve{\tau} $はある同一の言語に属する．すなわち，$p$は当該言語の原始記号の有限系列であり，原始記号自体はそのトークンの集合である．また，同じ言語では1個のトークンは唯一のタイプを持つと考えられるから，$ \func\breve{\tau} $である．
@@ -355,10 +355,10 @@ $ \tilde{u}\fap 3 \in \tildel{\trgl{v}}\fap 3 $であることを因果的に惹
 なお，規制ルールそれ自体ではなく，それを含意する式への解釈可能性を条件とする理由はこうである．もし規制ルール自体への解釈可能性を要求すると，例えば連言\kagi{$ P\text{ かつ }Q $}が規制ルールに解釈されるが，トークンとしては連言\kagi{$ R\text{ かつ }P\text{ かつ }S\text{ かつ }Q $}のそれしかないケースで，前者の連言のトークンをそこから抽出できるのかという問題が生じる．しかし，後者の連言は規制ルールを含意する式に解釈可能であろうから，それで要求を充たすようにすれば，この問題を回避できる．
 
 次に，文タイプの真偽が質問される状況を特定化する適用条件と，そこにおいてその文を肯定する因果系列を実現する構成要件とを持つある規制類型$ w $を考える．$w$の修正条件はコミュニケーションの成立を示すような質問者の反応を特定化するようなものと想定される．型文字\kagi{$ \eta $}で，このような$w$を指示するクラス抽象体の位置を表わすことにする．すなわち，
-\begin{align*}
+\begin{gather*}
     \arg \eta \subseteq\classab{e:(\exists k)(\exists r)(\tilde{e}\fap 2 = \orp{k,r}\con{1}k\subseteq \timex{\mathbb{R}}{4}\con{1}r\in\breve{\tau}\img\univ)},\\
     \tildel{\trgl{\eta}}\fap 2 = \classab{\orp{k,r}:r\in\breve{\tau}\img\univ\con{1}(\exists q)(\orp{k,q}\in\tau\con{1}\text{ $q$は$r$の肯定 })}.
-\end{align*}
+\end{gather*}
 $ e\in\arg \eta\con{1}\tilde{e}\fap 2 = \orp{k,r} $とすると，$ \tilde{e}\fap 2\in\tildel{\trgl{\eta}}\fap 2 $であるとき，$r$の肯定であるような言語的タイプのトークン$k$が生成される．例えば，質問「$\phi$ですか」に対する「$\phi$です」．ただし，\kagi{$ \phi $}に$r$を代入する．
 
 $ \tildel{\trgl{v}}\fap 2 $は，$ \cs{\epsilon}\eta $の冪集合の蓋然性である．つまり，
@@ -427,7 +427,7 @@ $t,t'\in\hat{\varphi}$の（時間的）前後関係は，$ \trgl{t}\subset\trgl
     }.
 \end{multline}
 $ \tilde{u}\fap 3 = \orp{d,b,y}\con{1}\tilde{u}\fap 0 = \orp{z,y} $について，任意の$ x\in z $に相関する公布範囲$ \tilde{u}\fap 2 $のメンバーを要求するのではなく，$ \orp{c,x\fap 0}\in d\uphl\vec{\varphi} $である$x$に限定する理由はこうである．
-制定／廃止範囲$ z $は，$ \arg v $によって，または，(5)により$ z\subseteq b $であるから，付帯条件$b$によって，例えば，$ (x)(x\in z\case{1}{1}{1}\orp{u\fap 0,x\fap 0}\in\vec{\varphi}) $といった時間的限定が可能である．しかし，このような限定がない場合，何らかの意味で$ (u*\trgl{v}) $の始点となる時間領域に完全に先行するような$ x\in z $が存在し得る．それでも，\ref{sssec:認定システムによる正規性論証}の正規性論証によって，$ x\in\enf{\epsilon}y $が認定され得る．いわゆる遡及的な制定や廃止と呼ばれる現象はこうして成立する．このことは$\orp{u,v}$が規制表明型でないケースでも同様である．
+制定／廃止範囲$ z $は，$ \arg v $によって，または，(5)により$ z\subseteq b $であるから，付帯条件$b$によって，例えば，$ (x)(x\in z\case{1}{1}{1}\orp{u\fap 0,x\fap 0}\in\vec{\varphi}) $といった時間的限定が可能である．しかし，このような限定がない場合，何らかの意味で$ (u\diamond\trgl{v}) $の始点となる時間領域に完全に先行するような$ x\in z $が存在し得る．それでも，\ref{sssec:認定システムによる正規性論証}の正規性論証によって，$ x\in\enf{\epsilon}y $が認定され得る．いわゆる遡及的な制定や廃止と呼ばれる現象はこうして成立する．このことは$\orp{u,v}$が規制表明型でないケースでも同様である．
 しかし，規制表明型である場合，この遡及的な$ x\in z $に相関する公布範囲のメンバー$e$を要求すると，$e\fap 0$より後でない$ c\in d $が存在しないため，(4)の条件を充たさないことになる．仮に(4)の時間的条件を外したとしても，遡及的な$ x\in z $に相関する$e$は，$ \cs{\epsilon}\eta $である有意な蓋然性を持たないと考えられる．
 
 次の条件は，(5)と逆に，公布範囲の任意のメンバー$ e\in  \tilde{u}\fap 2 $について，$e\fap 0$の時間的位置と$ \tilde{e}\fap 1 $が，それに相関して決定されるような$x\in \mathcal{L}\fap(\tilde{u}\fap 0)$が存在することを要求する．
@@ -441,7 +441,7 @@ $ \tilde{u}\fap 3 = \orp{d,b,y}\con{1}\tilde{u}\fap 0 = \orp{z,y} $について�
     }.
 \end{multline}
 
-関数$ \varrho $の主要なパターンは次のような構成である．$\varrho\fap\orp{x,y} = \orp{t,s}$について，$ x\fap 0\subseteq\timex{\mathbb{R}}{4} $である場合，$ t = \union{(\check{\varphi}\fap (x\fap 0))} $．それ以外の場合（特に$ y $がN類型の場合），$t$は因果系列$ \iter{\mathrm{E}}{2}\fap(x*\trgl{y}) $の始点と言えるような何らかの時間領域である．
+関数$ \varrho $の主要なパターンは次のような構成である．$\varrho\fap\orp{x,y} = \orp{t,s}$について，$ x\fap 0\subseteq\timex{\mathbb{R}}{4} $である場合，$ t = \union{(\check{\varphi}\fap (x\fap 0))} $．それ以外の場合（特に$ y $がN類型の場合），$t$は因果系列$ \iter{\mathrm{E}}{2}\fap(x\diamond\trgl{y}) $の始点と言えるような何らかの時間領域である．
 他方，$s$については，
 \[
     x\fap 0\subseteq \tilde{x}\fap 1\subseteq\timex{\mathbb{R}}{4}\case{1}{1}{1}s = \classab{\tilde{x}\fap 1}.
@@ -604,9 +604,9 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \end{align*}
 次に，任意の$ u\in\arg v $について，付帯条件$ (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3) $によって，
 すべての$ s\in\union{\classab{\mathcal{L}\fap(\tilde{e}\fap 0):\mathrm{E}\fap u = \mathrm{E}\fap e}} $に共通する内部構造が特定される．同一化される内部構造は，結節点$ \tilde{s}\fap 1 $，付帯条件と制定類型の組$ \mathcal{R}\fap(\tilde{s}\fap 3) $，制定範囲$ \mathcal{L}\fap(\tilde{s}\fap 0) $のメンバーの結節点と法益主体である．
-すなわち，$\gamma$に相対的な$\alpha$の特定化系列$ \alpha\star\gamma $を，
+すなわち，$\gamma$に相対的な$\alpha$の特定化系列$ \alpha\bullet\gamma $を，
 \begin{multline*}
-    \alpha\star\gamma = (\imath k)[
+    \alpha\bullet\gamma = (\imath k)[
         k\in\mathrm{Seq}\con{1}\arg k = 5\con{1}
         \alpha\subseteq\classab{s:\tilde{s}\fap 1 = k\fap 0\con{1}
         \mathcal{R}\fap(\tilde{s}\fap 3) = \orp{k\fap 1,k\fap 2}\con{1}\\
@@ -614,7 +614,7 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
         }
     ]
 \end{multline*}
-と定義する．$ (\alpha\star\gamma)\fap 2 $は(i)が成り立つような規制類型である．あるいは，準制定関係$\sigma$と結節点を$\mu$に制限された$\sigma$を，
+と定義する．$ (\alpha\bullet\gamma)\fap 2 $は(i)が成り立つような規制類型である．あるいは，準制定関係$\sigma$と結節点を$\mu$に制限された$\sigma$を，
 \begin{gather*}
     \sigma = \classab{\orp{\orp{u,v},\orp{x,y}}:
     \orp{u,v}\in\app{\epsilon} v\times \mathrm{Es}^\epsilon\con{1}
@@ -624,7 +624,7 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \end{gather*}
 と規定する．そして，(i)が成り立つ規制類型$y$に関する規制要素から$\mu \ddagger\sigma$を反復して遡及可能な規制要素にまで拡張して，
 \begin{multline*}
-    \alpha\star\gamma = (\imath k)[
+    \alpha\bullet\gamma = (\imath k)[
         k\in\mathrm{Seq}\con{1}\arg k = 5\con{1}
         \alpha\subseteq\classab{s:\tilde{s}\fap 1 = k\fap 0\con{1}
         \mathcal{R}\fap(\tilde{s}\fap 3) = \orp{k\fap 1,k\fap 2}\con{1}\\
@@ -641,11 +641,11 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \[
    \arg v \subseteq \classab{u:(\exists b)(
     b = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\con{1}
-    b\star\gamma\neq \Lambda
+    b\bullet\gamma\neq \Lambda
    )}.
 \]
 
-以上の条件を充たす$v,t$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon $を申込権限，$ \orp{s,t}\in \brevel{(\mathrm{est}^\epsilon)}\img\classab{\orp{u,v}}\cap\mathrm{REG}^\epsilon $を承諾権限と言う．特定の規制体系においてこれらを実装する方法については，立法規制の適用条件か付帯条件によって，$\enf{\epsilon}v$が構築される準拠領域$u\in\app{\epsilon} v$は，例えば，下記(1)(2)のいずれかを充たすものに限定される．すなわち，$ k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\star\gamma $とすると，
+以上の条件を充たす$v,t$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon $を申込権限，$ \orp{s,t}\in \brevel{(\mathrm{est}^\epsilon)}\img\classab{\orp{u,v}}\cap\mathrm{REG}^\epsilon $を承諾権限と言う．特定の規制体系においてこれらを実装する方法については，立法規制の適用条件か付帯条件によって，$\enf{\epsilon}v$が構築される準拠領域$u\in\app{\epsilon} v$は，例えば，下記(1)(2)のいずれかを充たすものに限定される．すなわち，$ k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $とすると，
 \setcounter{equation}{0}
 \begin{equation}
     \tilde{u}\fap 1\in\classab{k\fap 3,k\fap 4}\con{1}k\fap 0\in\classab{k\fap 3,k\fap 4}\cap\barl{\classab{\tilde{u}\fap 1}},
@@ -656,12 +656,12 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
         \check{\varphi}\fap(u\fap 0)\cap\check{\varphi}\fap(u'\fap 0)\neq\Lambda\con{1}
         \tilde{u}\fap 1 = \tilde{u'}\fap 1 \con{1}\\
         k\fap 0 = \tilde{u''}\fap 1\notin\classab{k\fap 3,k\fap4}\con{1}
-        k' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u'}\fap 3)\star\gamma\con{1}k'' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u''}\fap 3)\star\gamma\con{1}\\
+        k' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u'}\fap 3)\bullet\gamma\con{1}k'' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u''}\fap 3)\bullet\gamma\con{1}\\
         k'\fap 0 ,k''\fap 0 \in \classab{k\fap 3,k\fap4}\con{1}
         k\uphr\bar{1} = k'\uphr \bar{1} = k''\uphr\bar{1}
     ].
 \end{multline}
-(1)を充たす$u$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\star\gamma $と仮定する．すると契約の申込$ u\in \exe{\epsilon} v $によって，$ \mathcal{L}\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $となる蓋然性が成立する．今，ある$ s\in\mathcal{L}\fap(\tilde{u}\fap 0) $について，$ \orp{s,t}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $と仮定する．すると契約の承諾$ s\in\exe{\epsilon} t $によって，$ \tilde{s}\fap 0 = \orp{z,y} $について，$z\subseteq \enf{\epsilon}y$となる蓋然性が成立する．
+(1)を充たす$u$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $と仮定する．すると契約の申込$ u\in \exe{\epsilon} v $によって，$ \mathcal{L}\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $となる蓋然性が成立する．今，ある$ s\in\mathcal{L}\fap(\tilde{u}\fap 0) $について，$ \orp{s,t}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $と仮定する．すると契約の承諾$ s\in\exe{\epsilon} t $によって，$ \tilde{s}\fap 0 = \orp{z,y} $について，$z\subseteq \enf{\epsilon}y$となる蓋然性が成立する．
 言い換えれば，$ \tilde{u}\fap 1,\tilde{s}\fap 1\in \classab{k\fap 3,k\fap 4} $の合意によって，そのような蓋然性が生じる．
 
 これに対して，(2)は，申込権限の代理権$ \orp{u'',v} $について，$ \tilde{u''}\fap 1 $を承諾権限の結節点とするような申込権限を制定するものである．代理権自体は(1)(2)とは別に，下記の条件を充たす規制表明型$ p\in\mathrm{Es}^\epsilon $について，ある$ \orp{e,p}\in\mathrm{REG}^\epsilon $が規制体系に含まれる場合に，その実行によって制定される．
@@ -821,9 +821,9 @@ $}を表わす,
 
 関連して，$\alpha\subseteq\mathcal{C}^\epsilon$や$\prob{\alpha}{\beta}$もそのサイズが大きくなりがちであり，これらを規制類型の内部構造に配置する場合は，そこに含まれる規制類型と同様に$ \mathcal{X}^\epsilon\fap i $等に制限する必要がある．あるいは，規制類型の中ではこれらをなるべく使用せずに，次のようなN類型$y$に還元する方がよいかもしれない．すなわち，
 \[
-   \arg\trgl{y} = 3\con{1}\arg y = \mathcal{W}\fap(\breve{\mathrm{S}}\fap i)
+   \arg\trgl{y} = 4\con{1}\arg y = \mathcal{W}\fap(\breve{\mathrm{S}}\fap i)
 \]
-ならば，$ \enf{\epsilon}y $によって，実質的に単なる因果的構造を表現することができる．$ \arg\trgl{y} = 4 $として，$\exe{\epsilon} y$で表現してもよい．
+ならば，$ \exe{\epsilon}y $によって，実質的に単なる因果的構造を表現することができる．D \ref{df:執行可能性}により危険惹起に限られるが，$ \arg\trgl{y} = 3 $として，$\enf{\epsilon} y$で表現してもよい．
 
 なお，既に述べたように，$\mathrm{anc}_\epsilon\alpha\subseteq\breve{\alpha}\img\univ$であるが，始祖集合の選択によっては逆は成り立たない．
 例えば，始祖の実行を妨害する行動に対するS規制が体系内にあり，かつ，その規制類型の内部構造に始祖類型が含まれる場合，始祖類型であっても包括類型でないものが存在することになる．
