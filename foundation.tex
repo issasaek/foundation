@@ -6,7 +6,7 @@
 \usepackage{enumitem} % 箇条書きのカスタマイズ
 \usepackage[absolute,overlay]{textpos} % 要素を絶対座標で指定
 \usepackage{url}
-\newcommand{\version}{v1.1.1} % バージョン情報
+\newcommand{\version}{v1.2} % バージョン情報
 \usepackage[luatex,unicode,pdfencoding=auto]{hyperref}
 \hypersetup{
   bookmarksnumbered=true,
@@ -66,6 +66,7 @@
 \newcommand{\enf}[1]{\mathrm{enf}_{#1}} % 執行可能性
 \newcommand{\cs}[1]{\mathrm{cs}_{#1}} % 制御構造
 \newcommand{\cty}[1]{\mathrm{cty}_{#1}} % 制御可能性
+\newcommand{\bkg}[1]{\mathbin{\vartriangleright_{#1}}} % 背景条件
 % 2項演算子
 \newcommand{\iter}[2]{#1^{\mid #2}} % 関係の反復
 \newcommand{\timex}[2]{#1^{\times #2}} % 直積の反復
