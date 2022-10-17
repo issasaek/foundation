@@ -535,6 +535,20 @@ $}は\kagi{$
 $}を表わす．
 \end{df}
 
+\noindent $ \orp{a,x}\to_{\epsilon}\orp{b,y} $であることは，$\orp{a,b}$が，$x$と$y$を因果的に結合させる背景条件$ x\bkg{\epsilon}y $の要素であることとして記述することもできる．
+\begin{df}
+\label{df:背景条件}
+\kagi{$
+    \alpha\bkg{\epsilon}\beta
+$}は\kagi{$
+    \classab{\orp{a,b}:
+        \orp{a,\alpha}\to_{\epsilon}\orp{b,\beta}
+    }\cap\timex{(\trgl{\arg\epsilon})}{2}
+$}を表わす\footnote{
+    $\timex{(\trgl{\arg\epsilon})}{2}$への相対化は，後述する蓋然性もそうであるが，因果の背景条件自体を惹起する因果関係の項として，$\breve{\epsilon}\fap\Lambda$において言及可能にするためである．勿論その都度何らかのクラス$z\in\univ$に制限すればいずれにせよ言及可能であり，場合によってはクラスの大きさを抑えるために，$\timex{(\trgl{\arg\epsilon})}{2}$より小さなクラスに相対化する必要がある．しかし，定義上一般的に相対化しておく方が記法を簡単にできるケースがある．
+}．
+\end{df}
+
 \noindent 因果の定義により，\ref{ssec:集合論の体系}の体系において以下の基本法則が証明可能である．
 \[
     \textbf{因果の基本法則}\qquad 
@@ -563,9 +577,7 @@ $}を表わす．
                 \epsilon\dagger s\neq\Lambda
             )
         }\cap\trgl{\arg\epsilon}
-    $}を表わす\footnote{
-        $\trgl{\arg\epsilon}$への相対化は，後に蓋然性自体を因果の項として，$\breve{\epsilon}\fap\Lambda$において言及可能にするためである．なお，因果関係$\mathcal{C}^{\epsilon}$自体を例えば$ \timex{(\trgl{\arg\epsilon})}{2} $に相対化して，$\breve{\epsilon}\fap\Lambda$において言及可能にしても，おそらく$\mathcal{C}^{\epsilon}\notin\trgl{\arg\epsilon}$であろうから因果の項にはできない．それゆえ，因果自体を相対化しても意味はなく，$ \mathcal{C}^{\epsilon}\cap\timex{(\trgl{\arg\epsilon})}{2} $等を，相対化されていない因果の項にするしかない．
-    }．
+    $}を表わす．
 \end{df}
 
 もっとも，$\epsilon\dagger s$には開始点への類似性が極めて希薄なモデルも含まれ得るから，$\prob{\alpha}{\epsilon}$それ自体はまだ有意な蓋然性ではない．
