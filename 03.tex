@@ -589,18 +589,24 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 }．
 ただし，D \ref{df:蓋然性}の\kagi{$ x\in\alpha\case{2}{1}{0} $}という条件を外すと，$\alpha$が非可算のケースでは（$\alpha$に言及不可能な対象が含まれるから）$ \alpha\nsubseteq \prob{\alpha}{(1\uphl\epsilon)} $となり，この同一性は成り立たなくなる．
 
-% $n\in\indx{\epsilon}$の場合，$\indx{(n\uphl\epsilon)}=n$であるから，$ \indx{(n\uphl\epsilon)}\uphl(n\uphl\epsilon)= n\uphl\epsilon $である．
-
 \subsection{解釈空間}
 \label{ssec:解釈空間}
 
 \subsubsection{解釈空間の選択}
 \label{sssec:解釈空間の選択}
 
-因果関係は解釈空間に相対的であり，どのような解釈空間を選択するかに応じて，可変的な内容を持つ．この意味で，因果概念は文脈依存的であるが，規制の概念を使用する通常のケースにおいては，下記の1〜3の条件を充たす解釈空間$ \epsilon $が想定されている．すなわち，規制の概念を使用する文脈において，仮に\kagi{$ \beta $}が解釈空間を表わす型文字として現れているなら，\kagi{$ \beta $}は条件1〜3を充たす解釈空間を指示するクラス抽象体の位置を表わしている．
+因果関係は解釈空間に相対的であり，どのような解釈空間を選択するかに応じて，可変的な内容を持つ．この意味で，因果概念は文脈依存的であるが，規制の概念を使用する通常のケースにおいては，下記の1〜4の条件を充たす解釈空間$ \epsilon $が想定されている．すなわち，規制の概念を使用する文脈において，仮に\kagi{$ \beta $}が解釈空間を表わす型文字として現れているなら，\kagi{$ \beta $}は条件1〜4を充たす解釈空間を指示するクラス抽象体の位置を表わしている．
 \begin{enumerate}
     \item $ (\exists n)(\indx{\epsilon}\in n \in\epsilon\img\univ). $
     \item $ (\imath n)(2\in n\in\mathbb{N}\con{1}\trgl{\arg{\epsilon}}=\mathcal{W}\fap n)\neq\Lambda. $
+    \item $ (x)(y)(n)[n\in\mathbb{N}\con{1}(\exists p)(\exists q)(
+        (\breve{\epsilon}\fap\Lambda)\exten p = x\con{1}(\breve{\epsilon}\fap\Lambda)\exten q = y
+    )\case{1}{1}{0}
+    \\\hfill
+    (\exists r)(\exists r')(r,r'\in\mathrm{L}\con{1}(\breve{\epsilon}\fap\Lambda)\exten r = x\bkg{\epsilon}y
+    \con{1}(\breve{\epsilon}\fap\Lambda)\exten r' = \prob{x}{n\uphl\epsilon}
+    )
+    ]. $
     \item ある全体論的概念図式$g$が存在して，$\epsilon$は$g$に適合する．
 \end{enumerate}
 
@@ -608,7 +614,9 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 
 条件2により，$ \arg\epsilon $のメンバーに共通する対象領域は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある有限段階$\mathcal{W}\fap n$である．これは規制の概念の存在論的前提，すなわち規制の概念の使用を含むような，ある規制体系に関連する言明が真であるために必要な対象を全て含む領域を表わしている．つまり$n\in\mathbb{N}$の値は当の文脈で扱われる規制体系に応じて異なる．これも解釈空間の文脈依存性の一要素であるが，規制類型の階層構造のため自然科学の存在論$\mathcal{W}\fap 2$よりも高階になる．この点については後述するが，$n$は，当該規制体系における階層構造の最大値を超える段階であれば何でもよい．
 
-条件3は，ある論理式の集合$g$について，①$g$が全体論的概念図式と言えるための条件と，②$\epsilon$が$g$に適合すると言えるための条件に分解される．
+条件3により，$\breve{\epsilon}\fap \Lambda$で$x,y$が言及可能であるならば，（$\Lambda$かもしれない）背景条件$x\bkg{\epsilon}y$と，任意の$n\in\mathbb{N}$に関する蓋然性$ \prob{x}{n\uphl\epsilon} $も言及可能である．それゆえ，背景条件や蓋然性を惹起する因果関係が一般的に可能になる．ただし，$x\bkg{\epsilon}y$が言及可能であれば，それを惹起する因果関係の背景条件が言及可能になる．すると，その背景条件を惹起する因果関係の背景条件が言及可能になる．以下同様に続くから，この条件は少なからず理想化を含んでいる．そして，条件4で$\epsilon$は全体論的概念図式$g$に適合しなければならないから，$g$が充たすべき条件は$\epsilon$が条件3を充たすことと実質的に連動している．
+
+条件4は，ある論理式の集合$g$について，①$g$が全体論的概念図式と言えるための条件と，②$\epsilon$が$g$に適合すると言えるための条件に分解される．
 
 \subsubsection{全体論的概念図式}
 \label{sssec:全体論的概念図式}
@@ -623,25 +631,27 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 であるとき，かつそのときに限り，$ g $は全体論的概念図式である．
 
 まず，以下の要領で\ref{ssec:原初的言語}の原初的言語に述語を追加する\footnote{
-    述語が追加されても\ref{ssec:集合論の体系}の公理群は維持されるが，A \ref{axim:分出}の\kagi{$ \alpha $}は，変項または拡張言語の開放文で作られたクラス抽象体の位置を表わすものと再解釈される．したがって，拡張言語が述語「は人である」を持つならば，再解釈されたA \ref{axim:分出}によって，$ \classab{x:x\text{ は人である}}\cap\mathcal{P}(\timex{\mathbb{R}}{4})\in\univ $．
+    述語が追加されても\ref{ssec:集合論の体系}の公理群は維持される．ただし，A \ref{axim:分出}の\kagi{$ \alpha $}は，変項または$\mathfrak{L}$の開放文で作られたクラス抽象体の位置を表わす型文字として再解釈される．したがって，$\mathfrak{L}$が述語「は人である」を持つならば，再解釈されたA \ref{axim:分出}によって，
+    $ \classab{x:x\text{ は人である}}\cap\mathcal{P}(\timex{\mathbb{R}}{4})\in\univ $．
 }．ただし，追加される述語は最終的に有限個であると仮定する．
 
 \begin{enumerate}
     \item 受容されている科学理論の公理とその技術的・補助的な前提の他，実験状況の要約や常識的一般化を表現するのに必要な述語を追加する．ただし，同一性述語\kagi{$ = $}と数学的述語は原初的言語で定義可能であるから追加されない．
-    \item 一般化された因果述語と蓋然性述語を追加する．すなわち，「$a\in x$であることは$b\in y$であることを因果的に決定する」や「$x$は$x\in y$であるレベル$n$の蓋然性を持つ」に相当する述語を追加する\footnote{
-        1で追加された述語だけでも，特定の条件$ \gamma,\delta $に係る因果構造$ \classab{\orp{x,y}:\orp{x,\gamma}\to_{\epsilon}\orp{y,\delta}} $や（確率に関する数的条件と相俟って）蓋然性$ \prob{\gamma}{\epsilon} $であれば，それに言及する開放文を構成できるかもしれない．しかし，あらゆる因果構造に言及できる保証はない．
-    }．
-    \item 因果関係の項になるような巨視的な物理的対象（出来事や人間など）を指示するために必要であれば，日常的な述語をいくつ追加してもよい\footnote{
+    \item $\mathfrak{L}$の開放文が（$\trgl{\arg\epsilon}$に相対的に）言及する任意の$x,y$と$n\in\mathbb{N}$について，$ x\bkg{\epsilon}y $または$ \prob{x}{n\uphl\epsilon} $を（$\trgl{\arg\epsilon}$に相対的に）言及するために必要ならば，さらに述語を追加する．
+    \item 2の$ x\bkg{\epsilon}y $のメンバーの左右の成分，または$ \prob{x}{n\uphl\epsilon} $のメンバーになるような巨視的な物理的対象（出来事や人間など）を指示するために必要ならば，さらに（日常的な）述語を追加する\footnote{
         対象$x$を指示する名前は，$x$についてのみ真である述語\kagi{$ A $}を導入して，単称記述\kagi{$ (\imath y)Ay $}で代用できる．あるいは，特別な述語を導入しなくても日付や位置座標等で指定可能な場合もある．
     }．
 \end{enumerate}
-そして，以下の例のように，追加される述語の分だけ原子文の構成方法を追加する．
+条件2は，解釈空間$\epsilon$が\ref{sssec:解釈空間の選択}の条件3を充たすために要求される．$\mathfrak{L}$の開放文が（対象領域に相対的に）言及するクラスという概念については後述する．背景条件$ x\bkg{\epsilon}y $を言及する開放文は，構造的な規定であれ何であれ，$x$と$y$の相互連間の持続を説明するような規定条件である．また，蓋然性$ \prob{x}{n\uphl\epsilon} $を言及する開放文は，例えば，確率に関する数的関数$y$について，$ \brevel{(\classab{n}\uphl y)}\img\univ $を言及するものかもしれない\footnote{
+    開放文\kagi{$ \orp{a,x}\to_{\epsilon}\orp{b,y} $}が$\mathfrak{L}$の文に還元可能なわけではない．個別の条件$x,y$が特定可能であれば，$ x\bkg{\epsilon}y $を言及する$ \mathfrak{L} $開放文が存在するというだけである．
+}．
+
+次に，以下の例のように，追加される述語の分だけ原子文の構成方法を追加する．
 \begin{align*}
     &\text{「$\alpha$は人である」の\kagi{$ \alpha $}に変項を代入した結果は文である，}\\
     &\text{「$\alpha$は$\beta$を愛する」の\kagi{$ \alpha $}と\kagi{$ \beta $}に変項を代入した結果は文である．}
 \end{align*}
-
-拡張言語$\mathfrak{L}$に対して，対象領域$\kappa$に相対化された充足と真理を（再帰的に）定義する\footnote{
+そして，$\mathfrak{L}$の文に対して，対象領域$\kappa$に相対化された充足と真理を（再帰的に）定義する\footnote{
     $\kappa\in\univ$ならば，$\kappa$に相対化された充足と真理を直接的に定義することができる．ただし，追加される述語のリストが確定している必要がある．
 }．まず原子文の充足は，以下の例のように各述語ごとに定義される．
 \begin{enumerate}[label=(\arabic*)]
@@ -654,13 +664,19 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
     \item 任意の$p,q\in\mathfrak{L}$と$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ P\supset Q $}の\kagi{$ P $}に$p$を，\kagi{$ Q $}に$q$を代入した結果を充足するのは，$ s $が$p$を充足するならば$s$が$q$を充足するとき，かつそのときに限られる，
     \item 任意の$p\in\mathfrak{L}$と$ i\in\mathbb{N} $，及び$ s\in\mathrm{seq}^{\kappa} $について，$s$が，\kagi{$ (\alpha)P $}の\kagi{$ \alpha $}に$ \boldsymbol{v}(i) $を，\kagi{$ P $}に$p$を代入した結果を充足するのは，すべての$ x\in \alpha $について，$s\tbinom{i}{x}$が$p$を充足するとき，かつそのときに限られる．
 \end{enumerate}
-そして，$p\in\mathfrak{L}$が対象領域$ \kappa $において真であるのは，すべての$s\in \mathrm{seq}^{\kappa}$について$s$が$p$を充足するとき，かつそのときに限られる．
+$p\in\mathfrak{L}$が対象領域$ \kappa $において真であるのは，すべての$s\in \mathrm{seq}^{\kappa}$について$s$が$p$を充足するとき，かつそのときに限られる．
+また，開放文$q\in\mathfrak{L}$が$\kappa$において言及するクラスは，$q$に自由出現する変項の\kagi{$ ' $}の数を小さい順に並べた系列$v$について，
+\[
+   \classab{\mathcal{O}\fap(s\resl v):
+        \Lambda\neq v\con{1}s\in \mathrm{seq}^{\kappa}\text{ は }q\text{ を充足する}
+   }.
+\]
 
-真理集合$ \mathcal{T}^\epsilon $には\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．したがって，それらの図式化である論理式の集合$a$が存在して，$a\subseteq g$．\kagi{$\in$}は述語記号$\orp{2,0}$に置換され，また，解釈空間の定義上，任意の$m\in\arg\epsilon$について，
+ところで，真理集合$ \mathcal{T}^\epsilon $には\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．したがって，それらの図式化である論理式の集合$a$が存在して，$a\subseteq g$．\kagi{$\in$}は述語記号$\orp{2,0}$に置換され，また，解釈空間の定義上，任意の$m\in\arg\epsilon$について，
 \[
     \mathcal{R}\fap m\fap\orp{2,0}=\mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}.
 \]
-したがって，$ a\subseteq\mathrm{T}^m $．さらに，$ \brevel{\mathrm{imp}}\img\classab{a}\subseteq\mathrm{T}^m $である．関連して，$ \orp{a,r}\in\mathrm{imp} $なる$r$が$p$を前件$q$後件とする条件法である場合，反事実的依存の定義により，$q$は$p$に反事実的に依存しない．つまり，数学的法則は因果関係に直結しない．
+したがって，$ a\subseteq\mathrm{T}^m $．さらに，$ \brevel{\mathrm{imp}}\img\classab{a}\subseteq\mathrm{T}^m $である．関連して，$ \orp{a,r}\in\mathrm{imp} $なる$r$が$p$を前件$q$を後件とする条件法である場合，反事実的依存の定義により，$q$は$p$に反事実的に依存しない．つまり，数学的法則は因果関係に直結しない．
 
 \subsubsection{適合性の条件}
 \label{sssec:適合性の条件}
@@ -673,21 +689,7 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \end{enumerate}
 \ref{sssec:全体論的概念図式}の$g$を構成する仕方によって，(1)は$\breve{\epsilon}\fap\Lambda$が現実を反映したモデルであることを，(2)は$g$に出現しない述語記号は$\breve{\epsilon}\fap\Lambda$の現実性と関係がなく比較類似性の基盤とならないこと，を表現している．
 
-$\epsilon$が$g$に適合していると言えるための他の条件として，$\breve{\epsilon}\fap\Lambda $は，$g$に含まれる因果述語と蓋然性述語の図式化をそれぞれ以下のように解釈する．
-因果述語が述語記号$\orp{2,i}$に図式化されるとすると，
-\[
-    \mathcal{R}\fap(\breve{\epsilon}\fap\Lambda)\fap\orp{2,i} = \classab{\orp{\orp{a,x},\orp{b,y}}:
-        \orp{a,x}\to_{\epsilon}\orp{b,y}
-    }\cap \timex{(\trgl{\arg\epsilon})}{2}.
-\]
-また，蓋然性述語が述語記号$\orp{3,j}$に図式化されるとすると，
-\[
-    \mathcal{R}\fap(\breve{\epsilon}\fap\Lambda)\fap\orp{3,j} = \classab{\orp{y,x,n}:
-        x\in\prob{y}{(n\uphl\epsilon)}
-    }\cap\trgl{\arg\epsilon}.
-\]
-
-さて，$\epsilon$が$g$に適合していると言えるための最後の条件として，$\epsilon$が与える開始点への類似性の尺度は，$g$（がそれの図式化である$\mathcal{T}^\epsilon$）の各要素が改訂圧力を受ける場合（それを含む文の集合が含意する予測が観察により反駁される場合）におけるその耐性値に相関している．
+$\epsilon$が$g$に適合していると言えるための他の条件として，$\epsilon$が与える開始点への類似性の尺度は，$g$（がそれの図式化である$\mathcal{T}^\epsilon$）の各要素が改訂圧力を受ける場合（それを含む文の集合が含意する予測が観察により反駁される場合）におけるその耐性値に相関している．
 
 すなわち，実験状況を要約するような一般化$p\in\mathcal{T}^\epsilon$が観察により反駁されたと仮定した場合，整合性を回復するためには，$p$を含意する最小単位$b\subseteq \mathcal{T}^\epsilon$（どの$b'\subset b$も$p$を含意しない）のメンバーのいずれかを偽とみなす必要が生じる．
 この場合，体系内の文の相互連間の中で$b$の各メンバーが占める位置が，どれを偽として捨てるかの選択を制御する．体系内の位置の相違によって，ある種類の文は他の種類の文よりも改訂され難い．そのような相違が改訂圧力への耐性の相違である．例えば，論理法則や数学的法則は改訂に対してほとんど免疫がある\footnote{
