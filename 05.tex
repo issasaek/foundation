@@ -299,7 +299,7 @@ $ \alpha\subseteq\varSigma^{\epsilon}\alpha $であるから，$ k\fap 0 =\orp{u
     と仮定すると，$ k\fap 1 = \orp{u\fap 1,v\fap 1}\in \varSigma^{\epsilon}\alpha $．すると（※）により，$ u\fap 1\in\enf{\epsilon}(v\fap 1) $．
     
     以上を繰り返すと，[1] [2] $\dots$ という仮定のもとで，$ \tilde{k}\fap 0 = \orp{x,y}\in \varSigma^{\epsilon}\alpha $．
-    したがって，仮定[1] [2] $\dots$ が証拠に基づいて認定されれば，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $であることを認定できる．
+    したがって，仮定[1] [2] $\dots$ が証拠に基づいて認定されれば，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $であることを認定できる（さらに（※）により，$ x\in\enf{\epsilon}y $であることも認定できる）．
 \end{nom}
 
 なお，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $と，$ x\in\enf{\epsilon}y $の構成要件実現と修正条件実現とを連結する因果系列$ z $が存在して，
@@ -324,9 +324,9 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
     \]
     を前提として使用していない場合，適切な証拠の条件を欠く．ただし，\kagi{$ Gxy $}は$ x\in\exe{\epsilon} y $が有責に実現されたことを記述する文の位置を表わしている．
 \end{itemize}
-そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，$ s\in\exe{\epsilon} t $によって$ \exe{\epsilon} d $で認定される規制の修正条件が直接実現する場合\footnote{
-    例えば，金銭債務（金額占有の移転阻止に対するS規制）の修正条件を，債務者の何らかの財産の喪失であるとした場合，それを直接実現する規制は，執行裁判所の売却許可決定を含む執行手続によって制定される（売買の）引渡債務等である．
-}において，P規制$\orp{s,t}$か，または$ \mathrm{IS}\img\classab{\orp{s,t}} $のメンバーのS規制である．
+そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，ある$ w\subseteq\mathrm{REG}^\epsilon $について，$ w\subseteq\classab{\orp{s,t}:s\in\exe{\epsilon}t} $であることによって$ \exe{\epsilon}d $で認定される規制の修正条件が直接実現される場合において\footnote{
+    例えば，金銭債務（金額占有の移転阻止に対するS規制）の修正条件を債務者の何らかの財産の喪失であるとした場合，それの実行規制は，執行裁判所の売却許可決定を含む執行手続によって制定される（売買の）引渡債務等である．
+}，P規制$\orp{s,t}\in w$か，$ \mathrm{IS}\img\classab{\orp{s,t}} $のメンバーのS規制である．
 
 \subsubsection{言語的統制における正規性論証}
 \label{sssec:言語的統制における正規性論証}
@@ -633,10 +633,10 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \label{sssec:当事者}
 
 最後に，制定規制の付帯条件によって規制の当事者が限定されるパターンと，それに関連する契約と呼ばれる構造について考える．
-まず，規制要素$ \orp{x,y} $の法益主体という概念を規定する．
+まず，規制要素$ \orp{x,\delta} $の法益主体という概念を規定する．
 そのために，準拠領域とそれが制御可能性を充たす規制類型との関係$\beta$と，独立変項の内部構造を取り出す関数$\gamma$を考える．つまり，
 \begin{gather*}
-    \beta\neq\Lambda\con{1}(g)(h)(\orp{g,h}\in\beta\case{1}{1}{1}g\in(\cty{\epsilon}h)\times\mathrm{Reg}),\\
+    \beta\neq\Lambda\con{1}(g)(h)(\orp{g,h}\in\beta\case{1}{1}{1}\orp{g,h}\in(\cty{\epsilon}h)\times\mathrm{Reg}),\\
     \gamma\neq\Lambda\con{1}(a)(a\in\arg \gamma \case{1}{1}{1}\gamma\fap a\in \trcl a).
 \end{gather*}
 すると，任意の$ a\in\arg \delta $について，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが$ \gamma\fap(\tilde{a}\fap 2)\neq\Lambda $に対する利益侵害であるとき，すなわち，
@@ -649,7 +649,7 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
     } \tag{i}
 \end{multline*}
 であるとき，かつそのときに限り，$ \gamma\fap(\tilde{x}\fap 2) $は$ \orp{x,\delta} $の法益主体である．
-(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制的な修正条件になっていることを表現している．それが真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
+(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制条件になっていることを表現している．それが真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
 そして，規制要素$ \orp{x,\delta} $の結節点$ \tilde{x}\fap 1 $と法益主体$ \gamma\fap(\tilde{x}\fap 2) $の組を，$ \orp{x,\delta} $の当事者と言う．
 
 さて，ある規制体系において契約と呼ばれる構造が成り立つには，以下のような規制表明型$v\in\mathrm{Es}^\epsilon $と規制表明型$t\in\mathrm{Es}^\epsilon\cup\mathrm{Ab}^\epsilon$が必要である．いずれもP類型である．まず，任意の$u\in \arg v$について，被制定類型$ \mathcal{R}\fap(\tilde{u}\fap 0) $は$t$であり，制定範囲$ \mathcal{L}\fap(\tilde{u}\fap 0) $の任意のメンバーの公布範囲は，$\tilde{u}\fap 1$を結節点に持つ．すなわち，
@@ -865,7 +865,7 @@ $ \iter{\mathrm{S}}{2}\fap m $から始める理由は，$ \mathcal{X}^\epsilon\
 \kagi{$
     \mathfrak{w}\epsilon
 $}は\kagi{$
-    (n)(2\in n \in\mathbb{N}\con{1}\trgl{\arg\epsilon}=\mathcal{W}\fap n)
+    (\imath n)(2\in n \in\mathbb{N}\con{1}\trgl{\arg\epsilon}=\mathcal{W}\fap n)
 $}を表わす,
 \end{df}
 \noindent とすると，単に，ある$ m\in\mathbb{N} $について，
