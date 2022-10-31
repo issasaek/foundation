@@ -616,20 +616,12 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \label{sssec:全体的言語}
 
 \ref{ssec:原初的言語}の原初的言語に有限個の述語を（非限定的に）追加して，包括的な言語$\mathfrak{L}$を構成する．包括的であるというのは，環境を予測し制御するテクノロジーを構成するかその基盤となる言語的装置に寄与する任意の文$p$について，$p$の何らかの形式化が$\mathfrak{L}$の文である，ということである．
-述語を追加する方法は\ref{ssec:原初的言語}におけるのと同様である．つまり，$\mathfrak{L}$の述語として使用する述語記号を，以下の例のような文脈的定義によって指定する．述語記号$\orp{2,0}$は既に\kagi{$ \in $}として使用されている．
-\setcounter{equation}{0}
-\begin{multline}
-    \text{
-        \kagi{$\alpha$は人間である}の\kagi{$\alpha$}に任意の変項を代入した結果は，
-    }\\
-    \text{\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす．}
-\end{multline}
-\begin{multline}
-    \text{
-        \kagi{$\alpha$は$\beta$を愛する}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，
-       }\\
-    \text{\kagi{$ (F,\!,)'\alpha\beta $}に同一の代入をした結果を表わす．}
-\end{multline}
+述語を追加する方法は\ref{ssec:原初的言語}におけるのと同様である．つまり，$\mathfrak{L}$の述語として使用する述語記号を，以下の例のような文脈的定義によって指定する．(1)は原初的言語における\kagi{$ \in $}の文脈的定義と同一である．
+\begin{enumerate}[label=(\arabic*)]
+    \item \kagi{$\alpha\in\beta$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$\alpha$は人間である}の\kagi{$\alpha$}に任意の変項を代入した結果は，\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$\alpha$は$\beta$を愛する}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)'\alpha\beta $}に同一の代入をした結果を表わす．
+\end{enumerate}
 
 また，どのような述語をどれだけ追加するかについては，以下の1〜3の要領に従う\footnote{
     述語が追加されても\ref{ssec:集合論の体系}の公理群は維持される．ただし，A \ref{axim:分出}の\kagi{$ \alpha $}は，変項または$\mathfrak{L}$の開放文で作られたクラス抽象体の位置を表わす型文字として再解釈される．したがって，$\mathfrak{L}$が述語「は人である」を持つならば，再解釈されたA \ref{axim:分出}によって，
@@ -651,19 +643,24 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 
 $\epsilon$が$\mathfrak{L}$に適合するのは，次のAとBが両方成り立っているとき，かつそのときに限られる．
 \begin{enumerate}[label=\Alph*.]
-    \item $\breve{\epsilon}\fap 0$は，$\mathfrak{L}$の標準的モデルである．
-    \item $\epsilon$が与える開始点への類似性尺度は，$\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L}$の各要素が持つ改訂圧力への耐性値と相関している．
+    \item \begin{enumerate}
+        \item $\breve{\epsilon}\fap \Lambda$は$\mathfrak{L}$の標準的モデルである．
+        \item $\mathfrak{L}$の原始的述語でない任意の述語記号$\orp{n,i}$について，$(m)(m\in\arg\epsilon\case{1}{1}{1}(\mathcal{R}\fap m)\fap\orp{n,i} = \Lambda)$．
+    \end{enumerate}
+    \item $\epsilon$が与える開始点への類似性尺度は，$\mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L}$の各要素が持つ改訂圧力への耐性値と相関している．
 \end{enumerate}
 
-\paragraph{条件A}モデル$\breve{\epsilon}\fap 0$は，以下の条件を充たす唯一の$m\in\mathrm{MD}$（$\mathfrak{L}$の標準的モデル）である．$\mathfrak{L}$を構成する仕方によって，この条件は，$\breve{\epsilon}\fap\Lambda$が現実を反映したモデルであることを表現している．
+\paragraph{条件A}
+$\mathfrak{L}$を構成する仕方によって，A(a)は$\breve{\epsilon}\fap\Lambda$が現実を反映したモデルであることを，A(b)は$\mathfrak{L}$に出現しない述語記号は$\breve{\epsilon}\fap\Lambda$の現実性と関係がなく比較類似性の基盤とならないこと，を表現している．
+A(a)は次のことを意味する．以下の条件を充たす$m\in\mathrm{MD}$（$\mathfrak{L}$の標準的モデル）が存在して，$ \breve{\epsilon}\fap \Lambda = m $．
 \begin{enumerate}[label=(\arabic*)]
     \item $\mathcal{L}\fap m = \trgl{\arg\epsilon}$．
-    \item 原始的述語でない任意の述語記号$\orp{n,i}$について，$(\mathcal{R}\fap m)\fap\orp{n,i} = \Lambda$．
-    \item 原始的述語である任意の述語記号$\orp{n,i}$について，以下の型式に代入して得られる等式を使用して，各述語ごとに$\mathcal{R}\fap m$が与えるクラスを指定する．
+    % \item 原始的述語でない任意の述語記号$\orp{n,i}$について，$(\mathcal{R}\fap m)\fap\orp{n,i} = \Lambda$．
+    \item $\mathfrak{L}$の原始的述語である任意の述語記号$\orp{n,i}$について，以下の型式に代入して得られる等式を使用して，各述語ごとに$\mathcal{R}\fap m$が与えるクラスを指定する．
     \[
         (\mathcal{R}\fap m)\fap\orp{\alpha,\beta} = \timex{(\mathcal{L}\fap m)}{\alpha}\cap\classab{\gamma:\delta}.
     \]
-    ただし，\kagi{$ \alpha $}，\kagi{$ \beta $}にはそれぞれ$n,i$を指示する数字を，\kagi{$ \delta $}には原始式$ \orp{0,\orp{n,i},k} $を代入する．また，$ k\fap i = i $とする．そして，\kagi{$ \gamma $}には，変項$\boldsymbol{v}(0),\dots,\boldsymbol{v}(\breve{\mathrm{S}}\fap n) $から作られる順序対表現を代入する．例えば，
+    \kagi{$ \alpha $}，\kagi{$ \beta $}にそれぞれ$n,i$を指示する数字を，\kagi{$ \delta $}に原始式$ \orp{0,\orp{n,i},k} $を代入する．また，$ k\fap i = i $とする．そして\kagi{$ \gamma $}には，変項$\boldsymbol{v}(0),\dots,\boldsymbol{v}(\breve{\mathrm{S}}\fap n) $から作られる順序対表現を代入する．例えば，
         \begin{enumerate}
             \item $ (\mathcal{R}\fap m)\fap\orp{2,0} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\in x '}. $
             \item $ (\mathcal{R}\fap m)\fap\orp{1,0} = \timex{(\mathcal{L}\fap m)}{1}\cap\classab{x:x\text{ は人間}}. $
@@ -671,18 +668,26 @@ $\epsilon$が$\mathfrak{L}$に適合するのは，次のAとBが両方成り立
         \end{enumerate}
 \end{enumerate}
 
-ところで，真理集合$ \mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L} $には，\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．これらの公理の集合を$a$と置く．また，解釈空間の定義上，任意の$h\in\arg\epsilon$について，
+ところで，真理集合$ \mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L} $には，\ref{ssec:集合論の体系}のA \ref{axim:外延性}〜A \ref{axim:分出}が含まれる．これらの公理の集合を$a$と置く．また，解釈空間の定義上，任意の$h\in\arg\epsilon$について，
 \[
     (\mathcal{R}\fap h)\fap\orp{2,0}=\mathfrak{E}\cap\timex{(\trgl{\arg\epsilon})}{2}.
 \]
 したがって，$ a\subseteq\mathrm{T}^h $．さらに，$ \brevel{\mathrm{imp}}\img\classab{a}\subseteq\mathrm{T}^h $である．関連して，$ \orp{a,r}\in\mathrm{imp} $なる$r$が$p$を前件$q$を後件とする条件法である場合，反事実的依存の定義により，$q$は$p$に反事実的に依存しない．つまり，数学的法則は因果関係に直結しない．
 
-\paragraph{条件B}$\epsilon$が与える開始点への類似性の尺度は，$ \mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L} $の各要素が改訂圧力を受ける場合（それを含む文の集合が含意する予測が観察により反駁される場合）におけるその耐性値に相関している．
+なお条件Aによって，$\epsilon$から逆に$ \mathfrak{L} $を特徴づけることができる．それは$\breve{\epsilon}\fap\Lambda$の解釈関数が$\Lambda$を割り当てる述語記号が出現しない論理式のクラスである．すなわち，
+\begin{align*}
+\mathfrak{L} = \classab{p:p\in\mathrm{L}\con{1}
+\neg(\exists q)[
+    q\in \mathrm{trcl}\,p\cap\mathrm{Atm}\con{1}(\mathcal{R}\fap(\breve{\epsilon}\fap \Lambda))\fap((\mathcal{L}\resl\mathcal{R})\fap q) = \Lambda
+]}.
+\end{align*}
 
-すなわち，実験状況を要約するような一般化$p\in(\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L})$が観察により反駁されたと仮定した場合，整合性を回復するためには，$p$を含意する最小単位$b\subseteq (\mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L})$（どの$b'\subset b$も$p$を含意しない）のメンバーのいずれかを偽とみなす必要が生じる．
+\paragraph{条件B}$\epsilon$が与える開始点への類似性の尺度は，$ \mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L} $の各要素が改訂圧力を受ける場合（それを含む文の集合が含意する予測が観察により反駁される場合）におけるその耐性値に相関している．
+
+すなわち，実験状況を要約するような一般化$p\in(\mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L})$が観察により反駁されたと仮定した場合，整合性を回復するためには，$p$を含意する最小単位$b\subseteq (\mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L})$（どの$b'\subset b$も$p$を含意しない）のメンバーのいずれかを偽とみなす必要が生じる．
 この場合，体系内の文の相互連間の中で$b$の各メンバーが占める位置が，どれを偽として捨てるかの選択を制御する．体系内の位置の相違によって，ある種類の文は他の種類の文よりも改訂され難い．そのような相違が改訂圧力への耐性の相違である．例えば，論理法則や数学的法則は改訂に対してほとんど免疫がある\footnote{
     論理法則や数学的法則を含めたどの文も，他の文と連合して何らかの予測を含意することに関与するという意味で，経験的内容を分け持っている．原理的には論理法則や数学的法則の改訂もあり得る．クワイン~\cite[pp.\,2--4]{クワインb}を参照．
 }．基本的な物理法則の耐性値も非常に高いが，それが改訂されることはあり得る．さらに，物理法則の外側に，体系の周縁に向かって，他の自然科学的法則から経済学的一般化などの中間を経て，常識的な事実的一般化に至る配列が来る．この順番で改訂圧力への耐性値は下がっていく．
 
-そして，$\epsilon$が与える類似性尺度が改訂圧力への耐性値に相関するというのは，他の条件が同じであれば，改訂圧力への耐性値がより高い文がより多く偽となるようなモデルほど，開始点への類似性の度合いが低い，ということを意味している．言い換えれば，ある文が$ \mathrm{T}^{(\breve{\epsilon}\fap 0)}\cap \mathfrak{L} $が表現する包括的体系にとって基本的なものであればあるほど（中心に近ければ近いほど），それが偽となるモデルは開始点への類似性が低くなる．論理法則と数学的法則は体系の中心であり極限的なケースである．すなわち，論理法則は定義上すべてのモデルにおける真理であり，これが偽となる$m\in\arg\epsilon$はない．数学的法則もこれに準じて，解釈空間の定義により，すべての$m\in\arg\epsilon$において真である．
+そして，$\epsilon$が与える類似性尺度が改訂圧力への耐性値に相関するというのは，他の条件が同じであれば，改訂圧力への耐性値がより高い文がより多く偽となるようなモデルほど，開始点への類似性の度合いが低い，ということを意味している．言い換えれば，ある文が$ \mathrm{T}^{(\breve{\epsilon}\fap \Lambda)}\cap \mathfrak{L} $が表現する包括的体系にとって基本的なものであればあるほど（中心に近ければ近いほど），それが偽となるモデルは開始点への類似性が低くなる．論理法則と数学的法則は体系の中心であり極限的なケースである．すなわち，論理法則は定義上すべてのモデルにおける真理であり，これが偽となる$m\in\arg\epsilon$はない．数学的法則もこれに準じて，解釈空間の定義により，すべての$m\in\arg\epsilon$において真である．
 
