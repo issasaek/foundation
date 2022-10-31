@@ -354,9 +354,9 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
 \label{sssec:規制表明}
 
 任意の$y\in\mathrm{Reg}$と$b$（付帯条件）について，$ \breve{\epsilon}\fap \Lambda $において$ \app{\epsilon} y\cap b \subseteq \enf{\epsilon}y $であることを記述する論理式を，$b$に制限された$y$の制定ルールと言う．同様に，$ \app{\epsilon} y\cap b \subseteq \barl{(\enf{\epsilon}y)} $であることを記述する論理式を，$b$に制限された$y$の廃止ルールと言う．そして，制定ルールと廃止ルールを併せて規制ルールと言う．
-典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示する抽象体型\footnote{
-    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体の型である．
-}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示する抽象体型を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
+典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示する$\mathfrak{L}$のクラス抽象体\footnote{
+    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p\in\mathfrak{L}$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体である．
+}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示する$\mathfrak{L}$のクラス抽象体を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
 \setcounter{equation}{0}
 \begin{align}
     &\textbf{制定ルールの一般形式}\qquad \app{\epsilon}\delta\cap\beta\in\mathcal{P}(\enf{\epsilon}\delta)\\
@@ -395,8 +395,8 @@ $}を表わす．
 なる$ h,d,b,z,y $が存在する．そして，$ \iter{\mathrm{E}}{2}\fap(u\diamond\trgl{v}) $は，言語的トークンの集合$d$を生成して，公布範囲$h$のメンバーの結節点に対して，ある$c\in d$について$c \in \gamma$であることを蓋然的に認知させる因果系列である．ただし，ここでの$\gamma$は，$b$に制限された$y$の規制ルールを含意する式に解釈される言語的タイプについて，それのトークンのクラスとする．
 
 規制表明型のこの特徴づけは，原初的言語には還元できないにしても，もう少し精密化できる．
-まず，型文字\kagi{$ \tau $}で，$e$が言語的タイプ$p$のトークンであるような$ \orp{e,p} $のクラスを指示する抽象体の位置を表わすものとする．ただし，$ \tau\img\univ\subseteq \mathcal{P}(\timex{\mathbb{R}}{4}) $，そして，任意の$ p\in \breve{\tau} $はある同一の言語に属する．すなわち，$p$は当該言語の原始記号の有限系列であり，原始記号自体はそのトークンの集合である．また，同じ言語では1個のトークンは唯一のタイプを持つと考えられるから，$ \func\breve{\tau} $である．
-次に，$ f_1 $を，\ref{sssec:全体論的概念図式}の言語$\mathfrak{L}$の文$p$と，それに出現する述語を（\ref{sssec:全体論的概念図式}の1対1対応により）述語記号に置換して得られる論理式$q$について，そのような$\orp{p,q}$のクラスとする．すると，$ \func f_1\con{1}\func \brevel{(f_1)} $である．また，$ f_2 $を，$ l\in\breve{\tau}\img\univ $が$\mathfrak{L}$の文$p$に（適切に）解釈されるような$\orp{l,p}$のクラスとする．そして型文字\kagi{$ \theta $}で，$ f_2\resl f_1 $を指示する抽象体の位置を表わす．
+まず，型文字\kagi{$ \tau $}で，$e$が言語的タイプ$p$のトークンであるような$ \orp{e,p} $のクラスを指示する抽象体の位置を表わすものとする．ただし，$ \tau\img\univ\subseteq \mathcal{P}(\timex{\mathbb{R}}{4}) $，そして，任意の$ p\in \breve{\tau}\img\univ $はある同一の言語に属する．すなわち，$p$は当該言語の原始記号の有限系列であり，原始記号自体はそのトークンの集合である．また，同じ言語では1個のトークンは唯一のタイプを持つと考えられるから，$ \func\breve{\tau} $である．
+次に，$ f $を，\ref{sssec:全体的言語}の言語$\mathfrak{L}$について，$p\in\mathfrak{L}$が，$ l\in\breve{\tau}\img\univ $の適切な解釈（規格化・形式化）であるような$\orp{p,l}$のクラスとする．そして型文字\kagi{$ \theta $}で，$ f $の逆$\breve{f}$を指示する抽象体の位置を表わす．
 
 さて，$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $が規制表明型であるとき，
 \setcounter{equation}{0}
