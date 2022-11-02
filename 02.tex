@@ -475,7 +475,7 @@ $\ance{\alpha}$は$\alpha$を反復して$y$から$x$に遡及可能であるよ
 \label{ssec:集合論の体系}
 
 規制はクラスであり，その存在はクラス理論の公理によって決定される．いかなるクラスが存在するかという問題は，いかなるクラス理論を採用するかという問題である．
-以下では標準的と思われる体系ZF（ツェルメロ・フレンケル集合論）を導入する．公理の主要部分はクラスの存在仮定である．クラス$\alpha$が存在することを，\kagi{$ (\exists x)(x=\alpha) $}と等値な\kagi{$ \alpha\in\univ $}で表わす．また，次の省略記法を使う．
+以下では標準的と思われる体系ZFCを導入する．公理の主要部分はクラスの存在仮定である．クラス$\alpha$が存在することを，\kagi{$ (\exists x)(x=\alpha) $}と等値な\kagi{$ \alpha\in\univ $}で表わす．また，次の省略記法を使う．
 \begin{df}[冪集合]
 \label{df:冪集合}
 \kagi{$
@@ -485,7 +485,7 @@ $}は\kagi{$
 $}を表わす．
 \end{df}
 
-\noindent すると，以下のA \ref{axim:外延性}〜A \ref{axim:正則性}の（自由出現する変項をすべて普遍量化した）普遍閉鎖体がZFの公理（型）である．
+\noindent すると，以下のA \ref{axim:外延性}〜A \ref{axim:選択}の（自由出現する変項をすべて普遍量化した）普遍閉鎖体がZFCの公理（型）である．
 
 \begin{axim}[外延性]
 \label{axim:外延性}
@@ -526,6 +526,15 @@ $
 \label{axim:正則性}
 $
     x\neq \Lambda \ld{.}\supset (\exists y)(y\in x\md{.}x\cap y=\Lambda).
+$
+\end{axim}
+
+\begin{axim}[選択]
+\label{axim:選択}
+$
+    (\exists y)(
+        y\subseteq\mathfrak{E}\con{1}x\cap\barl{\classab{\Lambda}}\subseteq\arg y
+    ).
 $
 \end{axim}
 
@@ -642,9 +651,11 @@ $
 \end{pf}
 
 自然科学で必要とされるような数学的法則は，定義を通じてクラス理論の文に還元可能であり，それらは，上記のような証明を積み重ねて行くことで，\ref{ssec:集合論の体系}の公理から演繹可能である\footnote{
-    自然科学が要求する数学という目的にとっては，A \ref{axim:外延性}〜A \ref{axim:分出}だけで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，A \ref{axim:外延性}〜A \ref{axim:分出}は真となる．この意味で，自然科学の総体が要求する存在論は$ \mathcal{W}\fap 2 $である．
+    自然科学が要求する数学という目的にとっては，ZFCからA \ref{axim:置換}を除いたZCで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，ZCの公理は真となる．この意味で，自然科学の総体が要求する存在論は$ \mathcal{W}\fap 2 $である．
 }．
-このことは，それらの定理が真であるために要求される対象が，それらの公理群によって供給されるということも意味している．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる．すると，個々の実数は$\mathbb{N}$の部分クラスであるから，T \ref{thm:部分クラス}によって存在が供給される．$\mathbb{R}$自体についても，A \ref{axim:無限}とA \ref{axim:一対化，和，冪}により，$ \mathcal{P}(\mathbb{N})\in\univ $だから，同様にT \ref{thm:部分クラス}により，$ \mathbb{R}\in\univ $．
+このことは，それらの定理が真であるために要求される対象が，それらの公理群によって供給されるということも意味している．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる\footnote{
+    クワイン~\cite[pp.\,113--117]{クワインa}．
+}．すると，個々の実数は$\mathbb{N}$の部分クラスであるから，T \ref{thm:部分クラス}によって存在が供給される．$\mathbb{R}$自体についても，A \ref{axim:無限}とA \ref{axim:一対化，和，冪}により，$ \mathcal{P}(\mathbb{N})\in\univ $だから，同様にT \ref{thm:部分クラス}により，$ \mathbb{R}\in\univ $．
 
 ところで，規制$ z $の内部構造，すなわちD \ref{df:クラスの内部構造}に基づく$ \trcl z $のメンバーには，人やその他の物理的対象が含まれる．したがって，物理的対象の存在も供給しなければならない．
 
@@ -666,8 +677,8 @@ $}を表わす．
     Quine~\cite{Quine}．
 }．任意の時空領域の存在は，$ \timex{\mathbb{R}}{4} $の部分クラスとして，T \ref{thm:部分クラス}によって供給されるから，これとは区別された物理的対象を用意する必要はない．
 
-次に，規制$x$の内部構造$\trcl x$に他の規制類型が含まれ得ることから，規制の存在論を明確化する必要が生じる．そのため\ref{ssec:存在論}である種の階層構造を設定するが，そこでは，$\mathcal{W}\fap 0 = \Lambda$であり，$ 0 \in n $について$\mathcal{W}\fap n$が，$\mathcal{W}\fap (\breve{\mathrm{S}}\fap n)$から冪集合演算を反復して得られるクラス全ての合併，であるような無限系列$\mathcal{W}$を使う\footnote{
-    $ \mathcal{W}\fap n $は，累積階層$ \mathrm{WF} $の$ n\cdot\omega $段階と同一である．すなわち，系列$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $は，$ \omega^{2} $未満の極限順序数に係る累積階層の系列$ \Lambda,\mathrm{WF}{`}(1\cdot\omega),\mathrm{WF}{`}(2\cdot\omega),\dots $と同一である．
+次に，規制$x$の内部構造$\trcl x$に他の規制類型が含まれ得ることから，規制の存在論を明確化する必要が生じる．そのため\ref{ssec:存在論}である種の階層構造を設定するが，そこでは，$\mathcal{W}\fap 0 = \Lambda$であり，$ 0 \in n \in\mathbb{N}$について$\mathcal{W}\fap n$が，$\mathcal{W}\fap (\breve{\mathrm{S}}\fap n)$から冪集合演算を反復して得られるクラス全ての合併，であるような無限系列$\mathcal{W}$を使う\footnote{
+    任意の$n\in\mathbb{N}$について，$ \mathcal{W}\fap n $は，いわゆる累積的階層における水準$ \omega\cdot n $の階層と同一である．
 }．
 
 \begin{df}
@@ -690,7 +701,7 @@ $}は\kagi{$
 $}を表わす．
 \end{df}
 
-\noindent 規制の概念が要求する存在論は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある有限段階$ \mathcal{W}\fap n $であり，最大でも$\mathcal{W}$の各段階すべての合併$ \union{(\mathcal{W}\img\mathbb{N})} $である．
+\noindent 規制の概念が要求する存在論は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある段階$ \mathcal{W}\fap n $であり，最大でも$\mathcal{W}$の各段階すべての合併$ \union{(\mathcal{W}\img\mathbb{N})} $である．
 この点，$\func{\mathcal{W}}$であることが証明可能であり，したがって，A \ref{axim:置換}とA \ref{axim:無限}により，$ \mathcal{W}\img\mathbb{N}\in\univ $．さらに，A \ref{axim:一対化，和，冪}により，$\union{(\mathcal{W}\img\mathbb{N})}\in\univ$．
 この場合，$\mathcal{W}$の各段階についても，任意の$\Lambda\neq n\in\mathbb{N}$に対して，$ \Lambda\neq \mathcal{W}\fap n\in\univ $．
 この点に関連して一般的に言えば，
