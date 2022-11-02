@@ -3,6 +3,9 @@
 \subsection{正規集合と規制体系}
 \label{ssec:正規集合と規制体系}
 
+\subsubsection{高次類型}
+\label{sssec:高次類型}
+
 他の規制の執行可能性の実現を修正条件に持つような規制類型を「制定類型」，逆に執行可能性の阻止を修正条件に持つ規制類型を「廃止類型」，両者を併せて「高次類型」と言う．
 $ v $が高次類型であるというのは次のことを意味する．まず$ u\in\arg v $ならば，
 \[
@@ -125,8 +128,8 @@ $}を表わす．
 \end{df}
 
 \noindent $ \alpha $のメンバーは，正規集合$ \varSigma^{\epsilon}\alpha $または規制体系$ \mathrm{SY}^{\epsilon}\alpha $における始祖と言われる．始祖の集合として何を選ぶかは文脈依存的であり，それは正規集合や規制体系の概念を使用する目的または機能によって異なることが想定されている．この点，正規集合の概念は，執行可能性の認定や言語的統制において重要な役割を持つ．
-また，規制体系の概念は，規制体系の要素間が機能的に不整合である場合，それらを含む規制体系の部分クラスの工学的妥当性を否定する，という（工学的妥当性を記述する）機能を持つ．
-さらに，規制体系外の規制要素との関係において規制体系内の機能的不整合が生じるケースもあるから，正規集合の概念も（規制体系の前提概念としてだけではなく）工学的妥当性を記述する機能を持ち得る．
+また，規制体系の概念は，その部分クラスの工学的妥当性が当該体系内の他の規制の機能を促進したり阻害したりする関係に基づいているという意味で，工学的妥当性を記述する機能を持つ．
+さらに，規制体系外の規制要素との関係において規制体系内の機能促進や阻害が生じるケースもあるから，正規集合の概念も（規制体系の前提概念としてだけではなく）工学的妥当性を記述する機能を持ち得る．
 なお，高次規制としてのN規制は，制定規制としてP規制またはS規制が始祖に遡及する過程に出現するか，または，廃止規制としてそのような過程を切断することによって，間接的な規制的機能を持つ，と言うことができる．逆に高次規制ではないN規制を持つような規制体系は，部分的にその工学的妥当性が問われることになると思われる．
 
 ところで，$ \mathrm{est}^\epsilon $及び$ \mathrm{abo}^\epsilon $の左域は$ \mathrm{REG}^\epsilon $の部分クラスである．D \ref{df:制定関係}及びD \ref{df:廃止関係}からこの制限を外すと，例えば，$\mathcal{L}\fap z\notin \enf{\epsilon}(\mathcal{R}\fap z)$，つまり執行可能性を持たない外形的な廃止規制$z$について，$\orp{z,y}\in\mathrm{abo}^\epsilon$であり得る．するとこの場合，$y$の正規性が失われる．しかし，$y$はいわば無効な廃止実行の対象であるから，依然として正規集合そして規制体系の成員であるとする方がよい．
@@ -144,7 +147,62 @@ $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u
 \]
 であるから，$ a\in\enf{\epsilon}b\con{1}a\notin\enf{\epsilon}b $となって矛盾が生じる．つまり，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方は蓋然的でなければならない．ただし，$ \prob{\beta}{1\uphl\epsilon}=\beta $であるからレベル1の蓋然性は除かれる．
 
-関連して，$ x_1,x_2,z\in\varSigma^{\epsilon}\alpha $について，
+\subsubsection{工学的妥当性}
+\label{sssec:工学的妥当性}
+
+クラス$ e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha $の工学的妥当性は，
+\begin{align*}
+    d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y}\cap\trgl{\arg\epsilon})
+\end{align*}
+について，$ e\in d $であることの因果的帰結に基づいて測ることができる．それゆえ，条件$ \orp{e,d} $の工学的妥当性と言い換えてもよい．
+この点については，あくまで素描であるが，より一般的な枠組みを作ることができる．すなわち，任意の条件$\orp{e,d}$について，時区間$t$におけるその工学的妥当性その他の重要度を測る構造（評価構造）は，人間等のユーザー集合$\alpha$と評価関数$\gamma $に相対的に構成される．
+まず，$ e\in d $であることが因果的に決定する$ \alpha $メンバーの促進条件の蓋然性のクラスを，
+\begin{multline*}
+    \zeta_1 = \classab{\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}:
+    a\in\cty{\epsilon}b\con{1}\tildel{\trgl{b}}\fap 1 = \trgl{b}\fap 0\con{1}
+    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \alpha\con{1}\\
+    \Lambda\neq n\subseteq \indx{\epsilon}\con{1}
+    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}
+    }
+\end{multline*}
+と置く．同じく抑制条件の蓋然性のクラスを，
+\begin{multline*}
+    \zeta_2 = \classab{\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}:
+    a\in\cty{\epsilon}b\con{1}\tildel{\trgl{b}}\fap 1 = \barl{(\trgl{b}\fap 0)}\cap\msec{(\arg b)}{0}\con{1}
+    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \alpha\con{1}\\
+    \Lambda\neq n\subseteq \indx{\epsilon}\con{1}
+    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}
+    }
+\end{multline*}
+と置く．
+評価関数$\gamma$の独立変項は，手続上包括的に評価される$\zeta_1$の部分クラス，または，同じく$\zeta_2$の部分クラスである．つまり，
+\[
+    (w)(w\in\breve{\gamma}\img\univ\case{1}{1}{2}w\subseteq\zeta_1\case{2}{1}{1}w\subseteq\zeta_2)．
+\]
+そして$\gamma$は，独立変項に対してある数（評価の値）を与える．この数は差し当たり自然数で足りる．すると，条件$\orp{e,d}$の重要度は，
+\[
+\tag*{（@）}    (\gamma\img\mathcal{P}(\zeta_1)\text{ のメンバーの総和}) - (\gamma\img\mathcal{P}(\zeta_2)\text{ のメンバーの総和})
+\]
+で測ることができる．この値がマイナスになる場合，デメリットの方が大きいことを意味する．
+$\gamma$の位置に来る関数は評価の企画ごとに異なるが，典型的には，
+$\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\cup\zeta_2$なる媒介関数$\beta$が使われると考えられる．以下のように，$\beta$はレベル$1$の蓋然性を基準値として，レベルが加算されるごとに$ 1/\indx{\epsilon} $をマイナスする．
+\[
+    \beta\fap\orp{c,\prob{h}{(n\uphl\epsilon)}} = \beta\fap\orp{c,\prob{h}{(1\uphl\epsilon)}} - (\breve{\mathrm{S}}\fap n/\indx{\epsilon}).
+\]
+そして，$z\in\arg\gamma$について，$\gamma\fap z$は，単純に$\beta\img z$のメンバーの合計値でもよいが，$\gamma$が表わす関数によってはさらに制限される．
+例えば，$z$は機能的に関連する修正条件のクラスであり，$\beta\img z$のメンバーの合計値$n$と，$\gamma$に固有の制限値（$\gamma$が許容する媒介関数が$z$のメンバーに与える最大値等）$m$について，
+\[
+   n\leq m\case{1}{1}{1}\gamma\fap z = n\con{2}n > m\case{1}{1}{1}\gamma\fap z = m,
+\]
+である等\footnote{このような評価構造は刑事法の量刑判断の構造と類似する．媒介関数は個別の構成要件実現に関する量刑に，評価関数は手続上包括されるそれらのクラスに関する量刑に相当する．}．$\gamma,\beta$はこれより複雑なものでも単純なものでもあり得る．
+
+さて，規制集合の工学的妥当性に戻ろう．すなわち，
+\[
+    e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha\con{1}d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y}\cap\trgl{\arg\epsilon})
+\]
+である$ \orp{c,d} $の工学的妥当性を測るケースでは，$\alpha$は国籍保持者の集合で，$\gamma$の独立変項は，正規集合内部の何らかの規制集合の機能，または，その機能の阻止になるだろう．促進条件の阻止は抑制条件であると仮定すれば，規制集合の機能の阻止は結局抑制条件の集合になる．
+そして，（@）がマイナスである場合，$ \orp{e,d} $は工学的妥当性を欠く．しかし，$ e\subseteq g \subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha $については，プラスサイドも変動するからから工学的妥当性を欠くとは限らない．ただし，$e$の評価値をプラス転換して工学的妥当性を回復した$ e' $は，それが$ g $に埋め込まれた場合に新たなマイナス要因を生成しない限り，元の$g$よりも$ (g\cap\bar{e})\cup e' $の工学的妥当性を高める．
+例えば，$ x_1,x_2,z\in\varSigma^{\epsilon}\alpha $について，
 \[
     x_1\neq x_2\con{1}\orp{x_1,y},\orp{x_2,y}\in\mathrm{est}^\epsilon\con{1}\orp{z,y}\in \mathrm{abo}^\epsilon
 \]
@@ -154,11 +212,11 @@ $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u
 この場合，$z$の実行が，$x_1$の実行と$x_2$の実行のぞれぞれに依存するような特殊なケースを除いて，$y$の正規性は失われない．すなわち，$x_1$と$x_2$の実行による影響の両方を除去しようとする場合，片方がなくても$z$は実行されていたであろうから，$z$の実行は両者に依存しないことになる．また，一方の実行による影響のみを除去しようとする場合，$z$の実行は他方には依存しない．いずれにせよ，$y$の正規性は失われない．それゆえ，$ \varSigma^{\epsilon}\alpha $が（通常の法体系のように）正規性によって執行可能性を認定するシステムを含む場合には，$y$の執行可能性が前提される．すると，$z$はその機能を果たすことができない．
 このケースは当該正規集合または規制体系に関して，以下①②の情報を与える．
 \begin{enumerate}
-    \item [①] $x_1,x_2,z$が機能的に不整合である．
+    \item [①] $x_1,x_2$が相まって，$z$の機能を阻害する．
     \item [②] $z$の機能は，$x_1$または$x_2$の制定範囲内の規制（$y$など）を廃止する$z$自身の実行によるのではなく，$x_1$または$x_2$それ自体を廃止する規制$z'$によってよりよく果たされる．
 \end{enumerate}
-①②により，$ \varSigma^{\epsilon}\alpha $は少なくとも部分的に工学的妥当性を欠いていると言える．そして，$ \varSigma^{\epsilon}\alpha $から$z$を排除し，代わりに$z'$を追加すれば，その工学的妥当性を回復することができる\footnote{
-    この他，P規制の構成要件実現がS規制のそれを因果的に決定するような場合にも工学的妥当性に問題を生じる．また，このような機能的不整合や他の基準に基づく工学的妥当性を充足しないこと自体を構成要件として，端的にその規制集合のメンバーを廃止する，というN規制が体系内に含まれる可能性がある．憲法の人権規制等はそのようなN規制と解する余地がある．
+プラスサイドを考慮していないから，①だけで$ x_1,x_2 $を含むクラスが工学的妥当性を欠くとは言えない．しかし，$ \varSigma^{\epsilon}\alpha $から$z$を排除し，代わりに$z'$を追加することによって，他の条件が同じであれば，マイナスが減りプラスが増加する．したがって，いずれにせよその工学的妥当性を高めることができる\footnote{
+    この他，P規制の構成要件実現がS規制のそれを因果的に決定するような場合にも工学的妥当性に問題を生じる．また，何らかの評価構造に基づく工学的妥当性を充足しないこと自体を構成要件として，端的にその規制集合のメンバーを廃止する，というN規制が体系内に含まれる可能性がある．憲法の人権規制等はそのようなN規制と解する余地がある．
 }．
 
 なお，規制の工学的妥当性の判断は規制の機能という概念に頼っているが，この概念については概ね次のように説明できよう．
@@ -241,7 +299,7 @@ $ \alpha\subseteq\varSigma^{\epsilon}\alpha $であるから，$ k\fap 0 =\orp{u
     と仮定すると，$ k\fap 1 = \orp{u\fap 1,v\fap 1}\in \varSigma^{\epsilon}\alpha $．すると（※）により，$ u\fap 1\in\enf{\epsilon}(v\fap 1) $．
     
     以上を繰り返すと，[1] [2] $\dots$ という仮定のもとで，$ \tilde{k}\fap 0 = \orp{x,y}\in \varSigma^{\epsilon}\alpha $．
-    したがって，仮定[1] [2] $\dots$ が証拠に基づいて認定されれば，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $であることを認定できる．
+    したがって，仮定[1] [2] $\dots$ が証拠に基づいて認定されれば，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $であることを認定できる（さらに（※）により，$ x\in\enf{\epsilon}y $であることも認定できる）．
 \end{nom}
 
 なお，$ \orp{x,y}\in \varSigma^{\epsilon}\alpha $と，$ x\in\enf{\epsilon}y $の構成要件実現と修正条件実現とを連結する因果系列$ z $が存在して，
@@ -266,9 +324,9 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
     \]
     を前提として使用していない場合，適切な証拠の条件を欠く．ただし，\kagi{$ Gxy $}は$ x\in\exe{\epsilon} y $が有責に実現されたことを記述する文の位置を表わしている．
 \end{itemize}
-そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，$ s\in\exe{\epsilon} t $によって$ \exe{\epsilon} d $で認定される規制の修正条件が直接実現する場合\footnote{
-    例えば，金銭債務（金額占有の移転阻止に対するS規制）の修正条件を，債務者の何らかの財産の喪失であるとした場合，それを直接実現する規制は，執行裁判所の売却許可決定を含む執行手続によって制定される（売買の）引渡債務等である．
-}において，P規制$\orp{s,t}$か，または$ \mathrm{IS}\img\classab{\orp{s,t}} $のメンバーのS規制である．
+そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，ある$ w\subseteq\mathrm{REG}^\epsilon $について，$ w\subseteq\classab{\orp{s,t}:s\in\exe{\epsilon}t} $であることによって$ \exe{\epsilon}d $で認定される規制の修正条件が直接実現される場合において\footnote{
+    例えば，金銭債務（金額占有の移転阻止に対するS規制）の修正条件を債務者の何らかの財産の喪失であるとした場合，それの実行規制は，執行裁判所の売却許可決定を含む執行手続によって制定される（売買の）引渡債務等である．
+}，P規制$\orp{s,t}\in w$か，$ \mathrm{IS}\img\classab{\orp{s,t}} $のメンバーのS規制である．
 
 \subsubsection{言語的統制における正規性論証}
 \label{sssec:言語的統制における正規性論証}
@@ -295,10 +353,10 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
 \subsubsection{規制表明}
 \label{sssec:規制表明}
 
-任意の$y\in\mathrm{Reg}$と$b$（付帯条件）について，$ \breve{\epsilon}\fap \Lambda $において$ \app{\epsilon} y\cap b \subseteq \enf{\epsilon}y $であることを記述する論理式を，$b$に制限された$y$の制定ルールと言う．同様に，$ \app{\epsilon} y\cap b \subseteq \barl{(\enf{\epsilon}y)} $であることを記述する論理式を，$b$に制限された$y$の廃止ルールと言う．そして，制定ルールと廃止ルールを併せて規制ルールと言う．
-典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示する抽象体型\footnote{
-    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体の型である．
-}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示する抽象体型を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
+任意の$y\in\mathrm{Reg}$と$b$（付帯条件）について，$ \breve{\epsilon}\fap \Lambda $において$ \app{\epsilon} y\cap b \subseteq \enf{\epsilon}y $であることを記述する$\mathfrak{L}$の論理式を，$b$に制限された$y$の制定ルールと言う．同様に，$ \app{\epsilon} y\cap b \subseteq \barl{(\enf{\epsilon}y)} $であることを記述する$\mathfrak{L}$の論理式を，$b$に制限された$y$の廃止ルールと言う．そして，制定ルールと廃止ルールを併せて規制ルールと言う．
+典型的には，下記(1)または(2)の一般形式の\kagi{$ \delta $}に（$ \breve{\epsilon}\fap\Lambda $において）$y$を指示する$\mathfrak{L}$のクラス抽象体\footnote{
+    $ (\breve{\epsilon}\fap\Lambda)\exten p = x $である任意の論理式$p\in\mathfrak{L}$について，形式\kagi{$ \classab{\orp{\phi}:\psi} $}の\kagi{$ \phi $}に，$ \mathrm{var}\,p $の変項を間に\kagi{$ , $}を挟んで順次代入し，\kagi{$ \psi $}に$p$を代入した結果は，$ \breve{\epsilon}\fap\Lambda $において$ x $を指示するクラス抽象体である．
+}を，\kagi{$ \beta $}に（$ \breve{\epsilon}\fap\Lambda $において）$b$を指示する$\mathfrak{L}$のクラス抽象体を代入して（省略記法を）展開すると，今述べた制定ルールと廃止ルールが得られる．
 \setcounter{equation}{0}
 \begin{align}
     &\textbf{制定ルールの一般形式}\qquad \app{\epsilon}\delta\cap\beta\in\mathcal{P}(\enf{\epsilon}\delta)\\
@@ -337,8 +395,8 @@ $}を表わす．
 なる$ h,d,b,z,y $が存在する．そして，$ \iter{\mathrm{E}}{2}\fap(u\diamond\trgl{v}) $は，言語的トークンの集合$d$を生成して，公布範囲$h$のメンバーの結節点に対して，ある$c\in d$について$c \in \gamma$であることを蓋然的に認知させる因果系列である．ただし，ここでの$\gamma$は，$b$に制限された$y$の規制ルールを含意する式に解釈される言語的タイプについて，それのトークンのクラスとする．
 
 規制表明型のこの特徴づけは，原初的言語には還元できないにしても，もう少し精密化できる．
-まず，型文字\kagi{$ \tau $}で，$e$が言語的タイプ$p$のトークンであるような$ \orp{e,p} $のクラスを指示する抽象体の位置を表わすものとする．ただし，$ \tau\img\univ\subseteq \mathcal{P}(\timex{\mathbb{R}}{4}) $，そして，任意の$ p\in \breve{\tau} $はある同一の言語に属する．すなわち，$p$は当該言語の原始記号の有限系列であり，原始記号自体はそのトークンの集合である．また，同じ言語では1個のトークンは唯一のタイプを持つと考えられるから，$ \func\breve{\tau} $である．
-次に，$ f_1 $を，\ref{sssec:全体論的概念図式}の言語$\mathfrak{L}$の文$p$と，それに出現する述語を（\ref{sssec:全体論的概念図式}の1対1対応により）述語記号に置換して得られる論理式$q$について，そのような$\orp{p,q}$のクラスとする．すると，$ \func f_1\con{1}\func \brevel{(f_1)} $である．また，$ f_2 $を，$ l\in\breve{\tau}\img\univ $が$\mathfrak{L}$の文$p$に（適切に）解釈されるような$\orp{l,p}$のクラスとする．そして型文字\kagi{$ \theta $}で，$ f_2\resl f_1 $を指示する抽象体の位置を表わす．
+まず，型文字\kagi{$ \tau $}で，$e$が言語的タイプ$p$のトークンであるような$ \orp{e,p} $のクラスを指示する抽象体の位置を表わすものとする．ただし，$ \tau\img\univ\subseteq \mathcal{P}(\timex{\mathbb{R}}{4}) $，そして，任意の$ p\in \breve{\tau}\img\univ $はある同一の言語に属する．すなわち，$p$は当該言語の原始記号の有限系列であり，原始記号自体はそのトークンの集合である．また，同じ言語では1個のトークンは唯一のタイプを持つと考えられるから，$ \func\breve{\tau} $である．
+次に，$ f $を，\ref{sssec:全体的言語}の言語$\mathfrak{L}$について，$p\in\mathfrak{L}$が，$ l\in\breve{\tau}\img\univ $の適切な解釈（規格化・形式化）であるような$\orp{p,l}$のクラスとする．そして型文字\kagi{$ \theta $}で，$ f $の逆$\breve{f}$を指示する抽象体の位置を表わす．
 
 さて，$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $が規制表明型であるとき，
 \setcounter{equation}{0}
@@ -488,7 +546,7 @@ $ \tilde{u}\fap 3 = \orp{d,b,y}\con{1}\tilde{u}\fap 0 = \orp{z,y} $について�
    (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u'}\fap 3) = b\cup\classab{1}\con{1}
    (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u''}\fap 3) = b\cup\classab{2}.
 \]
-いずれにせよ，この状況で$ \tilde{u}\fap 0 = \orp{z,y}\con{1}x\in z $なる$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Ab}^\epsilon $を正規化するような体系は工学的妥当性を欠く．
+いずれにせよ，この状況で$ \tilde{u}\fap 0 = \orp{z,y}\con{1}x\in z $なる$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Ab}^\epsilon $を正規化するような体系は工学的妥当性に問題を生じる．
 他方，
 \[
     \tilde{u}\fap 0 = \orp{w,v'}\con{1}u'\in w\case{2}{1}{1}\tilde{u}\fap 0 = \orp{w,v''}\con{1}u''\in w
@@ -575,10 +633,10 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \label{sssec:当事者}
 
 最後に，制定規制の付帯条件によって規制の当事者が限定されるパターンと，それに関連する契約と呼ばれる構造について考える．
-まず，規制要素$ \orp{x,y} $の法益主体という概念を規定する．
+まず，規制要素$ \orp{x,\delta} $の法益主体という概念を規定する．
 そのために，準拠領域とそれが制御可能性を充たす規制類型との関係$\beta$と，独立変項の内部構造を取り出す関数$\gamma$を考える．つまり，
 \begin{gather*}
-    \beta\neq\Lambda\con{1}(g)(h)(\orp{g,h}\in\beta\case{1}{1}{1}g\in(\cty{\epsilon}h)\times\mathrm{Reg}),\\
+    \beta\neq\Lambda\con{1}(g)(h)(\orp{g,h}\in\beta\case{1}{1}{1}\orp{g,h}\in(\cty{\epsilon}h)\times\mathrm{Reg}),\\
     \gamma\neq\Lambda\con{1}(a)(a\in\arg \gamma \case{1}{1}{1}\gamma\fap a\in \trcl a).
 \end{gather*}
 すると，任意の$ a\in\arg \delta $について，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが$ \gamma\fap(\tilde{a}\fap 2)\neq\Lambda $に対する利益侵害であるとき，すなわち，
@@ -591,7 +649,7 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
     } \tag{i}
 \end{multline*}
 であるとき，かつそのときに限り，$ \gamma\fap(\tilde{x}\fap 2) $は$ \orp{x,\delta} $の法益主体である．
-(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制的な修正条件になっていることを表現している．それが真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
+(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制条件になっていることを表現している．それが真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
 そして，規制要素$ \orp{x,\delta} $の結節点$ \tilde{x}\fap 1 $と法益主体$ \gamma\fap(\tilde{x}\fap 2) $の組を，$ \orp{x,\delta} $の当事者と言う．
 
 さて，ある規制体系において契約と呼ばれる構造が成り立つには，以下のような規制表明型$v\in\mathrm{Es}^\epsilon $と規制表明型$t\in\mathrm{Es}^\epsilon\cup\mathrm{Ab}^\epsilon$が必要である．いずれもP類型である．まず，任意の$u\in \arg v$について，被制定類型$ \mathcal{R}\fap(\tilde{u}\fap 0) $は$t$であり，制定範囲$ \mathcal{L}\fap(\tilde{u}\fap 0) $の任意のメンバーの公布範囲は，$\tilde{u}\fap 1$を結節点に持つ．すなわち，
@@ -807,7 +865,7 @@ $ \iter{\mathrm{S}}{2}\fap m $から始める理由は，$ \mathcal{X}^\epsilon\
 \kagi{$
     \mathfrak{w}\epsilon
 $}は\kagi{$
-    (n)(2\in n \in\mathbb{N}\con{1}\trgl{\arg\epsilon}=\mathcal{W}\fap n)
+    (\imath n)(2\in n \in\mathbb{N}\con{1}\trgl{\arg\epsilon}=\mathcal{W}\fap n)
 $}を表わす,
 \end{df}
 \noindent とすると，単に，ある$ m\in\mathbb{N} $について，
@@ -866,5 +924,5 @@ $ x\in\trcl x $と仮定すると，ある$n$が存在して，$ x\in \iter{(\la
 \label{sec:結論}
 
 $ \orp{x,y} $が規制であるということは，$ \orp{x,y}\in\mathrm{REG}^\epsilon $であるということである．それは解釈空間に相対的な因果的構造であり，これまでに定義された通りの構造である．原初的言語への還元によって，規制の概念それ自体には曖昧さは存在しない．すべての文脈依存性は，解釈空間を指示するクラス抽象体の代わりとなる型文字\kagi{$ \epsilon $}に吸収される．
-このような構造としての規制は結局は物理的システムであり，当然ではあるがそれの工学的妥当性とは区別される．あるいは，規制類型の規定条件を構成する構造解析の作業と，規制の工学的妥当性を検証することは，異なるプロジェクトに属する．後者は主として，当該規制が属する規制体系または正規集合において，それを含む部分クラスの機能的整合性によって測られる．
+このような構造としての規制は結局は物理的システムであり，当然ではあるがそれの工学的妥当性とは区別される．あるいは，規制類型の規定条件を構成する構造解析の作業と，規制の工学的妥当性を検証することは，異なるプロジェクトに属する．後者は当該規制が属する規制体系または正規集合に相対的な評価構造によって測られる．
 また，規制体系または正規集合には2種類の階層構造が設定される．制定階層はこれらの集合を定義する条件であり，その階層を辿ることで個別の規制の執行可能性の認定を代替し，言語的統制を実現する．もう一つの階層構造である内部階層は，集合の累積的階層と連動することによって，規制類型の存在論を確定する．そして，解釈空間$\epsilon$が設定する対象領域の階層は，規制体系の階層の深さを常に上回るものと想定される．
