@@ -181,32 +181,41 @@ $}を表わす．
 これに対して，$ \trgl{\delta}\fap 1 = \barl{\classab{\orp{e,a}:\text{$e$は$a$の空間的位置の変化}}}\cap \msec{(\arg\delta)}{1} $等である場合，身体運動の不在を介した不作為による結果惹起である．なお，ある身体運動を惹起する刺激過程とそれの不在を惹起する刺激過程は同一ではない．
 
 次に，$ \tildel{\trgl{\delta}}\fap 0 $を$\delta$の修正条件と言い，（制御可能性において）制御方向の違いに応じて構成要件の実現を促進するか（促進条件），または，それを抑制する機能を持つ（抑制条件）．そして，$ x\in\arg \delta $について，$\tilde{x}\fap 0$はそれについて修正条件が実現すべき対象（修正領域）である．
-修正条件の内容は規制類型ごとに異なるが，
+修正条件の内容は規制類型ごとに異なるが，その一般形式を次のように考えることができる．
+ある$j\in\arg\delta$について，$\trgl{\delta}\fap j$に条件$\beta$の（様々なレベルにおける）蓋然性を設定する場合，
+\[
+    \trgl{\delta}\fap j = \classab{\orp{b,m}:b\in\prob{\beta}{(m\uphl\epsilon)}}\cap\mser{(\arg\delta)}{0}
+\]
+とした上で，蓋然性レベルを$ \arg\delta\subseteq\classab{x:\mathcal{R}\fap(x\fap j)\subseteq\indx{\epsilon}} $等，適用条件で制限する\footnote{
+    特定の蓋然性レベル$\mu\subseteq\indx{\epsilon}$に限定するなら，$ \trgl{\delta}\fap j = \prob{\beta}{(\mu\uphl\epsilon)}\cap\mser{(\arg\delta)}{j}．$としてもよい．
+}．
+次に，$j = \breve{\mathrm{S}}\fap\arg\delta$であり，したがって，$ \trgl{\delta}\fap j $が修正条件である場合，上記の\kagi{$ \beta $}に以下の代入を行って，修正条件の一般形式を得る．すなわち，
 \[
     (\exists n)(n\in\mathbb{N}\con{1}\union{(\sigma\img\univ)}\subseteq\timex{\univ}{n})
 \]
-であるような$ \sigma\in\mathrm{Seq} $について，$ \tildel{\trgl{\delta}}\fap 0 = \mathfrak{E}\resl\sigma $を基本的な形式とみなすことができる．
-例えば，厳密な規定条件ではないが，系列要素を刑罰類型として，
+であるような$ \sigma\in\mathrm{Seq} $について，$\beta = \mathfrak{E}\resl\sigma$と置く．
+
+例えば，厳密な規定ではないが，$\sigma$の系列要素を刑罰類型として，
 \begin{gather*}
     \sigma\fap 2 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$円の罰金}},\\
     \sigma\fap 3 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$月の禁錮}},\\
     \sigma\fap 4 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$月の懲役}},\\
     \sigma\fap 5 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する死刑}\con{1}n=\Lambda}
 \end{gather*}
-と置く．すると，$ \orp{\orp{12,a,e},4}\in \mathfrak{E}\resl\sigma $は，$e\subseteq\timex{\mathbb{R}}{4}$が$a$に対する1年間の懲役であることを意味する\footnote{$e$は出来事であると想定されているが，いずれにせよ$ \timex{\mathbb{R}}{4} $の部分クラスであるから，人やその他の物理的対象と出来事の区別は存在論的に重要ではない．}．
-
-そして，修正領域に関して，$ \arg\delta $による以下のような制限を考えることができる．すなわち，
-$ x\in\arg\delta $について，$ \tilde{x}\fap 0 = \orp{\orp{e,a,n},i} $なる$ e,a,n,i $が存在して，
+と置く．すると，$ \orp{\orp{e,a,12},4}\in \mathfrak{E}\resl\sigma $は，$e\subseteq\timex{\mathbb{R}}{4}$が$a$に対する1年間の懲役であることを意味する\footnote{$e$は出来事であると想定されているが，いずれにせよ$ \timex{\mathbb{R}}{4} $の部分クラスであるから，人やその他の物理的対象と出来事の区別は存在論的に重要ではない．}．
+次に，修正領域に関して，$ \arg\delta $による以下のような制限を考えることができる．すなわち，
+$ x\in\arg\delta $について，$ \mathcal{L}\fap(\tilde{x}\fap 0) = \orp{\orp{e,a,n},i} $なる$ e,a,n,i $と，$\mathcal{R}\fap(\tilde{x}\fap 0) = m $が存在して，
 \begin{gather*}
     e,a\subseteq\timex{\mathbb{R}}{4}\con{1}a = \tilde{x}\fap 1\con{1}n\subseteq\mathbb{N},\\
     1\in i \in 6\con{1}
     (i = 2\case{1}{1}{1} n\leq 1000000)\con{1}
     (i = 3\case{1}{1}{1}n\leq 60)\con{1}
-    (i = 4\case{1}{1}{2}n\leq 240 \case{2}{1}{1}n = \mathbb{N}).
+    (i = 4\case{1}{1}{2}n\leq 240 \case{2}{1}{1}n = \mathbb{N}),\\
+    m\subseteq \indx{\epsilon}.
 \end{gather*}
-このような適用条件によると，$ \tilde{x}\fap 0\in \tildel{\trgl{\delta}}\fap 0 $は，100万円以下の罰金，5年以下の禁錮，20年以下の懲役，無期懲役（$ n = \mathbb{N} $），死刑，のいずれかになる．なお，故意過失等の有責性の状態に応じてさらに修正条件の範囲が細分化され得るが，それは制御可能性の問題である．
+このような適用条件によると，$ \tilde{x}\fap 0\in \tildel{\trgl{\delta}}\fap 0 $は，100万円以下の罰金，5年以下の禁錮，20年以下の懲役，無期懲役（$ n = \mathbb{N} $），死刑，のいずれかの（レベル$m$の）蓋然性になる．
 
-$\delta$の執行可能性$\enf{\epsilon}\delta$は，$\delta$の構成要件実現によって$\delta$の修正条件（の蓋然性）が実現される因果的構造である．すなわち，
+さて，$\delta$の執行可能性$\enf{\epsilon}\delta$は，単に，$\delta$の構成要件実現によって$\delta$の修正条件が実現される因果的構造である．すなわち，
 
 \begin{df}
 \label{df:執行可能性}
@@ -214,29 +223,10 @@ $\delta$の執行可能性$\enf{\epsilon}\delta$は，$\delta$の構成要件実
     \enf{\epsilon}\delta
 $}は\kagi{$
     \classab{x:
-        (\exists n)(\Lambda\neq n\subseteq\mathfrak{h}\epsilon\con{1}
-        \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}}
-        )
+        \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\tildel{\trgl{\delta}}\fap 0}
     }
 $}を表わす．
 \end{df}
-
-\noindent この定義により，$ x\in\enf{\epsilon}\delta\cap\exe{\epsilon}\delta $の場合，ある蓋然性レベル$n\in\indx{\epsilon}$について，$ \tilde{x}\fap 0\in \prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon} $．
-したがって，仮に$ x\notin\exe{\epsilon}\delta $であったなら，$\tilde{x}\fap 0\notin \prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}$．しかし，その仮定的状況においても，より低い蓋然性レベル$m(n\in m \in \indx{\epsilon})$について，$ \tilde{x}\fap 0\in (\tildel{\trgl{\delta}}\fap 0)^{m\uphl\epsilon} $ではあったかもしれない．つまり，レベル$n$の蓋然性は構成要件実現に依存しているが，それより低いレベル$m$の蓋然性はそうではない．
-このような場合に執行可能性を否定すべきであるならば，$x\in\enf{\epsilon}\delta$であることが，
-\[
-   \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\prob{(\tildel{\trgl{\delta}}\fap 0)}{\indx{\epsilon}\uphl\epsilon}}
-\]
-であることを意味するように，D \ref{df:執行可能性}を変更する必要がある．しかし，$ x\in\exe{\epsilon}\delta $である状況では，実質的に全ての有意レベル$ \Lambda\neq i\in\indx{\epsilon} $の蓋然性に対して因果関係を要求することになるから，執行可能性（と制御可能性）の内容としては過剰と思われる．これに対して，$\delta$の構成要件の実現として，特定のレベル$\mu\subseteq\indx{\epsilon}$の蓋然性の惹起が要求されることはあり得る．
-例えば，
-\[
-    \tildel{\trgl{\delta}}\fap 2 = \prob{y}{(\mu\uphl\epsilon)}\cap\mser{(\arg\delta)}{2}．
-\]
-逆に，執行可能性におけるのと同様に，有意レベルのいずれかの段階の蓋然性でよいという趣旨であれば，
-\[
-    \tildel{\trgl{\delta}}\fap 2 = \classab{\orp{x,n}:x\in\prob{y}{(n\uphl\epsilon)}\con{1}n\in\mathbb{N}}\cap\mser{(\arg\delta)}{2}
-\]
-とした上で，蓋然性レベルを，$ \arg\delta\subseteq\classab{x:\mathcal{R}\fap(\tilde{x}\fap 2)\subseteq\indx{\epsilon}} $等，適用条件で制限する．
 
 \subsection{制御可能性}
 \label{ssec:制御可能性}
