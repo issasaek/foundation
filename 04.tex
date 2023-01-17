@@ -307,11 +307,15 @@ $ \tilde{x}\fap 1 = \tilde{w}\fap 1 $である$w$と，$ \app{\epsilon}\delta\su
 \begin{align*}
     \orp{x,\exe{\epsilon}\delta\cap\enf{\epsilon}\delta}\to_{\epsilon}\orp{w,\gamma}
 \end{align*}
-であれば，$ x\in\cty{\epsilon}\delta $．さらにこのケースで，仮に$ y_1 = \app{\epsilon}{(\delta\uphr y_1)} $であるなら，$ \gamma = \cs{\epsilon}(\delta\uphr y_1)\cap \trgl{\arg\epsilon} $．そして多分，
+であれば，$ x\in\cty{\epsilon}\delta $．さらにこのケースで，$\trgl{\delta}=\trgl{v}\con{1}\app{\epsilon}v = y_1$なる$v\in\mathrm{Reg}$を考えると，
 \[
-    x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta\case{1}{1}{1}x\in \exe{\epsilon}(\delta\uphr y_1)\cap\enf{\epsilon}(\delta\uphr y_1).
+    \gamma = \cs{\epsilon}v\cap \trgl{\arg\epsilon}．
 \]
-すると，$ x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta $である場合，それと同期している$ \delta\uphr y_1 $の規制随伴性によって，$ \cs{\epsilon}(\delta\uphr y_1) $が構築される，とも言うことができる．
+また通常の場合，
+\[
+    x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta\case{1}{1}{1}x\in \exe{\epsilon}v\cap\enf{\epsilon}v.
+\]
+すると，$ x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta $である場合，それと同期している$ v $の執行随伴性によって，$ \cs{\epsilon}v $が構築される，とも言うことができる．
 
 ところで，制御可能性の概念の明確さと，それを立証したり反証する容易さは当然別のことである．
 制御可能性の認定プロセスは構成要件該当性のそれと共に，執行可能性の因果関係が何らかの認知システムにより因果的に媒介されるケースにおいて，その因果連鎖の中に埋め込まれる．
