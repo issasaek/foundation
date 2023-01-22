@@ -7,33 +7,38 @@
 \label{sssec:高次類型}
 
 他の規制類型に係る執行可能性の実現（の蓋然性）を修正条件に持つような規制類型を「制定類型」，逆に執行可能性の阻止（の蓋然性）を修正条件に持つ規制類型を「廃止類型」，両者を併せて「高次類型」と言う．
-$ v $が高次類型であるというのは次のことを意味する．まず$ u\in\arg v $ならば，
+$ v $が高次類型であるとき，任意の$ u\in\arg v $について，
 \[
-    \tilde{u}\fap 0 = \orp{z,y}\con{1}z\subseteq\app{\epsilon} y\con{1}y\in\mathrm{Reg}
+    \tilde{u}\fap 0 = \orp{\orp{z,y},i}\con{1}z\subseteq\app{\epsilon}y\con{1}y\in\mathrm{Reg}\con{1}0\in i\subseteq\indx{\epsilon}
 \]
-なる$ z,y $が存在する．つまり，$z$は規制類型$y$の適用条件を充たす準拠領域のクラスである．そして，$v$が制定類型ならば，
-\[
-    \tildel{\trgl{v}}\fap 0 = \classab{\orp{z,y}:z\subseteq\enf{\epsilon}y}\cap\mser{(\arg v)}{0}.
-\]
-すると，$ \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0 $であるとき，$z$のすべてのメンバーについて$y$の執行可能性が成立する\footnote{
+なる$ z,y,i $が存在する．この事実を表現する省略記法として，
+\begin{df}
+\label{df:高次類型}
+\kagi{$
+    \mathrm{Ho}^{\epsilon}
+$}は\kagi{$
+    \mathrm{Reg}\cap\classab{v:
+        \mser{(\arg v)}{0}\subseteq \classab{\orp{\orp{z,y},i}:z\subseteq \app{\epsilon}y\con{1}y\in\mathrm{Reg}\con{1}0\in i\subseteq\indx{\epsilon}}
+    }
+$}を表わす．
+\end{df}
+\noindent 次に，$v\in\mathrm{Ho}^{\epsilon}$が制定類型であり，かつ，$ \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0 $であるとき，$z\subseteq\enf{\epsilon}y$であるレベル$i$の蓋然性が成立する．
+他方，$v$が廃止類型ならば，$z\subseteq\barl{(\enf{\epsilon}y)}$であるレベル$i$の蓋然性が成立する．
+したがって，以下の定義により，制定類型と廃止類型それぞれのクラスが導入される\footnote{
     $ \mser{(\arg v)}{0} $への制限は$ \tildel{\trgl{v}}\fap 0 $の存在を確保するためである．
-}．他方，$v$が廃止類型ならば，
-\[
-    \tildel{\trgl{v}}\fap 0 = \classab{\orp{z,y}:z\subseteq\barl{(\enf{\epsilon}y)}}\cap\mser{(\arg v)}{0}.
-\]
-すると，$ \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0 $であるとき，$z$のすべてのメンバーについて$y$の執行可能性の成立が阻止される．
-
-以下の定義により，制定類型と廃止類型それぞれのクラスが導入される．
+    同様に，$\enf{\epsilon}y$及び$\barl{(\enf{\epsilon}y)}$自体は存在する保証がないため，何らからの集合$h$との共通部分を採用している．
+}．
 
 \begin{df}
 \label{df:制定類型}
 \kagi{$
     \mathrm{Es}^\epsilon
-$}は\kagi{$
-    \mathrm{Reg}\cap\classab{
-        v:\tildel{\trgl{v}}\fap 0 = \classab{\orp{z,y}:z\subseteq\enf{\epsilon}y}\cap\mser{(\arg v)}{0}\con{1}
-        \\\hfill
-        \mser{(\arg v)}{0}\subseteq \classab{\orp{z,y}:z\subseteq\app{\epsilon} y}\uphr\mathrm{Reg}
+$}は，\\\hfill
+\kagi{$
+    \mathrm{Ho}^{\epsilon}\cap\classab{v:
+        \tildel{\trgl{v}}\fap 0 = \classab{\orp{\orp{z,y},i}:
+            (\exists h)[z\in\prob{\mathcal{P}(h\cap\enf{\epsilon}y)}{i\uphl\epsilon}]
+        }\cap\mser{(\arg v)}{0}
     }
 $}を表わす，
 \end{df}
@@ -42,42 +47,46 @@ $}を表わす，
 \label{df:廃止類型}
 \kagi{$
     \mathrm{Ab}^\epsilon
-$}は\kagi{$
-    \mathrm{Reg}\cap\classab{
-        v:\tildel{\trgl{v}}\fap 0 = \classab{\orp{z,y}:z\subseteq\barl{(\enf{\epsilon}y)}}\cap\mser{(\arg v)}{0}\con{1}
-        \\\hfill
-        \mser{(\arg v)}{0}\subseteq \classab{\orp{z,y}:z\subseteq\app{\epsilon} y}\uphr\mathrm{Reg}
+$}は，\\\hfill
+\kagi{$
+    \mathrm{Ho}^{\epsilon}\cap\classab{v:
+        \tildel{\trgl{v}}\fap 0 = \classab{\orp{\orp{z,y},i}:
+            (\exists h)[z\in\prob{\mathcal{P}(h\cap\barl{(\enf{\epsilon}y)})}{i\uphl\epsilon}]
+        }\cap\mser{(\arg v)}{0}
     }
 $}を表わす．
 \end{df}
 
-$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $について，$ \tilde{u}\fap 0 = \orp{z,y} $と仮定する．
-この場合，$z$が何であるかは適用条件$ \app{\epsilon} v $によって明示的に限定される他，制御可能性と執行可能性によっても限定される．例えば，仮に$\arg v$において$ z\subseteq\arg y $という限定しかないなら，$z$が単一クラスであっても$v$の適用条件を充たす．しかし，後述の規制ルールの付帯条件で明示的に限定されない限り，$z$が小さすぎる場合には$ u\notin\cty{\epsilon}v $であると考えられる．
-逆に，$ z = \app{\epsilon} y $である等$z$が大きすぎる場合は，$u\in\exe{\epsilon} v$であっても，おそらく$ z\subseteq\enf{\epsilon}y $である有意なレベルの蓋然性が成立しない．つまり，$ u\notin\enf{\epsilon}v $．一般に$x\in z$が制定時点から時間的にあまりに遠い場合，$x\in\enf{\epsilon}y$である蓋然性は有意レベルを下回る．
+$\orp{u,v}\in\app{\epsilon}v\times\mathrm{Es}^{\epsilon}$について，$ z = \iter{\mathcal{L}}{2}\fap(\tilde{u}\fap 0)$は$\orp{u,v}$の「制定範囲」と言われる（$v\in\mathrm{Ab}^{\epsilon}$なら「廃止範囲」）．
+$z$が何であるかは適用条件$ \app{\epsilon} v $によって明示的に限定される他，制御可能性と執行可能性によっても限定される．例えば，仮に$\arg v$において$ z\subseteq\app{\epsilon}y $という限定しかないなら，$z$が単一クラスであっても$\app{\epsilon}v$を充たし得る．しかし，後述の規制ルールの付帯条件で明示的に限定されない限り，$z$が小さすぎる場合には$ u\notin\cty{\epsilon}v $であると考えられる．
+逆に，$ z = \app{\epsilon} y $である等$z$が大きすぎる場合は，$u\in\exe{\epsilon} v$であっても，おそらく$ z\subseteq\enf{\epsilon}y $である有意なレベルの蓋然性が成立しない．したがって，$ u\notin\enf{\epsilon}v $．一般に$x\in z$が制定時点から時間的にあまりに遠い場合，$x\in\enf{\epsilon}y$である蓋然性は有意レベルを下回る．
 ただし，通常の法システムの場合，執行可能性の証明は正規性の証明で代替されるであろうから，少なくとも認定上は（$ \orp{u,v} $の正規性が認定される限り），$ u\in\enf{\epsilon}v $であることが前提される．以上のことは必要な変更の上で廃止類型にも当てはまる．
 
-次に，$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $について，$ \tilde{u}\fap 0 = \orp{z,y}\con{1}u\in\exe{\epsilon} v\con{1}x\in z $であると仮定する．
+改めて，$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $について，$ u\in\exe{\epsilon} v\con{1}\mathcal{L}\fap(\tilde{u}\fap 0) = \orp{z,y}\con{1}x\in z $であると仮定する．
 制定関係$ \mathrm{est}^\epsilon $は，この場合における，$ \orp{u,v} $の$ \orp{x,y} $に対する関係である．すなわち，
 
 \begin{df}
 \label{df:制定関係}
 \kagi{$
     \mathrm{est}^\epsilon
-$}は\kagi{$
-    \classab{\orp{\orp{u,v},\orp{x,\mathcal{R}\fap(\tilde{u}\fap 0)}}:
-        \orp{u,v}\in\mathrm{REG}^\epsilon\cap(\exe{\epsilon} v\times\mathrm{Es}^\epsilon)\con{1}x\in\mathcal{L}\fap(\tilde{u}\fap 0)
+$}は，\\\hfill
+\kagi{$
+    \classab{\orp{\orp{u,v},\orp{x,(\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0)}}:
+        \orp{u,v}\in\mathrm{REG}^\epsilon\cap(\exe{\epsilon} v\times\mathrm{Es}^\epsilon)\con{1}x\in\iter{\mathcal{L}}{2}\fap(\tilde{u}\fap 0)
     }
 $}を表わす．
 \end{df}
-\noindent 制定関係と同様にして廃止関係$\mathrm{est}^\epsilon$を定義する．
+
+\noindent 制定関係と同様にして廃止関係$\mathrm{abo}^\epsilon$を定義する．
 
 \begin{df}
 \label{df:廃止関係}
 \kagi{$
     \mathrm{abo}^\epsilon
-$}は\kagi{$
-    \classab{\orp{\orp{u,v},\orp{x,\mathcal{R}\fap(\tilde{u}\fap 0)}}:
-        \orp{u,v}\in\mathrm{REG}^\epsilon\cap(\exe{\epsilon} v\times\mathrm{Ab}^\epsilon)\con{1}x\in\mathcal{L}\fap(\tilde{u}\fap 0)
+$}は，\\\hfill
+\kagi{$
+    \classab{\orp{\orp{u,v},\orp{x,(\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0)}}:
+        \orp{u,v}\in\mathrm{REG}^\epsilon\cap(\exe{\epsilon} v\times\mathrm{Ab}^\epsilon)\con{1}x\in\iter{\mathcal{L}}{2}\fap(\tilde{u}\fap 0)
     }
 $}を表わす．
 \end{df}
@@ -135,17 +144,14 @@ $}を表わす．
 ところで，$ \mathrm{est}^\epsilon $及び$ \mathrm{abo}^\epsilon $の左域は$ \mathrm{REG}^\epsilon $の部分クラスである．D \ref{df:制定関係}及びD \ref{df:廃止関係}からこの制限を外すと，例えば，$\mathcal{L}\fap z\notin \enf{\epsilon}(\mathcal{R}\fap z)$，つまり執行可能性を持たない外形的な廃止規制$z$について，$\orp{z,y}\in\mathrm{abo}^\epsilon$であり得る．するとこの場合，$y$の正規性が失われる．しかし，$y$はいわば無効な廃止実行の対象であるから，依然として正規集合そして規制体系の成員であるとする方がよい．
 
 次に，D \ref{df:正規集合}で暗に示されているが，制定関係と廃止関係は同一の対象に対して競合し得る．例えば，
-$ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u,v},\orp{a,b}}\in\mathrm{est}^\epsilon\con{1}\orp{\orp{s,t},\orp{a,b}}\in \mathrm{abo}^\epsilon $．ここで，
-\[
-    \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0\con{1}\tilde{s}\fap 0\in \tildel{\trgl{t}}\fap 0
-\]
-であると仮定する．すると，定義により，
-\[
-    \mathcal{R}\fap(\tilde{u}\fap 0) = \mathcal{R}\fap(\tilde{s}\fap 0) = b \con{1}
-    a\in \mathcal{L}\fap(\tilde{u}\fap 0)\subseteq \enf{\epsilon}b \con{1}
-    a\in \mathcal{L}\fap(\tilde{s}\fap 0)\nsubseteq \enf{\epsilon}b
-\]
-であるから，$ a\in\enf{\epsilon}b\con{1}a\notin\enf{\epsilon}b $となって矛盾が生じる．つまり，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方は蓋然的でなければならない．ただし，$ \prob{\beta}{1\uphl\epsilon}=\beta $であるからレベル1の蓋然性は除かれる．
+$ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u,v},\orp{a,b}}\in\mathrm{est}^\epsilon\con{1}\orp{\orp{s,t},\orp{a,b}}\in \mathrm{abo}^\epsilon $とすると，定義により，
+\begin{gather*}
+    \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0\con{1}\tilde{s}\fap 0\in \tildel{\trgl{t}}\fap 0,\\
+    (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0) = (\mathcal{R}\resl\mathcal{L})\fap(\tilde{s}\fap 0) = b \con{1}
+    a\in \iter{\mathcal{L}}{2}\fap(\tilde{u}\fap 0)\subseteq \enf{\epsilon}b \con{1}
+    a\in \iter{\mathcal{L}}{2}\fap(\tilde{s}\fap 0)\nsubseteq \enf{\epsilon}b.
+\end{gather*}
+それゆえ，仮に$ \mathcal{R}\fap(\tilde{u}\fap 0)=\mathcal{R}\fap(\tilde{s}\fap 0)= 1 $ならば，$ a\in\enf{\epsilon}b\con{1}a\notin\enf{\epsilon}b $となって矛盾が生じる．つまり，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方の蓋然性レベルは$1$未満でなければならない．
 
 \subsubsection{工学的妥当性}
 \label{sssec:工学的妥当性}
