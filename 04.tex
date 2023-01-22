@@ -181,16 +181,25 @@ $}を表わす．
 これに対して，$ \trgl{\delta}\fap 1 = \barl{\classab{\orp{e,a}:\text{$e$は$a$の空間的位置の変化}}}\cap \msec{(\arg\delta)}{1} $等である場合，身体運動の不在を介した不作為による結果惹起である．なお，ある身体運動を惹起する刺激過程とそれの不在を惹起する刺激過程は同一ではない．
 
 次に，$ \tildel{\trgl{\delta}}\fap 0 $を$\delta$の修正条件と言い，（制御可能性において）制御方向の違いに応じて構成要件の実現を促進するか（促進条件），または，それを抑制する機能を持つ（抑制条件）．そして，$ x\in\arg \delta $について，$\tilde{x}\fap 0$はそれについて修正条件が実現すべき対象（修正領域）である．
-修正条件の内容は規制類型ごとに異なるが，その一般形式を次のように考えることができる．
-ある$j\in\arg\delta$について，$\trgl{\delta}\fap j$に条件$\beta$の（様々なレベルにおける）蓋然性を設定する場合，
+修正条件の内容は規制類型ごとに異なるが，その一般形式を以下のように考えることができる．
+前提概念として，$b\in\beta$であるレベル$m$の蓋然性を持つ$\orp{b,m}$のクラスを定義する．
+\begin{df}
+\label{df:危険測度関係}
+\kagi{$
+    \beta^{::\epsilon}
+$}は\kagi{$
+    \classab{\orp{b,m}:b\in\prob{\beta}{m\uphl\epsilon}\con{1}0\in m\in\epsilon\img\univ}
+$}を表わす．
+\end{df}
+\noindent そして，ある$j\in\arg\delta$について，$\trgl{\delta}\fap j$に条件$\beta$の（様々なレベルにおける）蓋然性を設定する場合，
 \[
-    \trgl{\delta}\fap j = \classab{\orp{b,m}:b\in\prob{\beta}{(m\uphl\epsilon)}}\cap\mser{(\arg\delta)}{0}
+    \trgl{\delta}\fap j = \beta^{::\epsilon}\cap\mser{(\arg\delta)}{0}
 \]
 とした上で，蓋然性レベルを$ \arg\delta\subseteq\classab{x:\mathcal{R}\fap(x\fap j)\subseteq\indx{\epsilon}} $等，適用条件で制限する\footnote{
     特定の蓋然性レベル$\mu\subseteq\indx{\epsilon}$に限定して，$ \trgl{\delta}\fap j = \prob{\beta}{(\mu\uphl\epsilon)}\cap\mser{(\arg\delta)}{j}$，とすることも考えられる．しかし，$i\in \mu$について，レベル$i$の蓋然性を惹起しているが，レベル$\mu$の蓋然性は先行条件に依存していないケースでは，$\app{\epsilon}\delta$が阻却されるか，または$\enf{\epsilon}\delta$（D \ref{df:執行可能性}）が阻却されてしまうから（$\trgl{\delta}\fap j$が修正条件の場合），結局は不都合を生じる．
     % 死ぬ直前の人への殺人未遂の事例で，仮に行動がなくても死の有意危険があるケースを考える．当該行動はレベル$\indx{\epsilon}$の危険を因果的に決定していないが，さらに高められた死の危険を因果的に決定している．
 }．
-次に，$j = \breve{\mathrm{S}}\fap\arg\delta$であり，したがって，$ \trgl{\delta}\fap j $が修正条件である場合，上記の\kagi{$ \beta $}に以下の代入を行って，修正条件の一般形式を得る．すなわち，
+次に，$j = \breve{\mathrm{S}}\fap\arg\delta$であり，したがって，$ \trgl{\delta}\fap j $が修正条件である場合，上記の\kagi{$ \beta $}に以下の代入を行って，修正条件の一般形式を得る（$\delta$が後述の高次類型であるケースを除く）．すなわち，
 \[
     (\exists n)(n\in\mathbb{N}\con{1}\union{(\sigma\img\univ)}\subseteq\timex{\univ}{n})
 \]

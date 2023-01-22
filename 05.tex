@@ -26,19 +26,17 @@ $}を表わす．
 他方，$v$が廃止類型ならば，$z\subseteq\barl{(\enf{\epsilon}y)}$であるレベル$i$の蓋然性が成立する．
 したがって，以下の定義により，制定類型と廃止類型それぞれのクラスが導入される\footnote{
     $ \mser{(\arg v)}{0} $への制限は$ \tildel{\trgl{v}}\fap 0 $の存在を確保するためである．
-    同様に，$\enf{\epsilon}y$及び$\barl{(\enf{\epsilon}y)}$自体は存在する保証がないため，何らからの集合$h$との共通部分を採用している．
 }．
 
 \begin{df}
 \label{df:制定類型}
 \kagi{$
     \mathrm{Es}^\epsilon
-$}は，\\\hfill
-\kagi{$
-    \mathrm{Ho}^{\epsilon}\cap\classab{v:
-        \tildel{\trgl{v}}\fap 0 = \classab{\orp{\orp{z,y},i}:
-            (\exists h)[z\in\prob{\mathcal{P}(h\cap\enf{\epsilon}y)}{i\uphl\epsilon}]
-        }\cap\mser{(\arg v)}{0}
+$}は\kagi{$
+    \mathrm{Ho}^{\epsilon}\cap
+    \classab{v:
+        \tildel{\trgl{v}}\fap 0 = 
+        (\trgl{\arg\epsilon}\cap\classab{\orp{z,y}:z\subseteq\enf{\epsilon}y})^{::\epsilon}\cap\mser{(\arg v)}{0}
     }
 $}を表わす，
 \end{df}
@@ -47,12 +45,11 @@ $}を表わす，
 \label{df:廃止類型}
 \kagi{$
     \mathrm{Ab}^\epsilon
-$}は，\\\hfill
-\kagi{$
-    \mathrm{Ho}^{\epsilon}\cap\classab{v:
-        \tildel{\trgl{v}}\fap 0 = \classab{\orp{\orp{z,y},i}:
-            (\exists h)[z\in\prob{\mathcal{P}(h\cap\barl{(\enf{\epsilon}y)})}{i\uphl\epsilon}]
-        }\cap\mser{(\arg v)}{0}
+$}は\kagi{$
+    \mathrm{Ho}^{\epsilon}\cap
+    \classab{v:
+        \tildel{\trgl{v}}\fap 0 = 
+        (\trgl{\arg\epsilon}\cap\classab{\orp{z,y}:z\subseteq\barl{(\enf{\epsilon}y)}})^{::\epsilon}\cap\mser{(\arg v)}{0}
     }
 $}を表わす．
 \end{df}
@@ -147,11 +144,9 @@ $}を表わす．
 $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u,v},\orp{a,b}}\in\mathrm{est}^\epsilon\con{1}\orp{\orp{s,t},\orp{a,b}}\in \mathrm{abo}^\epsilon $とすると，定義により，
 \begin{gather*}
     \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0\con{1}\tilde{s}\fap 0\in \tildel{\trgl{t}}\fap 0,\\
-    (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0) = (\mathcal{R}\resl\mathcal{L})\fap(\tilde{s}\fap 0) = b \con{1}
-    a\in \iter{\mathcal{L}}{2}\fap(\tilde{u}\fap 0)\subseteq \enf{\epsilon}b \con{1}
-    a\in \iter{\mathcal{L}}{2}\fap(\tilde{s}\fap 0)\nsubseteq \enf{\epsilon}b.
+    \tilde{u}\fap 0 = \orp{\orp{c,b},i}\con{1}\tilde{s}\fap 0 = \orp{\orp{c',b},i'}\con{1}a\in c\cap c',
 \end{gather*}
-それゆえ，仮に$ \mathcal{R}\fap(\tilde{u}\fap 0)=\mathcal{R}\fap(\tilde{s}\fap 0)= 1 $ならば，$ a\in\enf{\epsilon}b\con{1}a\notin\enf{\epsilon}b $となって矛盾が生じる．つまり，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方の蓋然性レベルは$1$未満でなければならない．
+なる$c,c',i,i'$が存在する．さらに，$i = i' = 1$であると仮定すると，$c\subseteq\enf{\epsilon}b\con{1}c'\subseteq\barl{(\enf{\epsilon}b)}$．それゆえ，$a\in\enf{\epsilon}b\cap\barl{(\enf{\epsilon}b)} $となって矛盾が生じる．したがって，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方の蓋然性レベルは$1$未満である．
 
 \subsubsection{工学的妥当性}
 \label{sssec:工学的妥当性}
