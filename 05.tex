@@ -148,31 +148,49 @@ $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u
 \end{gather*}
 なる$c,c',i,i'$が存在する．さらに，$i = i' = 1$であると仮定すると，$c\subseteq\enf{\epsilon}b\con{1}c'\subseteq\barl{(\enf{\epsilon}b)}$．それゆえ，$a\in\enf{\epsilon}b\cap\barl{(\enf{\epsilon}b)} $となって矛盾が生じる．したがって，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方の蓋然性レベルは$1$未満である．
 
+さらに，制定関係と廃止関係のいずれか一方が同一の対象に対して競合するケースも，結論的には認められる．
+上記の例を一部変更して，
+\[
+    \orp{\orp{u,v},\orp{a,b}}\in\mathrm{est}^\epsilon\con{1}\orp{\orp{s,t},\orp{a,b}}\in \mathrm{est}^\epsilon
+\]
+であると仮定しよう．すると，$c\subseteq\enf{\epsilon}b$であるレベル$i$の蓋然性と，$c'\subseteq\enf{\epsilon}b$であるレベル$i'$の蓋然性とが成立する．
+ここで$c = c'$である場合，事実上\footnote{
+    $i = i'$のとき：$u\in\exe{\epsilon}v$でなくても，$s\in\exe{\epsilon}t$によって同じ結果が生じるから，$u\notin\enf{\epsilon}v$．同様にして，$s\notin\enf{\epsilon}t$．次に，$i \neq i'$のとき：①$i>i'$ならば，$u\in\exe{\epsilon}v$でなくても，$s\in\exe{\epsilon}t$によって同じ結果が生じるから，$u\notin\enf{\epsilon}v$．②$i<i'$ならば，$s\in\exe{\epsilon}t$でなくても，$u\in\exe{\epsilon}v$によって同じ結果が生じるから，$s\notin\enf{\epsilon}t$．
+}，
+\setcounter{equation}{0}
+\begin{gather}
+    i = i' \case{1}{1}{1}u\notin\enf{\epsilon}v\con{1}s\notin\enf{\epsilon}t,\\
+    i\neq i'\case{1}{1}{2}u\notin\enf{\epsilon}v\case{2}{1}{1}s\notin\enf{\epsilon}t.
+\end{gather}
+それゆえ，仮定と矛盾するから競合は成立しないように見える．しかし，通常の法体系等の認定システムにおいては，執行可能性の認定は正規性によって代替されると考えられるから，(1)(2)を考慮する余地はない．また，$c\neq c'$である場合は，差し当たって問題は生じない．以下では，制定関係と廃止関係のいずれか一方が競合し得ることを前提とする．
+
 \subsubsection{工学的妥当性}
 \label{sssec:工学的妥当性}
 
 クラス$ e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha $の工学的妥当性は，
 \begin{align*}
-    d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y}\cap\trgl{\arg\epsilon})
+    d = \mathcal{P}(\trgl{\arg\epsilon}\cap\classab{\orp{x,y}:x\in\enf{\epsilon}y})
 \end{align*}
 について，$ e\in d $であることの因果的帰結に基づいて測ることができる．それゆえ，条件$ \orp{e,d} $の工学的妥当性と言い換えてもよい．
-この点については，あくまで素描であるが，より一般的な枠組みを作ることができる．すなわち，任意の条件$\orp{e,d}$について，時区間$t$におけるその工学的妥当性その他の重要度を測る構造（評価構造）は，人間等のユーザー集合$\alpha$と評価関数$\gamma $に相対的に構成される．
-まず，$ e\in d $であることが因果的に決定する$ \alpha $メンバーの促進条件の蓋然性のクラスを，
+この点については，あくまで素描であるが，より一般的な枠組みを作ることができる．すなわち，任意の条件$\orp{e,d}$について，時区間$t$におけるその工学的妥当性その他の重要度を測る構造（評価構造）は，人間等のユーザー集合$\kappa$と評価関数$\gamma $に相対的に構成される．
+まず，$ e\in d $であることが因果的に決定する$ \alpha $メンバーの促進条件のクラスを，
 \begin{multline*}
-    \zeta_1 = \classab{\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}:
-    a\in\cty{\epsilon}b\con{1}\tildel{\trgl{b}}\fap 1 = \trgl{b}\fap 0\con{1}
-    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \alpha\con{1}\\
-    \Lambda\neq n\subseteq \indx{\epsilon}\con{1}
-    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}
+    \zeta_1 = \classab{\orp{\tilde{a}\fap 0,\tildel{\trgl{b}}\fap 0}:
+    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\tildel{\trgl{b}}\fap 0}\con{1}a\in\cty{\epsilon}b\con{1}
+    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \kappa\con{1}\\
+    b\in\mathrm{Reg}\con{1}
+    (\exists x)(\tildel{\trgl{b}}\fap 0 = x^{::\epsilon}\cap\mser{(\arg b)}{0})\con{1}
+    \tildel{\trgl{b}}\fap 1 = \trgl{b}\fap 0
     }
 \end{multline*}
-と置く．同じく抑制条件の蓋然性のクラスを，
+と置く．同じく抑制条件のクラスを，
 \begin{multline*}
-    \zeta_2 = \classab{\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}:
-    a\in\cty{\epsilon}b\con{1}\tildel{\trgl{b}}\fap 1 = \barl{(\trgl{b}\fap 0)}\cap\msec{(\arg b)}{0}\con{1}
-    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \alpha\con{1}\\
-    \Lambda\neq n\subseteq \indx{\epsilon}\con{1}
-    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\prob{(\tildel{\trgl{b}}\fap 0)}{n\uphl\epsilon}}
+    \zeta_2 = \classab{\orp{\tilde{a}\fap 0,\tildel{\trgl{b}}\fap 0}:
+    \orp{e,d}\to_{\epsilon}\orp{\tilde{a}\fap 0,\tildel{\trgl{b}}\fap 0}\con{1}a\in\cty{\epsilon}b\con{1}
+    a\fap 0\subseteq t\con{1}\tilde{a}\fap 1 \in \kappa\con{1}\\
+    b\in\mathrm{Reg}\con{1}
+    (\exists x)(\tildel{\trgl{b}}\fap 0 = x^{::\epsilon}\cap\mser{(\arg b)}{0})\con{1}
+    \tildel{\trgl{b}}\fap 1 = \barl{(\trgl{b}\fap 0)}\cap\msec{(\arg b)}{0}
     }
 \end{multline*}
 と置く．
@@ -186,37 +204,50 @@ $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u
 \]
 で測ることができる．この値がマイナスになる場合，デメリットの方が大きいことを意味する．
 $\gamma$の位置に来る関数は評価の企画ごとに異なるが，典型的には，
-$\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\cup\zeta_2$なる媒介関数$\beta$が使われると考えられる．以下のように，$\beta$はレベル$1$の蓋然性を基準値として，レベルが加算されるごとに$ 1/\indx{\epsilon} $をマイナスする．
+$\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\cup\zeta_2$なる媒介関数$\beta$に基づいて（$\gamma$は）構成される．なお，$\beta$はレベル$1$の蓋然性を基準値として，レベルが加算されるごとに$ 1/\indx{\epsilon} $をマイナスする．つまり任意の$\orp{\orp{b,m},x}\in\breve{\beta}\img\univ$について，
 \[
-    \beta\fap\orp{c,\prob{h}{(n\uphl\epsilon)}} = \beta\fap\orp{c,\prob{h}{(1\uphl\epsilon)}} - (\breve{\mathrm{S}}\fap n/\indx{\epsilon}).
+    \beta\fap\orp{\orp{b,m},x} = \beta\fap\orp{\orp{b,1},x} - (\breve{\mathrm{S}}\fap m/\indx{\epsilon}).
 \]
-そして，$z\in\arg\gamma$について，$\gamma\fap z$は，単純に$\beta\img z$のメンバーの合計値でもよいが，$\gamma$が表わす関数によってはさらに制限される．
-例えば，$z$は機能的に関連する修正条件のクラスであり，$\beta\img z$のメンバーの合計値$n$と，$\gamma$に固有の制限値（$\gamma$が許容する媒介関数が$z$のメンバーに与える最大値等）$m$について，
+そして，$w\in\arg\gamma$について，$\gamma\fap w$は，単純に$\beta\img w$のメンバーの合計値でもよいが，$\gamma$が表わす関数によってはさらに制限される．
+例えば，$w$は機能的に関連する修正条件のクラスであり，$\beta\img w$のメンバーの合計値$n$と，$\gamma$に固有の制限値$j$について，
 \[
-   n\leq m\case{1}{1}{1}\gamma\fap z = n\con{2}n > m\case{1}{1}{1}\gamma\fap z = m,
+   n\leq j\case{1}{1}{1}\gamma\fap w = n\con{2}n > j\case{1}{1}{1}\gamma\fap w = j,
 \]
-である等\footnote{このような評価構造は刑事法の量刑判断の構造と類似する．媒介関数は個別の構成要件実現に関する量刑に，評価関数は手続上包括されるそれらのクラスに関する量刑に相当する．}．$\gamma,\beta$はこれより複雑なものでも単純なものでもあり得る．
+である等\footnote{
+    このような評価構造は刑事法の量刑判断の構造と類似する（あるいは後者は評価構造の一種である）．媒介関数は個別の構成要件実現に関する量刑に，評価関数は手続上包括されるそれらのクラスに関する量刑に相当する．そして制限値$j$は，例えば，$\beta$または当該企画で許容される他の媒介関数が$w\in\arg\gamma$の特定のメンバーに付与する値である．これは上記の量刑手続上包括されるクラスについて，その特定のメンバーに対して可能な最大の量刑に相当する．
+}．$\gamma,\beta$はこれより複雑なものでも単純なものでもあり得る．
 
 さて，規制集合の工学的妥当性に戻ろう．すなわち，
 \[
-    e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha\con{1}d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y}\cap\trgl{\arg\epsilon})
+    e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha\con{1}d = \mathcal{P}(\trgl{\arg\epsilon}\cap\classab{\orp{x,y}:x\in\enf{\epsilon}y})
 \]
-である$ \orp{c,d} $の工学的妥当性を測るケースでは，$\alpha$は国籍保持者の集合で，$\gamma$の独立変項は，正規集合内部の何らかの規制集合の機能，または，その機能の阻止になるだろう．促進条件の阻止は抑制条件であると仮定すれば，規制集合の機能の阻止は結局抑制条件の集合になる．
+である$ \orp{e,d} $の工学的妥当性を測るケースでは，$\kappa$は国籍保持者の集合で，$\gamma$の独立変項は，以下のように，ある$z\times\classab{y}\subseteq\mathrm{SY}^{\epsilon}\alpha$の機能を構成するクラス$w$，または，当該機能の阻止を構成するクラス$w'$になるだろう．後者に関連して，促進条件の阻止は抑制条件であると仮定している．
+\begin{gather*}
+w = \union{
+\classab{x:x\subseteq\zeta_1\con{1}
+    \orp{x,\mathfrak{E}\cap(\trgl{\arg\epsilon})}\text{ は }z\times\classab{y}\text{ の機能}
+}
+},\\
+w' = \classab{\orp{\tilde{a}\fap 0,\barl{(\tildel{\trgl{b}}\fap 0)}\cap\mser{(\arg b)}{0}}:
+    \orp{\tilde{a}\fap 0,\tildel{\trgl{b}}\fap 0}\in w
+}\cap\zeta_2.
+\end{gather*}
+
 そして，（@）がマイナスである場合，$ \orp{e,d} $は工学的妥当性を欠く．しかし，$ e\subseteq g \subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha $については，プラスサイドも変動するからから工学的妥当性を欠くとは限らない．ただし，$e$の評価値をプラス転換して工学的妥当性を回復した$ e' $は，それが$ g $に埋め込まれた場合に新たなマイナス要因を生成しない限り，元の$g$よりも$ (g\cap\bar{e})\cup e' $の工学的妥当性を高める．
-例えば，$ x_1,x_2,z\in\varSigma^{\epsilon}\alpha $について，
+例えば，$ x_1,x_2,r\in\varSigma^{\epsilon}\alpha $について，
 \[
-    x_1\neq x_2\con{1}\orp{x_1,y},\orp{x_2,y}\in\mathrm{est}^\epsilon\con{1}\orp{z,y}\in \mathrm{abo}^\epsilon
+    x_1\neq x_2\con{1}\orp{x_1,p},\orp{x_2,p}\in\mathrm{est}^\epsilon\con{1}\orp{r,p}\in \mathrm{abo}^\epsilon
 \]
-と仮定する．また，制定実行$ \mathcal{L}\fap x_1\in\exe{\epsilon}{(\mathcal{R}\fap x_1)} $及び$ \mathcal{L}\fap x_2\in\exe{\epsilon}{(\mathcal{R}\fap x_2)} $は，廃止実行$ \mathcal{L}\fap z\in\exe{\epsilon}{(\mathcal{R}\fap z)} $より，時間的に先行しているとしよう\footnote{
+と仮定する．また，制定実行$ \mathcal{L}\fap x_1\in\exe{\epsilon}{(\mathcal{R}\fap x_1)} $及び$ \mathcal{L}\fap x_2\in\exe{\epsilon}{(\mathcal{R}\fap x_2)} $は，廃止実行$ \mathcal{L}\fap h\in\exe{\epsilon}{(\mathcal{R}\fap h)} $より，時間的に先行しているとしよう\footnote{
     一般に，廃止実行は先行する制定実行に依存しているが，時間順序が逆の場合はそうではない．ただし，これは時間遡行的な因果関係が通常は成立しないことの反映であり，制定と廃止の時間順序それ自体によって正規性を規定する先天的な理由はないと思われる．
 }．
-この場合，$z$の実行が，$x_1$の実行と$x_2$の実行のぞれぞれに依存するような特殊なケースを除いて，$y$の正規性は失われない．すなわち，$x_1$と$x_2$の実行による影響の両方を除去しようとする場合，片方がなくても$z$は実行されていたであろうから，$z$の実行は両者に依存しないことになる．また，一方の実行による影響のみを除去しようとする場合，$z$の実行は他方には依存しない．いずれにせよ，$y$の正規性は失われない．それゆえ，$ \varSigma^{\epsilon}\alpha $が（通常の法体系のように）正規性によって執行可能性を認定するシステムを含む場合には，$y$の執行可能性が前提される．すると，$z$はその機能を果たすことができない．
+この場合，$r$の実行が，$x_1$の実行と$x_2$の実行のぞれぞれに依存するような特殊なケースを除いて，$p$の正規性は失われない．すなわち，$x_1$と$x_2$の実行による影響の両方を除去しようとする場合，片方がなくても$r$は実行されていたであろうから，$r$の実行は両者に依存しないことになる．また，一方の実行による影響のみを除去しようとする場合，$r$の実行は他方には依存しない．いずれにせよ，$p$の正規性は失われない．それゆえ，$ \varSigma^{\epsilon}\alpha $が（通常の法体系のように）正規性によって執行可能性を認定するシステムを含む場合には，$p$の執行可能性が前提される．すると，$r$はその機能を果たすことができない．
 このケースは当該正規集合または規制体系に関して，以下①②の情報を与える．
 \begin{enumerate}
-    \item [①] $x_1,x_2$が相まって，$z$の機能を阻害する．
-    \item [②] $z$の機能は，$x_1$または$x_2$の制定範囲内の規制（$y$など）を廃止する$z$自身の実行によるのではなく，$x_1$または$x_2$それ自体を廃止する規制$z'$によってよりよく果たされる．
+    \item [①] $x_1,x_2$が相まって，$r$の機能を阻害する．
+    \item [②] $h$の機能は，$x_1$または$x_2$の制定範囲内の規制（$p$など）を廃止する$r$自身の実行によるのではなく，$x_1$または$x_2$それ自体を廃止する規制$r'$によってよりよく果たされる．
 \end{enumerate}
-プラスサイドを考慮していないから，①だけで$ x_1,x_2 $を含むクラスが工学的妥当性を欠くとは言えない．しかし，$ \varSigma^{\epsilon}\alpha $から$z$を排除し，代わりに$z'$を追加することによって，他の条件が同じであれば，マイナスが減りプラスが増加する．したがって，いずれにせよその工学的妥当性を高めることができる\footnote{
+プラスサイドを考慮していないから，①だけで$ x_1,x_2 $を含むクラスが工学的妥当性を欠くとは言えない．しかし，$ \varSigma^{\epsilon}\alpha $から$r$を排除し，代わりに$r'$を追加することによって，他の条件が同じであれば，マイナスが減りプラスが増加する．したがって，いずれにせよその工学的妥当性を高めることができる\footnote{
     この他，P規制の構成要件実現がS規制のそれを因果的に決定するような場合にも工学的妥当性に問題を生じる．また，何らかの評価構造に基づく工学的妥当性を充足しないこと自体を構成要件として，端的にその規制集合のメンバーを廃止する，というN規制が体系内に含まれる可能性がある．憲法の人権規制等はそのようなN規制と解する余地がある．
 }．
 
@@ -227,13 +258,14 @@ $\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\
 さて，$b\in k$が，規制集合$ z\times\classab{y}\subseteq\mathrm{SY}^{\epsilon}\alpha $の（$ \mathrm{SY}^{\epsilon}\alpha $における）機能であるのは，
 \begin{align*}
     \orp{\orp{u,v},\orp{s,t}}\in\mathrm{IS}\cap((\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon)\times(\mathrm{SY}^{\epsilon}\alpha\uphr\mathrm{Ab}^\epsilon))
-    \con{1}\tilde{s}\fap 0 = \orp{z,y}\con{1}\tildel{\trgl{v}}\fap 1 = \tildel{\trgl{t}}\fap 1 = \trgl{t}\fap 0
+    \con{1}\mathcal{L}\fap(\tilde{s}\fap 0) = \orp{z,y}\con{1}\tildel{\trgl{v}}\fap 1 = \tildel{\trgl{t}}\fap 1 = \trgl{t}\fap 0
 \end{align*}
-である$ \orp{u,v},\orp{s,t} $が存在して，$ z\subseteq\enf{\epsilon}y $が$b\in k$の蓋然性を因果的に決定するということが，$ u\in\exe{\epsilon} v $を因果的に決定しているとき，かつそのときに限られる．
+である$ \orp{u,v},\orp{s,t} $が存在して，$ z\subseteq\enf{\epsilon}y $が$b\in k$を因果的に決定するということが，$ u\in\exe{\epsilon} v $を因果的に決定しているとき，かつそのときに限られる．
 すなわち，
 \begin{align*}
-    \orp{\orp{\tilde{u}\fap 0,b},(\tildel{\trgl{v}}\fap 0)\bkg{\epsilon}(\prob{k}{(\indx{\epsilon}\uphl\epsilon)})}
+    \orp{\orp{\tilde{u}\fap 0,b},(\tildel{\trgl{v}}\fap 0)\bkg{\epsilon}k}
     \to_{\epsilon}\orp{u,\exe{\epsilon}{v}}
+    \con{1}u\in\exe{\epsilon}v
 \end{align*}
 であるとき，かつそのときに限り，$ b\in k $は$ z\times\classab{y} $の機能である．なお，$ \orp{u,v}\in\mathrm{SY}^{\epsilon}\alpha $である必要はない．
 
