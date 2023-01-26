@@ -60,7 +60,9 @@ $z$が何であるかは適用条件$ \app{\epsilon} v $によって明示的に
 ただし，通常の法システムの場合，執行可能性の証明は正規性の証明で代替されるであろうから，少なくとも認定上は（$ \orp{u,v} $の正規性が認定される限り），$ u\in\enf{\epsilon}v $であることが前提される．以上のことは必要な変更の上で廃止類型にも当てはまる．
 
 改めて，$ \orp{u,v}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $について，$ u\in\exe{\epsilon} v\con{1}\mathcal{L}\fap(\tilde{u}\fap 0) = \orp{z,y}\con{1}x\in z $であると仮定する．
-制定関係$ \mathrm{est}^\epsilon $は，この場合における，$ \orp{u,v} $の$ \orp{x,y} $に対する関係である．すなわち，
+制定関係$ \mathrm{est}^\epsilon $は，この場合における，$ \orp{u,v} $の$ \orp{x,y} $に対する関係である\footnote{
+    $\tilde{u}\fap 0\in\mser{(\arg v)}{0}$である限り，$\orp{u,v}$の修正条件の危険測度$\mathcal{R}\fap(\tilde{u}\fap 0)$が何であるかは，制定関係及び廃止関係に影響しない．
+}．すなわち，
 
 \begin{df}
 \label{df:制定関係}
@@ -296,13 +298,13 @@ w' = \classab{\orp{\tilde{a}\fap 0,\barl{(\tildel{\trgl{b}}\fap 0)}\cap\mser{(\a
     \item $ \orp{x,y}\in\varSigma^{\epsilon}\alpha $であることを認定する制御構造．
 \end{enumerate}
 (1)は，構成要件該当性の情報を検出してそれを執行システムまで運ぶ仕組みの一部である．修正条件の導入を自然的な因果に頼るのでない限りこのような仕組みが必要になる．
-(2)は，修正条件の有効性を確認するプロセスであるが，規制体系内の他の機能を促進するために省略されることがある．しかし，抑制機能を持つ修正条件の副作用が意識される場合には，修正条件導入のフロー効率を犠牲にしてでも維持される傾向がある．
+(2)は，修正条件の有効性を確認するプロセスであるが，規制体系内の他の機能を促進するために省略されることがある．しかし，抑制機能を持つ修正条件の副作用が意識される場合には，修正条件導入のフロー効率を犠牲にしてでも維持される傾向がある．しかし，(2)をさらに分解すると，省略されない要素として，修正条件の実現$\tilde{x}\fap 0\in\tildel{\trgl{y}}\fap 0$を認定する制御構造が含まれると考えられる．これがないと，$\tilde{x}\fap 0\notin \tildel{\trgl{y}}\fap 0$であっても，(1)と(3)により$\orp{x,y}\in\enf{\epsilon}y$を認定することになって問題が生じる．
 (3)は，その構成要件の実現に対して修正条件が導入されるような規制類型の範囲を限定する．規制類型の数が無限であるためこのような限定が必要となる\footnote{
     (3)は，規制を制定するシステムとそれを認定するシステムの分割を前提としているわけではない．仮に認定システムがその都度問題の規制類型の範囲を決定する（非高次類型からなる始祖の集合を決定する）ような仕組みであったとしても，正規性の認定基準を最適化できるかはともかく，(3)の制御構造自体は存在する．
 }．この(3)の制御構造をさらに分解すると，そこに（※）を前提として使用する制御構造を見出すことができる．すなわち，系列の前者が後者に対して，関係
 \[
     \classab{\orp{\orp{u,v},\orp{x,y}}:
-    x\in \mathcal{L}\fap(\tilde{u}\fap 0)\con{1}y = \mathcal{R}\fap(\tilde{u}\fap 0)\con{1}v\in\mathrm{Es}^\epsilon
+    x\in (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\con{1}y = (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\con{1}v\in\mathrm{Es}^\epsilon
     }
 \]
 を持つような規制要素の系列$ k $が存在して，
@@ -343,7 +345,7 @@ $ \alpha\subseteq\varSigma^{\epsilon}\alpha $であるから，$ k\fap 0 =\orp{u
 \]
 であるとしても，$ (\exists u)(\orp{u,t}\in \varSigma^{\epsilon}\alpha) $とは限らない．
 上述の認定システムの例で言えば，$ \orp{s,t}=\orp{a,b} $であるか，$ s\in\cs{\epsilon}t $が，$ a\in\cs{\epsilon}b $を分解した(1)〜(3)の制御構造，または，(3)の部分構造である（※）を前提として使う制御構造であるとしても，$ (\exists u)(\orp{u,t}\in \varSigma^{\epsilon}\alpha) $とは限らない．
-しかし，$ \varSigma^{\epsilon}\alpha $が法体系等の正規集合ならば，制御構造$ s\in\cs{\epsilon}t $は，通常，同一の正規集合に属する他の規制類型に係る執行可能性（またはそれに依存する制御構造\footnote{実現した制御構造は執行随伴性またはその言語的代替に依存しているが，通常の状況では，いずれの条件も執行可能性に依存している．}）に依存している．
+しかし，$ \varSigma^{\epsilon}\alpha $が法体系等の正規集合ならば，制御構造$ s\in\cs{\epsilon}t $は，通常，$ \varSigma^{\epsilon}\alpha $に属する他の規制類型に係る執行可能性（またはそれに依存する制御構造\footnote{実現した制御構造は執行随伴性またはその言語的代替に依存しているが，通常の状況では，いずれの条件も執行可能性に依存している．}）に依存している．
 すなわち，$ e\notin\arg d $かもしれない$ e $と$ d\in \brevel{(\varSigma^{\epsilon}\alpha)}\img\univ $が存在して，$ \orp{e,\enf{\epsilon}d}\to_{\epsilon}\orp{s,\cs{\epsilon}t} $．そして，$ d $は例えば以下のようなN類型である．
 
 $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行動の集積としての手続の実現であり\footnote{
@@ -357,24 +359,24 @@ $ \exe{\epsilon}{d} $は，結節点に帰属可能な行動ではなく，行�
     \]
     を前提として使用していない場合，適切な証拠の条件を欠く．ただし，\kagi{$ Gxy $}は$ x\in\exe{\epsilon} y $が有責に実現されたことを記述する文の位置を表わしている．
 \end{itemize}
-そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，ある$ w\subseteq\mathrm{REG}^\epsilon $について，$ w\subseteq\classab{\orp{s,t}:s\in\exe{\epsilon}t} $であることによって$ \exe{\epsilon}d $で認定される規制の修正条件が直接実現される場合において\footnote{
+そして，修正条件の実現$ \tilde{e}\fap 0\in \tildel{\trgl{d}}\fap 0 $は，執行規制の制定であって，執行機関の行動を直接起動するような条件（他の規制類型の適用条件）の一部ではない．執行規制は，上位執行機関を結節点に持ち，下位執行機関の実行規制を制定するP規制であるか，裁判を含む執行手続によって実行規制を制定するN規制である．実行規制は，ある$ w\subseteq\mathrm{REG}^\epsilon $について，$ w\subseteq\classab{\orp{p,q}:p\in\exe{\epsilon}q} $であることによって$ \exe{\epsilon}d $で認定される規制の修正条件が直接実現される場合において\footnote{
     例えば，金銭債務（金額占有の移転阻止に対するS規制）の修正条件を債務者の何らかの財産の喪失であるとした場合，それの実行規制は，執行裁判所の売却許可決定を含む執行手続によって制定される（売買の）引渡債務等である．
-}，P規制$\orp{s,t}\in w$か，$ \mathrm{IS}\img\classab{\orp{s,t}} $のメンバーのS規制である．
+}，P規制$\orp{p,q}\in w$か，$ \mathrm{IS}\img\classab{\orp{p,q}} $のメンバーのS規制である．
 
 \subsubsection{言語的統制における正規性論証}
 \label{sssec:言語的統制における正規性論証}
 
-次に，（※）を推論の前提とする制御構造は，執行随伴性の言語的代替を形成する推論過程においても出現する．$ \orp{x,y}\in \mathrm{REG}^\epsilon $について，$ x\notin\exe{\epsilon} y $であると仮定する．しかし，$ \tilde{x}\fap 1 $において（$ x\fap 0 $の時間領域に），執行随伴性$ x\in\exe{\epsilon} y\cap\enf{\epsilon}y $の言語的代替，つまり，
+次に，（※）を推論の前提とする制御構造は，執行随伴性の言語的代替を形成する推論過程においても出現する．$ \orp{x,y}\in \mathrm{REG}^\epsilon $について，$ x\notin\exe{\epsilon} y $であると仮定する．しかし，$ \tilde{x}\fap 1 $において（$ x\fap 0 $の時間領域に），執行随伴性$ x\in\exe{\epsilon} y\cap\enf{\epsilon}y $であることの言語的代替，つまり，
 \begin{gather*}
     \text{$ x\in\enf{\epsilon}y $であることを記述する文を肯定する制御構造}\\
     \text{（その文の真偽を問われたならば，それを肯定するだろう）}
 \end{gather*}
-があれば，ある$\tilde{w}\fap 1 = \tilde{x}\fap 1 $について$ w\in\cs{\epsilon}y $が成立し得る\footnote{もちろん，制御構造の因果的決定要因が執行随伴性またはその言語的代替に尽きるわけではない．ある条件実現を因果的に決定する条件実現は無数に存在する．}．ただし，$ \tildel{\trgl{y}}\fap 1 \neq \Lambda $ならば，$ x\in\cty{\epsilon}y $でない限り，このような制御構造の構築は起きないと考えられる．また，通常の状況では，実際に$ x\in \enf{\epsilon}y $でない限り，それを肯定する制御構造も形成されない．他方，実際に$ x\in\enf{\epsilon}y $であれば，前述の正規性の論証によって，$ x\in\enf{\epsilon}y $を肯定する制御構造を形成することができる．つまり，
+があれば，ある$\tilde{w}\fap 1 = \tilde{x}\fap 1 $について$ w\in\cs{\epsilon}y $が成立し得る\footnote{もちろん，制御構造の因果的決定要因が執行随伴性またはその言語的代替に尽きるわけではない．ある条件実現を因果的に決定する条件実現は無数に存在する．}．ただし，$ \tildel{\trgl{y}}\fap 1 \neq \Lambda $ならば，$ x\in\cty{\epsilon}y $でない限り，このような制御構造の構築は起きないと考えられる．
+また通常の状況では，$ x\in \enf{\epsilon}y $であることによって，それを肯定する制御構造も形成され得る．他方，$ \tilde{x}\fap 1 $において，（※）が前提として受容されているならば，前述の正規性の論証によって，$ x\in\enf{\epsilon}y $を肯定する制御構造を形成できる．つまり，
 \begin{dem}
     正規性論証により，$ \orp{x,y}\in\varSigma^{\epsilon}\alpha $．すると，（※）により，$ x\in\enf{\epsilon}y $．
 \end{dem}
-
-\noindent 正規性論証がそれについてのものである，始祖から$\orp{x,y}$に至る\ref{sssec:認定システムによる正規性論証}の系列$k$について，その系列要素の中には右成分がN類型である規制要素が含まれ得る．つまりN規制は，言語的統制を媒介することによって間接的な規制的機能を持つことができる．
+\noindent なお，正規性論証がそれについてのものである，始祖から$\orp{x,y}$に至る\ref{sssec:認定システムによる正規性論証}の系列$k$について，その系列要素の中には右成分がN類型である規制要素が含まれ得る．つまりN規制は，言語的統制を媒介することによって間接的な規制的機能を持つことができる．
 
 ところで，$ \tilde{x}\fap 1 $は，正規性の論証を行うために必要な$ \varSigma^{\epsilon}\alpha $に関する情報をどこから得るのかという問題が残る．
 前述の認定システムが行う正規性の論証においては，当該システムが正規集合に関する情報を得ていることが前提されていた．なぜなら，認定システムがその機能を果たすためには正規性の情報が不可欠であり，それゆえ，その情報へのアクセス可能性は認定システムの基本設計に含まれると考えられるからである．
