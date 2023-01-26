@@ -171,7 +171,7 @@ $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u
 
 クラス$ e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha $の工学的妥当性は，
 \begin{align*}
-    d = \mathcal{P}(\trgl{\arg\epsilon}\cap\classab{\orp{x,y}:x\in\enf{\epsilon}y})
+    d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y})\cap\trgl{\arg\epsilon}
 \end{align*}
 について，$ e\in d $であることの因果的帰結に基づいて測ることができる．それゆえ，条件$ \orp{e,d} $の工学的妥当性と言い換えてもよい．
 この点については，あくまで素描であるが，より一般的な枠組みを作ることができる．すなわち，任意の条件$\orp{e,d}$について，時区間$t$におけるその工学的妥当性その他の重要度を測る構造（評価構造）は，人間等のユーザー集合$\kappa$と評価関数$\gamma $に相対的に構成される．
@@ -221,13 +221,13 @@ $\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\
 
 さて，規制集合の工学的妥当性に戻ろう．すなわち，
 \[
-    e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha\con{1}d = \mathcal{P}(\trgl{\arg\epsilon}\cap\classab{\orp{x,y}:x\in\enf{\epsilon}y})
+    e\subseteq \mathrm{SY}^{\epsilon}\alpha\cup \varSigma^{\epsilon}\alpha\con{1}d = \mathcal{P}(\classab{\orp{x,y}:x\in\enf{\epsilon}y})\cap\trgl{\arg\epsilon}
 \]
 である$ \orp{e,d} $の工学的妥当性を測るケースでは，$\kappa$は国籍保持者の集合で，$\gamma$の独立変項は，以下のように，ある$z\times\classab{y}\subseteq\mathrm{SY}^{\epsilon}\alpha$の機能を構成するクラス$w$，または，当該機能の阻止を構成するクラス$w'$になるだろう．後者に関連して，促進条件の阻止は抑制条件であると仮定している．
 \begin{gather*}
 w = \union{
 \classab{x:x\subseteq\zeta_1\con{1}
-    \orp{x,\mathfrak{E}\cap(\trgl{\arg\epsilon})}\text{ は }z\times\classab{y}\text{ の機能}
+    \orp{x,\mathfrak{E}\cap\trgl{\arg\epsilon}}\text{ は }z\times\classab{y}\text{ の機能}
 }
 },\\
 w' = \classab{\orp{\tilde{a}\fap 0,\barl{(\tildel{\trgl{b}}\fap 0)}\cap\mser{(\arg b)}{0}}:
