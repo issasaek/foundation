@@ -181,32 +181,52 @@ $}を表わす．
 これに対して，$ \trgl{\delta}\fap 1 = \barl{\classab{\orp{e,a}:\text{$e$は$a$の空間的位置の変化}}}\cap \msec{(\arg\delta)}{1} $等である場合，身体運動の不在を介した不作為による結果惹起である．なお，ある身体運動を惹起する刺激過程とそれの不在を惹起する刺激過程は同一ではない．
 
 次に，$ \tildel{\trgl{\delta}}\fap 0 $を$\delta$の修正条件と言い，（制御可能性において）制御方向の違いに応じて構成要件の実現を促進するか（促進条件），または，それを抑制する機能を持つ（抑制条件）．そして，$ x\in\arg \delta $について，$\tilde{x}\fap 0$はそれについて修正条件が実現すべき対象（修正領域）である．
-修正条件の内容は規制類型ごとに異なるが，
+修正条件の内容は規制類型ごとに異なるが，その一般形式を以下のように考えることができる．
+前提概念として，$b\in\beta$であるレベル$m$の蓋然性を持つ$\orp{b,m}$のクラスを定義する．
+\begin{df}
+\label{df:危険測度関係}
+\kagi{$
+    \beta^{::\epsilon}
+$}は\kagi{$
+    \classab{\orp{b,m}:b\in\prob{\beta}{m\uphl\epsilon}\con{1}0\in m\in\epsilon\img\univ}
+$}を表わす．
+\end{df}
+\noindent そして，ある$j\in\arg\delta$について，$\trgl{\delta}\fap j$に条件$\beta$の（様々なレベルにおける）蓋然性を設定する場合，
+\[
+    \trgl{\delta}\fap j = \beta^{::\epsilon}\cap\mser{(\arg\delta)}{0}
+\]
+とした上で，蓋然性レベルを$ \arg\delta\subseteq\classab{x:\mathcal{R}\fap(x\fap j)\subseteq\indx{\epsilon}} $等，適用条件で制限する\footnote{
+    特定の蓋然性レベル$\mu\subseteq\indx{\epsilon}$に限定して，$ \trgl{\delta}\fap j = \prob{\beta}{(\mu\uphl\epsilon)}\cap\mser{(\arg\delta)}{j}$，とすることも考えられる．しかし，$i\in \mu$について，レベル$i$の蓋然性を惹起しているが，レベル$\mu$の蓋然性は先行条件に依存していないケースでは，$\app{\epsilon}\delta$が阻却されるか，または$\enf{\epsilon}\delta$（D \ref{df:執行可能性}）が阻却されてしまうから（$\trgl{\delta}\fap j$が修正条件の場合），結局は不都合を生じる．
+    % 死ぬ直前の人への殺人未遂の事例で，仮に行動がなくても死の有意危険があるケースを考える．当該行動はレベル$\indx{\epsilon}$の危険を因果的に決定していないが，さらに高められた死の危険を因果的に決定している．
+}．
+次に，$j = \breve{\mathrm{S}}\fap\arg\delta$であり，したがって，$ \trgl{\delta}\fap j $が修正条件である場合，上記の\kagi{$ \beta $}に以下の代入を行って，修正条件の一般形式を得る（$\delta$が後述の高次類型であるケースを除く）．すなわち，
 \[
     (\exists n)(n\in\mathbb{N}\con{1}\union{(\sigma\img\univ)}\subseteq\timex{\univ}{n})
 \]
-であるような$ \sigma\in\mathrm{Seq} $について，$ \tildel{\trgl{\delta}}\fap 0 = \mathfrak{E}\resl\sigma $を基本的な形式とみなすことができる．
-例えば，厳密な規定条件ではないが，系列要素を刑罰類型として，
+であるような$ \sigma\in\mathrm{Seq} $について，$\beta = \mathfrak{E}\resl\sigma$と置く．
+
+例えば，厳密な規定ではないが，$\sigma$の系列要素を刑罰類型として，
 \begin{gather*}
     \sigma\fap 2 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$円の罰金}},\\
     \sigma\fap 3 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$月の禁錮}},\\
     \sigma\fap 4 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する$n$月の懲役}},\\
     \sigma\fap 5 = \classab{\orp{e,a,n}:\text{$e$は$a$に対する死刑}\con{1}n=\Lambda}
 \end{gather*}
-と置く．すると，$ \orp{\orp{12,a,e},4}\in \mathfrak{E}\resl\sigma $は，$e\subseteq\timex{\mathbb{R}}{4}$が$a$に対する1年間の懲役であることを意味する\footnote{$e$は出来事であると想定されているが，いずれにせよ$ \timex{\mathbb{R}}{4} $の部分クラスであるから，人やその他の物理的対象と出来事の区別は存在論的に重要ではない．}．
-
-そして，修正領域に関して，$ \arg\delta $による以下のような制限を考えることができる．すなわち，
-$ x\in\arg\delta $について，$ \tilde{x}\fap 0 = \orp{\orp{e,a,n},i} $なる$ e,a,n,i $が存在して，
+と置く．すると，$ \orp{\orp{e,a,12},4}\in \mathfrak{E}\resl\sigma $は，$e\subseteq\timex{\mathbb{R}}{4}$が$a$に対する1年間の懲役であることを意味する\footnote{$e$は出来事であると想定されているが，いずれにせよ$ \timex{\mathbb{R}}{4} $の部分クラスであるから，人やその他の物理的対象と出来事の区別は存在論的に重要ではない．}．
+次に，修正領域に関して，$ \arg\delta $による以下のような制限を考えることができる．すなわち，
+$ x\in\arg\delta $について，$ \mathcal{L}\fap(\tilde{x}\fap 0) = \orp{\orp{e,a,n},i} $なる$ e,a,n,i $と，$\mathcal{R}\fap(\tilde{x}\fap 0) = m $が存在して，
 \begin{gather*}
     e,a\subseteq\timex{\mathbb{R}}{4}\con{1}a = \tilde{x}\fap 1\con{1}n\subseteq\mathbb{N},\\
     1\in i \in 6\con{1}
     (i = 2\case{1}{1}{1} n\leq 1000000)\con{1}
     (i = 3\case{1}{1}{1}n\leq 60)\con{1}
-    (i = 4\case{1}{1}{2}n\leq 240 \case{2}{1}{1}n = \mathbb{N}).
+    (i = 4\case{1}{1}{2}n\leq 240 \case{2}{1}{1}n = \mathbb{N}),\\
+    m\subseteq \indx{\epsilon}.
 \end{gather*}
-このような適用条件によると，$ \tilde{x}\fap 0\in \tildel{\trgl{\delta}}\fap 0 $は，100万円以下の罰金，5年以下の禁錮，20年以下の懲役，無期懲役（$ n = \mathbb{N} $），死刑，のいずれかになる．なお，故意過失等の有責性の状態に応じてさらに修正条件の範囲が細分化され得るが，それは制御可能性の問題である．
+このような適用条件によると，$ \tilde{x}\fap 0\in \tildel{\trgl{\delta}}\fap 0 $は，100万円以下の罰金，5年以下の禁錮，20年以下の懲役，無期懲役（$ n = \mathbb{N} $），死刑，のいずれかの（レベル$m$の）蓋然性になる．
+% 3年執行猶予は3年以内の$e$が懲役等である蓋然性．起訴猶予の認定も刑罰の蓋然性を修正条件に持つ規制の認定．
 
-$\delta$の執行可能性$\enf{\epsilon}\delta$は，$\delta$の構成要件実現によって$\delta$の修正条件（の蓋然性）が実現される因果的構造である．すなわち，
+さて，$\delta$の執行可能性$\enf{\epsilon}\delta$は，単に，$\delta$の構成要件実現によって$\delta$の修正条件が実現される因果的構造である．すなわち，
 
 \begin{df}
 \label{df:執行可能性}
@@ -214,29 +234,10 @@ $\delta$の執行可能性$\enf{\epsilon}\delta$は，$\delta$の構成要件実
     \enf{\epsilon}\delta
 $}は\kagi{$
     \classab{x:
-        (\exists n)(\Lambda\neq n\subseteq\mathfrak{h}\epsilon\con{1}
-        \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}}
-        )
-    }
+        \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\tildel{\trgl{\delta}}\fap 0}
+    }\cap\trgl{\arg\epsilon}
 $}を表わす．
 \end{df}
-
-\noindent この定義により，$ x\in\enf{\epsilon}\delta\cap\exe{\epsilon}\delta $の場合，ある蓋然性レベル$n\in\indx{\epsilon}$について，$ \tilde{x}\fap 0\in \prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon} $．
-したがって，仮に$ x\notin\exe{\epsilon}\delta $であったなら，$\tilde{x}\fap 0\notin \prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}$．しかし，その仮定的状況においても，より低い蓋然性レベル$m(n\in m \in \indx{\epsilon})$について，$ \tilde{x}\fap 0\in (\tildel{\trgl{\delta}}\fap 0)^{m\uphl\epsilon} $ではあったかもしれない．つまり，レベル$n$の蓋然性は構成要件実現に依存しているが，それより低いレベル$m$の蓋然性はそうではない．
-このような場合に執行可能性を否定すべきであるならば，$x\in\enf{\epsilon}\delta$であることが，
-\[
-   \orp{x,\exe{\epsilon}\delta}\to_{\epsilon}\orp{\tilde{x}\fap 0,\prob{(\tildel{\trgl{\delta}}\fap 0)}{\indx{\epsilon}\uphl\epsilon}}
-\]
-であることを意味するように，D \ref{df:執行可能性}を変更する必要がある．しかし，$ x\in\exe{\epsilon}\delta $である状況では，実質的に全ての有意レベル$ \Lambda\neq i\in\indx{\epsilon} $の蓋然性に対して因果関係を要求することになるから，執行可能性（と制御可能性）の内容としては過剰と思われる．これに対して，$\delta$の構成要件の実現として，特定のレベル$\mu\subseteq\indx{\epsilon}$の蓋然性の惹起が要求されることはあり得る．
-例えば，
-\[
-    \tildel{\trgl{\delta}}\fap 2 = \prob{y}{(\mu\uphl\epsilon)}\cap\mser{(\arg\delta)}{2}．
-\]
-逆に，執行可能性におけるのと同様に，有意レベルのいずれかの段階の蓋然性でよいという趣旨であれば，
-\[
-    \tildel{\trgl{\delta}}\fap 2 = \classab{\orp{x,n}:x\in\prob{y}{(n\uphl\epsilon)}\con{1}n\in\mathbb{N}}\cap\mser{(\arg\delta)}{2}
-\]
-とした上で，蓋然性レベルを，$ \arg\delta\subseteq\classab{x:\mathcal{R}\fap(\tilde{x}\fap 2)\subseteq\indx{\epsilon}} $等，適用条件で制限する．
 
 \subsection{制御可能性}
 \label{ssec:制御可能性}
@@ -250,7 +251,7 @@ $}を表わす．
 $}は\kagi{$
     \classab{x:
         \orp{x,\app{\epsilon}\delta}\to_{\epsilon}\orp{x\fap 0,\tildel{\trgl{\delta}}\fap 1}
-    }
+    }\cap\trgl{\arg\epsilon}
 $}を表わす．
 \end{df}
 
@@ -272,7 +273,7 @@ $}を表わす．
 
 次に，$\delta$の制御可能性$\cty{\epsilon}\delta$は，$\tilde{x}\fap 1 = \tilde{w}\fap 1$なる$w$が存在して，
 \[
-   \text{$ x\in\enf{\epsilon}\delta\cap\exe{\epsilon}\delta$であることによって，$w\in\cs{\epsilon}\delta$である蓋然性が因果的に決定される，}
+   \text{$ x\in\exe{\epsilon}\delta\cap\enf{\epsilon}\delta$であることによって，$w\in\cs{\epsilon}\delta$である蓋然性が因果的に決定される，}
 \]
 そのような$x$のクラスである．つまり，
 
@@ -288,12 +289,12 @@ $}は\kagi{$
                 \orp{x,\exe{\epsilon}\delta\cap\enf{\epsilon}\delta}\to_{\epsilon}
                 \orp{w,\prob{(\cs{\epsilon}\delta)}{n\uphl\epsilon}}
         )
-    }
+    }\cap\trgl{\arg\epsilon}
 $}を表わす．
 \end{df}
 
 \noindent $ \exe{\epsilon}\delta\cap\enf{\epsilon}\delta $を$ \delta $の「執行随伴性」と言う．すると，$x\in\cty{\epsilon}\delta$であることは，執行随伴性によって結節点$\tilde{x}\fap 1$内部の制御回路が変更される，という学習の過程を表現する．
-つまり，$\delta$がP類型ならば，$\delta$の執行随伴性によって促進的制御構造（の蓋然性）が構築される（促進的または正の制御可能性）．そして，$\tilde{x}\fap 0\in\prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}$であることは，$\tilde{x}\fap 1$に対して，$\exe{\epsilon}\delta$を促進する機能を持つ（促進条件）．これに対して，$\delta$がS類型ならば，$\delta$の執行随伴性によって抑制的制御構造（の蓋然性）が構築される（抑制的または負の制御可能性）．そして，$\tilde{x}\fap 0\in\prob{(\tildel{\trgl{\delta}}\fap 0)}{n\uphl\epsilon}$であることは，$\tilde{x}\fap 1$に対して，$\exe{\epsilon}\delta$を抑制する機能を持つ（抑制条件）．
+つまり，$\delta$がP類型ならば，$\delta$の執行随伴性によって促進的制御構造（の蓋然性）が構築される（促進的または正の制御可能性）．そして，$\tilde{x}\fap 0\in\tildel{\trgl{\delta}}\fap 0$であることは，$\tilde{x}\fap 1$に対して，$\exe{\epsilon}\delta$を促進する機能を持つ（促進条件）．これに対して，$\delta$がS類型ならば，$\delta$の執行随伴性によって抑制的制御構造（の蓋然性）が構築される（抑制的または負の制御可能性）．そして，$\tilde{x}\fap 0\in\tildel{\trgl{\delta}}\fap 0$であることは，$\tilde{x}\fap 1$に対して，$\exe{\epsilon}\delta$を抑制する機能を持つ（抑制条件）．
 
 さらに，構築される制御構造に関連して，
 $ \tilde{x}\fap 1 = \tilde{w}\fap 1 $である$w$と，$ \app{\epsilon}\delta\subseteq y_1,y_2 $について，
@@ -317,15 +318,19 @@ $ \tilde{x}\fap 1 = \tilde{w}\fap 1 $である$w$と，$ \app{\epsilon}\delta\su
 \begin{align*}
     \orp{x,\exe{\epsilon}\delta\cap\enf{\epsilon}\delta}\to_{\epsilon}\orp{w,\gamma}
 \end{align*}
-であれば，$ x\in\cty{\epsilon}\delta $．さらにこのケースで，仮に$ y_1 = \app{\epsilon}{(\delta\uphr y_1)} $であるなら，$ \gamma = \cs{\epsilon}(\delta\uphr y_1)\cap \trgl{\arg\epsilon} $．そして多分，
+であれば，$ x\in\cty{\epsilon}\delta $．さらにこのケースで，$\trgl{\delta}=\trgl{v}\con{1}\app{\epsilon}v = y_1$なる$v\in\mathrm{Reg}$を考えると，
 \[
-    x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta\case{1}{1}{1}x\in \exe{\epsilon}(\delta\uphr y_1)\cap\enf{\epsilon}(\delta\uphr y_1).
+    \gamma = \cs{\epsilon}v．
 \]
-すると，$ x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta $である場合，それと同期している$ \delta\uphr y_1 $の規制随伴性によって，$ \cs{\epsilon}(\delta\uphr y_1) $が構築される，とも言うことができる．
+また通常の場合，
+\[
+    x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta\case{1}{1}{1}x\in \exe{\epsilon}v\cap\enf{\epsilon}v.
+\]
+すると，$ x\in \exe{\epsilon}\delta\cap\enf{\epsilon}\delta $である場合，それと同期している$ v $の執行随伴性によって，$ \cs{\epsilon}v $が構築される，とも言うことができる．
 
 ところで，制御可能性の概念の明確さと，それを立証したり反証する容易さは当然別のことである．
-制御可能性の認定プロセスは構成要件該当性のそれと共に，執行可能性の因果関係が何らかの認知システムにより因果的に媒介されるケースにおいて，その因果連鎖の中に埋め込まれる．
-そこにおいて，制御可能性を直接的に立証したり反証することは，構成要件該当性のそれに比べて困難を伴う．当該規制随伴性によって新たに将来の制御構造が構築される（有意なレベルの）蓋然性について，そこに関与している多くの変数を十分に特定化することはできない．仮に関連しそうな全ての情報を取得したとしても，そこから特定の制御構造の蓋然性レベルを導出できるような理論はそもそも存在しない．
+制御可能性の認定プロセスは構成要件該当性のそれと共に，執行可能性が何らかの認知システムにより因果的に媒介されるケースにおいて，その因果連鎖の中に埋め込まれる．
+そこにおいて，制御可能性を直接的に立証したり反証することは，構成要件該当性のそれに比べて困難を伴う．当該執行随伴性によって新たに将来の制御構造が構築される（有意なレベルの）蓋然性について，そこに関与している多くの変数を十分に特定化することはできない．仮に関連しそうな全ての情報を取得したとしても，そこから特定の制御構造の蓋然性レベルを導出できるような理論はそもそも存在しない．
 
 そこで，制御可能性の立証及び反証は，通常（日常的にも制度的にも）他の条件の立証及び反証で代替される．すなわち，（抑制条件のデメリットとの関係で制御可能性の認定が特に重視される）S規制について言えば，次の形式の文を制御可能性の認定において前提として使用する証明規則（\ref{sssec:認定システムによる正規性論証}を参照）を考えることができる．
 \[
@@ -333,13 +338,13 @@ $ \tilde{x}\fap 1 = \tilde{w}\fap 1 $である$w$と，$ \app{\epsilon}\delta\su
 \]
 \kagi{$ Gxy $}は「$ x\in\exe{\epsilon} y $が有責に実現された」に相当する文を表わす文型である．これはS規制の制御可能性を表わす媒介的な概念として，規制類型ごとに構築される．
 
-この点について，\ref{ssec:執行可能性}における規制類型$\delta$の例を再び用いよう．すなわち，$ x\in\exe{\epsilon}\delta $は人の死の惹起であり，$ \trgl{\delta}\fap 0 = \mathfrak{E}\resl\sigma $は\ref{ssec:執行可能性}で示した通りの刑罰類型の系列である．また，
+この点について，\ref{ssec:執行可能性}における規制類型$\delta$の例を再び用いよう．すなわち，$ x\in\exe{\epsilon}\delta $は人の死の惹起であり，\ref{ssec:執行可能性}で示した刑罰類型の系列$\mathfrak{E}\resl\sigma$について，$ \tildel{\trgl{\delta}}\fap 0 \subseteq\classab{\orp{b,m}:b\in\prob{(\mathfrak{E}\resl\sigma)}{m\uphl\epsilon}} $である．また，
 \[
    \mathrm{rec}\,\delta = \classab{x:
         \text{$ \tilde{x}\fap 1 $が$ x\fap 0 $の時点で$ x\in\exe{\epsilon}\delta $であることを認知}
    }\cap\app{\epsilon}\delta
 \]
-と置く．そして，$ k\in\indx{\epsilon} $を有意レベルを超える高度の蓋然性レベルと決める．すると，$ \tilde{x}\fap 0 = \orp{\orp{e,a,n},i} $について，
+と置く．そして，$ k\in\indx{\epsilon} $を有意レベルを超える高度の蓋然性レベルと決める．すると，$ \mathcal{L}\fap(\tilde{x}\fap 0) = \orp{\orp{e,a,n},i} $について，
 \begin{gather*}
     x\in \mathrm{rec}\,\delta \con{1} \neg(i = 4\con{1}60\leq n\case{2}{1}{1}i=5) \case{1}{1}{0}\neg Gxy.\\
     x\notin \mathrm{rec}\,\delta \con{1} x\in \prob{(\mathrm{rec}\,\delta)}{k\uphl\epsilon}\con{1}
@@ -367,7 +372,7 @@ $}は\kagi{$
 $}を表わす．
 \end{df}
 
-\noindent $ \orp{x,v}\in\mathrm{REG}^\epsilon $であるとき，$\orp{x,v}$は1個の規制である．それは適用条件$\app{\epsilon} v$と執行可能性$ \enf{\epsilon}v $を充たす準拠領域$x$と規制類型$v$の順序対である．そして，制御方向$ \tilde{v}\fap 1 $が空でない限り，$ x $は制御可能性$ \cty{\epsilon}v $をも充たしている必要がある．
+\noindent $ \orp{x,v}\in\mathrm{REG}^\epsilon $であるとき，$\orp{x,v}$は1個の規制である．それは適用条件$\app{\epsilon} v$と執行可能性$ \enf{\epsilon}v $を充たす準拠領域$x$と規制類型$v$の順序対である．そして，制御方向$ \tildel{\trgl{v}}\fap 1 $が空でない限り，$ x $は制御可能性$ \cty{\epsilon}v $をも充たしている必要がある．
 $v$がP類型なら$\orp{x,v}$はP規制，S類型ならS規制，N類型ならN規制と言われる．
 N規制の制御方向は$ \Lambda $であり，そこでは制御構造も制御可能性も意味を持たない．N規制の内容は単に適用条件と執行可能性であり，P規制やS規制のような直接的な規制的機能を持たない．しかし，N規制は，後述の高次規制としてP規制またはS規制の生成消滅に寄与するか（\ref{ssec:正規集合と規制体系}），または，言語的統制を媒介することによって（\ref{sssec:言語的統制における正規性論証}），間接的な規制的機能を持つようになる．
 
@@ -379,14 +384,13 @@ N規制の制御方向は$ \Lambda $であり，そこでは制御構造も制�
 \[
     \tildel{\trgl{y}}\fap 1 = \barl{(\trgl{y}\fap 0)}\cap\msec{(\arg y)}{0}\con{1}x\in \cs{\epsilon}y\con{1}x\in\app{\epsilon} y \case{1}{1}{1}x\notin\exe{\epsilon} y.
 \]
-しかし，このS類型のケースで，$ x\in \cs{\epsilon}y $であることが，規制随伴性（またはその言語的代替）によって構築されている場合には，通常，何らかの$ \orp{z,w}\in \app{\epsilon} w\times\mathrm{Reg} $が存在して，
+しかし，このS類型のケースで，$ x\in \cs{\epsilon}y $であることが，執行随伴性（またはその言語的代替）によって構築されている場合には，通常，$\orp{x,y}$に対して遮断関係を持つ$ \orp{z,w}\in \app{\epsilon} w\times\mathrm{Reg} $が存在して，
 \[
     \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z\fap 0,\trgl{w}\fap 0}\con{1}
     \orp{z\fap 0,\trgl{w}\fap 0}\to_{\epsilon}\orp{x\fap 0,\tildel{\trgl{y}}\fap 1}.
 \]
-あるいは，同一の規制随伴性（またはその言語的代替）によって，$ z\in\cs{\epsilon}w $が構築されるとも考えられる．
-このような$ \orp{z,w} $と$ \orp{x,y} $の関係を遮断関係と呼ぶ．それは，一方の因果系列の実現が他方のそれを論理的に阻止するような関係である．
-$ \orp{z,w}$ と $\orp{x,y} $が遮断関係$\mathrm{IS}$に属するとき，$ \arg w = \arg y $，かつ任意の$ 0\in n\in\iter{\breve{\mathrm{S}}}{2}\fap(\arg w) $について，$ \trgl{w}\fap n = \barl{(\trgl{y}\fap n)}\cap\msec{(\arg y)}{n} $．すなわち，
+あるいは，同一の執行随伴性（またはその言語的代替）によって，$ z\in\cs{\epsilon}w $が構築されるとも考えられる．
+遮断関係$\mathrm{IS}$は，一方の因果系列の実現が他方のそれを論理的に阻止するような関係である．すなわち，
 
 \begin{df}
 \label{df:遮断関係}
@@ -396,7 +400,7 @@ $}は\kagi{$
     \classab{\orp{\orp{z,w},\orp{x,y}}:z\in\app{\epsilon} w\con{1}x\in\app{\epsilon} y\con{1}z\uphr\bar{1} = x\uphr\bar{1}\con{1}w,y\in\mathrm{Reg}\con{1}
     \\\hfill
     \arg w = \arg y\con{1}
-    (\iter{\mathrm{E}}{2}\fap\trgl{w})\uphr\bar{1}\subseteq\lambda_n(\barl{(\trgl{y}\fap i)}\cap\msec{(\arg y)}{n})\con{1}
+    (\iter{\mathrm{E}}{2}\fap\trgl{w})\uphr\bar{1}\subseteq\lambda_n(\barl{(\trgl{y}\fap n)}\cap\msec{(\arg y)}{n})\con{1}
     \trgl{w}\fap 0 = \trgl{y}\fap 0
 }
 $}を表わす．
@@ -426,7 +430,7 @@ $ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得�
 なお関連して，$ \orp{\orp{z,w},\orp{x,y}}\in\mathrm{IS} $であるとき，$ \orp{x,y} $がS規制ならば，$ x\in\exe{\epsilon} y $は「禁止されている」，$ z\in\exe{\epsilon} w $は「義務づけられている」と言えるかもしれない．
 実際このケースで，
 \[
-    \tildel{\trgl{w}}\fap 1 = \trgl{y}\fap 0\con{1}
+    \tildel{\trgl{w}}\fap 1 = \trgl{w}\fap 0\con{1}
     \tildel{\trgl{w}}\fap 0 = \barl{(\tildel{\trgl{y}}\fap 0)}\cap\mser{(\arg y)}{0}
 \]
 であれば，$ \orp{z,w} $は$ \orp{x,y} $の抑制条件の阻止を促進条件とするP規制であり得る\footnote{
@@ -447,7 +451,7 @@ $ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得�
 \end{enumerate}
 という制御構造から成る因果系列が存在する．一方の極である法規制の場合，①〜③の担当システムは通常ある程度独立した異なる機関である．他方の極である個人の内部規制や個人間の規制では，担当システムは同一の人間である．そして，これらの中間的なバージョンが存在する．いずれにせよ①〜③の制御構造もまた執行随伴性またはその言語的代替によって構築される．執行可能性を構築することは，そのような全体的システムを設計・構築することでもある．
 
-さらに執行可能性自体について言えば，全体的言語に適合する解釈空間に依拠する限り，因果関係は，それゆえに執行可能性は，最終的に何らかの物理的構造に帰着すると思われる．この意味で規制システムは物理的システムであり，特に法規制はその執行可能性が人工的に創出される工学的な産物である．だとすると，他の工学的産物と同様に，物理的システムとしての規制を記述することと，それの工学的妥当性を検証することは，異なる問題に属する．前者の重要部分は規制類型を言及する\ref{sssec:全体的言語}の言語$\mathfrak{L}$の開放文，つまり，$ (\breve{\epsilon}\fap\Lambda)\exten p = y\in\mathrm{Reg} $である論理式$p\in\mathfrak{L}$を構成する作業であり，これを規制の構造解析と呼ぶ．
+さらに執行可能性自体について言えば，\ref{sssec:全体的言語}の全体的言語$\mathfrak{L}$に適合する解釈空間に依拠する限り，因果関係は，それゆえに執行可能性は，最終的に何らかの物理的構造に帰着すると思われる．この意味で規制システムは物理的システムであり，特に法規制はその執行可能性が人工的に創出される工学的な産物である．だとすると，他の工学的産物と同様に，物理的システムとしての規制を記述することと，それの工学的妥当性を検証することは，異なる問題に属する．前者の重要部分は規制類型を言及する言語$\mathfrak{L}$の開放文，つまり，$ (\breve{\epsilon}\fap\Lambda)\exten p = y\in\mathrm{Reg} $である論理式$p\in\mathfrak{L}$を構成する作業であり，これを規制の構造解析と呼ぶ．
 例えば，\ref{ssec:執行可能性}においては，「$x$は人間」とか「$e$は$a$に対する$n$月の懲役」といった原初的言語に還元できない述語を使用して，規制類型を部分的に規定した．このような構造解析の例は完全な形ではないが，例証のために今後も必要に応じて追加されるだろう．
 
 構造解析を体系的に行う場合，日常言語の不明瞭な用語を積み重ねて作られた混乱した概念群を明晰化せざるを得ないことが多い．日常言語は定式化ではなくコミュニケーションのために進化してきた構造であり，定式化に無自覚な分野では容易に混乱が生じる．例として法人への行動帰属の問題を考察してみよう．
@@ -461,12 +465,12 @@ $ \orp{x,\app{\epsilon} y}\to_{\epsilon}\orp{z,\app{\epsilon} w} $であり得�
         \con{1}\text{$z\in\exe{\epsilon} y$は$ \tilde{x}\fap 1 $の業務執行}.
     \]
 \end{enumerate}
-上記の「業務執行権」と「業務執行」は当然さらなる明確化を必要とする．前者は，$ x\in\exe{\epsilon} y $が業務執行であるP規制$ \orp{x,y} $であるか，または，$ z\in\exe{\epsilon} w $が業務執行であるような$ \mathrm{IS}\img\classab{\orp{z,w}} $のメンバーであるS規制，として定義することが期待できる．
+上記の「業務執行権」と「業務執行」は当然さらなる明確化を必要とする．前者は，$ a\in\exe{\epsilon} b $が業務執行であるP規制$ \orp{a,b} $であるか，または，$ a\in\exe{\epsilon}b $が業務執行であるような$ \mathrm{IS}\img\classab{\orp{a,b}} $のメンバーであるS規制，として定義することが期待できる．
 問題は後者であるが，法人の行動を規定するために業務執行の概念を使うなら，業務執行の概念を規定する際には法人の行動の概念，それゆえ法人を結節点に持つ規制の概念は使えない．この点については，
-占有等の事実状態としての設立時出資財産について，その不適切な管理運用に対するS規制は，発起人集合によって制定される規制として，法人の行動の概念を使用せずに規定できると思われる\footnote{
+占有等の事実状態としての設立時出資財産について，その不適切な管理運用に対するS規制は，設立者集合によって制定される規制として，法人の行動の概念を使用せずに規定できると思われる\footnote{
     機関の概念も使用しない．逆にそのような規制の結節点が設立時の機関である．
-}．すると，そのようなS規制$ \orp{x,y} $と$ \orp{z,w}\in\mathrm{IS}\img\classab{\orp{x,y}} $について，$ z\in\exe{\epsilon} w $（設立時出資財産の適切な管理運用）は当該法人の業務執行であり，また，業務執行の結果としてその執行者が占有取得した財産（設立後出資財産も含まれる）の適切な管理運用も業務執行である，というように再帰的に規定すれば，かろうじて循環を回避できるかもしれない．
+}．すると，そのようなS規制$ \orp{c,f} $と$ \orp{c,f}\in\mathrm{IS}\img\classab{\orp{a,b}} $について，$ a\in\exe{\epsilon}b $（設立時出資財産の適切な管理運用）は当該法人の業務執行であり，また，業務執行の結果としてその執行者が占有取得した財産（設立後出資財産も含まれる）の適切な管理運用も業務執行である，というように再帰的に規定すれば，かろうじて循環を回避できるかもしれない．
 
 また，法人の概念自体についても，それは法人の構成員や機関の概念からは独立に規定する必要がある．なぜなら，法人の構成員や機関は，当該法人との契約等によって，当該法人を準拠領域の内部構造に持つ規制の当事者となるからである．
-そこで，法人を，発起人集合$h$，設立時名称$n$，設立時の主事務所の所在地$s$，等々の順序対または系列とみなす方法が考えられる．これによると，法人自体は単なる符号として生成消滅することはなく，生成消滅したり存続期間を云々できるのは，法人を内部構造に持つ規制群であることになる．
+そこで，法人を，設立者集合$h$，設立時名称$n$，設立時の主事務所の所在地$s$，等々の順序対または系列とみなす方法が考えられる．これによると，法人自体は単なる符号として生成消滅することはなく，生成消滅したり存続期間を云々できるのは，法人を内部構造に持つ規制群であることになる．
  
