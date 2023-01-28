@@ -675,27 +675,29 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
     } \tag{i}
 \end{multline*}
 であるとき，かつそのときに限り，$ \gamma\fap(\tilde{x}\fap 2) $は$ \orp{x,\delta} $の法益主体である．
-(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制条件になっていることを表現している．それが真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
+(i)は，$ \tilde{a}\fap 2\in\tildel{\trgl{\delta}}\fap 2 $であることが，$ \gamma\fap(\tilde{a}\fap 2) $のある種の行動パターン（$\beta$の要素）に対して抑制条件になっていることを表現している．(i)が真となるような\kagi{$ \beta $}と\kagi{$ \gamma $}への代入は，\kagi{$ \delta $}への代入によって異なる．
 そして，規制要素$ \orp{x,\delta} $の結節点$ \tilde{x}\fap 1 $と法益主体$ \gamma\fap(\tilde{x}\fap 2) $の組を，$ \orp{x,\delta} $の当事者と言う．
 
-さて，ある規制体系において契約と呼ばれる構造が成り立つには，以下のような規制表明型$v\in\mathrm{Es}^\epsilon $と規制表明型$t\in\mathrm{Es}^\epsilon\cup\mathrm{Ab}^\epsilon$が必要である．いずれもP類型である．まず，任意の$u\in \arg v$について，被制定類型$ \mathcal{R}\fap(\tilde{u}\fap 0) $は$t$であり，制定範囲$ \mathcal{L}\fap(\tilde{u}\fap 0) $の任意のメンバーの公布範囲は，$\tilde{u}\fap 1$を結節点に持つ．すなわち，
+さて，ある規制体系において契約と呼ばれる構造が成り立つには，以下のような規制表明型$v\in\mathrm{Es}^\epsilon $と規制表明型$t\in\mathrm{Es}^\epsilon\cup\mathrm{Ab}^\epsilon$が必要である．いずれもP類型である．まず，任意の$u\in \arg v$について，被制定類型$ (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0) $は$t$であり，制定範囲$ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0) $の任意のメンバーの公布範囲は，$\tilde{u}\fap 1$を結節点に持つ．すなわち，
 \begin{align*}
     \arg v\subseteq\classab{u:
-    \mathcal{R}\fap(\tilde{u}\fap 0) = t\con{1}
-            \mathcal{L}\fap(\tilde{u}\fap 0)\subseteq \classab{s:
-                \tilde{s}\fap 2 \subseteq\classab{e:\tilde{e}\fap 1 = \tilde{u}\fap 1}
+    (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0) = t\con{1}
+    (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq \classab{s:
+                \mathcal{L}\fap(\tilde{s}\fap 2) \subseteq\classab{e:\tilde{e}\fap 1 = \tilde{u}\fap 1}
                 }
     }.
 \end{align*}
-次に，任意の$ u\in\arg v $について，付帯条件$ (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3) $によって，
-すべての$ s\in\union{\classab{\mathcal{L}\fap(\tilde{e}\fap 0):\mathrm{E}\fap u = \mathrm{E}\fap e}} $に共通する内部構造が特定される．同一化される内部構造は，結節点$ \tilde{s}\fap 1 $，付帯条件と制定類型の組$ \mathcal{R}\fap(\tilde{s}\fap 3) $，制定範囲$ \mathcal{L}\fap(\tilde{s}\fap 0) $のメンバーの結節点と法益主体である．
+次に，付帯条件$ (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3) $によって，すべての$s\in (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)$に共通する内部構造が特定される\footnote{
+    $(u)[u\in\arg v\case{1}{1}{1}(\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq(\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)]$であるから（\ref{sssec:規制表明}），結局，$\union{\classab{(\mathcal{L}\resl\mathcal{L})\fap(\tilde{e}\fap 0):e\in\arg v\con{1}\mathrm{E}\fap e = \mathrm{E}\fap u}}$のメンバーに共通する内部構造である．
+}．
+共通化される内部構造は，結節点$ \tilde{s}\fap 1 $，付帯条件と被制定類型の組$ \mathcal{R}\fap(\tilde{s}\fap 3) $，制定範囲$ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{s}\fap 0) $のメンバーの結節点と法益主体である．
 すなわち，$\gamma$に相対的な$\alpha$の特定化系列$ \alpha\bullet\gamma $を，
 \begin{multline*}
     \alpha\bullet\gamma = (\imath k)[
         k\in\mathrm{Seq}\con{1}\arg k = 5\con{1}
         \alpha\subseteq\classab{s:\tilde{s}\fap 1 = k\fap 0\con{1}
         \mathcal{R}\fap(\tilde{s}\fap 3) = \orp{k\fap 1,k\fap 2}\con{1}\\
-        \mathcal{L}\fap(\tilde{s}\fap 0)\subseteq \classab{x:k\fap 3= \tilde{x}\fap 1\con{1} k\fap 4 = \gamma\fap(\tilde{x}\fap 2)\neq\Lambda}
+        (\mathcal{L}\resl\mathcal{L})\fap(\tilde{s}\fap 0)\subseteq \classab{x:k\fap 3= \tilde{x}\fap 1\con{1} k\fap 4 = \gamma\fap(\tilde{x}\fap 2)\neq\Lambda}
         }
     ]
 \end{multline*}
@@ -703,9 +705,9 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
 \begin{gather*}
     \sigma = \classab{\orp{\orp{u,v},\orp{x,y}}:
     \orp{u,v}\in\app{\epsilon} v\times \mathrm{Es}^\epsilon\con{1}
-    x\in \mathcal{L}\fap(\tilde{u}\fap 0)\con{1}y = \mathcal{R}\fap(\tilde{u}\fap 0)
+    x\in (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\con{1}y = (\mathcal{R}\resl\mathcal{L})\fap(\tilde{u}\fap 0)
     },\\
-    \mu \ddagger\sigma = \classab{\orp{u,v}:\tilde{u}\fap 0 \in\mu}\uphl\sigma
+    \mu \ddagger\sigma = \classab{\orp{u,v}:\tilde{u}\fap 1 \in\mu}\uphl\sigma
 \end{gather*}
 と規定する．そして，(i)が成り立つ規制類型$y$に関する規制要素から$\mu \ddagger\sigma$を反復して遡及可能な規制要素にまで拡張して，
 \begin{multline*}
@@ -713,7 +715,7 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
         k\in\mathrm{Seq}\con{1}\arg k = 5\con{1}
         \alpha\subseteq\classab{s:\tilde{s}\fap 1 = k\fap 0\con{1}
         \mathcal{R}\fap(\tilde{s}\fap 3) = \orp{k\fap 1,k\fap 2}\con{1}\\
-        \mathcal{L}\fap(\tilde{s}\fap 0)\subseteq\classab{x':
+        (\mathcal{L}\resl\mathcal{L})\fap(\tilde{s}\fap 0)\subseteq\classab{x':
             (\exists x)(\exists y)(
             \orp{x',k\fap 2}\in\ance{(\classab{k\fap 3,k\fap 4}\ddagger\sigma)}\img\classab{\orp{x,y}}\con{1}\\
             k\fap 3= \tilde{x}\fap 1\con{1} k\fap 4 = \gamma\fap(\tilde{x}\fap 2)\neq\Lambda
@@ -722,7 +724,9 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
         }
     ]
 \end{multline*}
-と定義してもよい．いずれにせよ，
+と定義してもよい\footnote{
+    例えば，契約によって直接債務を制定するのではなく，債務を制定する予約権を制定するケース等が想定されている．
+}．いずれにせよ，
 \[
    \arg v \subseteq \classab{u:(\exists b)(
     b = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\con{1}
@@ -739,26 +743,28 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
     (\exists u')(\exists k')(\exists u'')(\exists k'')[
         \orp{u',v},\orp{u'',v}\in\mathrm{REG}^\epsilon\con{1}
         \check{\varphi}\fap(u\fap 0)\cap\check{\varphi}\fap(u'\fap 0)\neq\Lambda\con{1}
-        \tilde{u}\fap 1 = \tilde{u'}\fap 1 \con{1}\\
-        k\fap 0 = \tilde{u''}\fap 1\notin\classab{k\fap 3,k\fap4}\con{1}
-        k' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u'}\fap 3)\bullet\gamma\con{1}k'' = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u''}\fap 3)\bullet\gamma\con{1}\\
+        \tilde{u}\fap 1 = \tildel{(u')}\fap 1 \con{1}\\
+        k\fap 0 = \tildel{(u'')}\fap 1\notin\classab{k\fap 3,k\fap4}\con{1}
+        k' = (\mathcal{L}\resl\mathcal{R})\fap(\tildel{(u')}\fap 3)\bullet\gamma\con{1}k'' = (\mathcal{L}\resl\mathcal{R})\fap(\tildel{(u'')}\fap 3)\bullet\gamma\con{1}\\
         k'\fap 0 ,k''\fap 0 \in \classab{k\fap 3,k\fap4}\con{1}
         k\uphr\bar{1} = k'\uphr \bar{1} = k''\uphr\bar{1}
     ].
 \end{multline}
-(1)を充たす$u$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $と仮定する．すると契約の申込$ u\in \exe{\epsilon} v $によって，$ \mathcal{L}\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $となる蓋然性が成立する．今，ある$ s\in\mathcal{L}\fap(\tilde{u}\fap 0) $について，$ \orp{s,t}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $と仮定する．すると契約の承諾$ s\in\exe{\epsilon} t $によって，$ \tilde{s}\fap 0 = \orp{z,y} $について，$z\subseteq \enf{\epsilon}y$となる蓋然性が成立する．
-言い換えれば，$ \tilde{u}\fap 1,\tilde{s}\fap 1\in \classab{k\fap 3,k\fap 4} $の合意によって，そのような蓋然性が生じる．
 
-これに対して，(2)は，申込権限の代理権$ \orp{u'',v} $について，$ \tilde{u''}\fap 1 $を承諾権限の結節点とするような申込権限を制定するものである．代理権自体は(1)(2)とは別に，下記の条件を充たす規制表明型$ p\in\mathrm{Es}^\epsilon $について，ある$ \orp{e,p}\in\mathrm{REG}^\epsilon $が規制体系に含まれる場合に，その実行によって制定される．
+(1)を充たす$u$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $と仮定する．すると契約の申込$ u\in \exe{\epsilon} v $によって，
+$ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $となるレベル$\mathcal{R}\fap(\tilde{u}\fap 0)$の蓋然性が成立する．
+今，ある$ s\in(\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0) $について，$ \orp{s,t}\in\mathrm{REG}^\epsilon\uphr\mathrm{Es}^\epsilon $と仮定する．すると契約の承諾$ s\in\exe{\epsilon} t $によって，$ \tilde{s}\fap 0 = \orp{\orp{z,y},m} $について，$z\subseteq \enf{\epsilon}y$となるレベル$m$の蓋然性が成立する．言い換えれば，$ \tilde{u}\fap 1,\tilde{s}\fap 1\in \classab{k\fap 3,k\fap 4} $の合意によって，そのような蓋然性が生じる．
+
+これに対して，(2)は，申込権限の代理権$ \orp{u'',v} $について，$ \tildel{(u'')}\fap 1 $を承諾権限の結節点とするような申込権限$\orp{u,v}$を制定するものである．$\orp{u,v}$の結節点は，既存の申込権限$\orp{u',v}$のそれと同一である．代理権自体は(1)(2)とは別に，下記の条件を充たす規制表明型$ p\in\mathrm{Es}^\epsilon $について，ある$ \orp{e,p}\in\mathrm{REG}^\epsilon $が規制体系に含まれる場合に，その実行によって制定される．
 \begin{multline}
     \arg p\subseteq \classab{e:
     (\exists u)(\exists u')[
-        \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}u'\in \mathcal{L}(\tilde{e}\fap 0)\cap\app{\epsilon} v\con{1}\mathcal{R}(\tilde{e}\fap 0) = v\con{1}\\
-        \tilde{u}\fap 1\neq \tilde{u'}\fap 1\con{1}
-        \tilde{u}\uphr\classab{0,2,3} = \tilde{u'}\uphr\classab{0,2,3}\con{1}
+        \orp{u,v}\in\mathrm{REG}^\epsilon\con{1}u'\in (\mathcal{L}\resl\mathcal{L})\fap(\tilde{e}\fap 0)\cap\app{\epsilon} v\con{1}(\mathcal{R}\resl\mathcal{L})\fap(\tilde{e}\fap 0) = v\con{1}\\
+        \tilde{u}\fap 1\neq \tildel{(u')}\fap 1\con{1}
+        \tilde{u}\uphr\classab{0,2,3} = \tildel{(u')}\uphr\classab{0,2,3}\con{1}
         \check{\varphi}\fap(u\fap 0)\cap\check{\varphi}\fap(u'\fap 0)\neq\Lambda
     ]
-}
+    }.
 \end{multline}
 承諾権限の代理権についても同様である．契約に関する基本的な規制は，当該規制体系において，(1)〜(3)により再帰的に実装される．
 
