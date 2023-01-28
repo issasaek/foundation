@@ -788,7 +788,7 @@ $ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $�
 しかし，規制体系内の全ての規制類型について，それが$ \mathcal{W}\fap 1,\iter{\mathfrak{P}}{1}\fap(\mathcal{W}\fap 1),\iter{\mathfrak{P}}{2}\fap(\mathcal{W}\fap 1),\dots $のどの段階に属するかを体系的に確定することはできない．それゆえ，個々の規制類型の構造解析において，上記の$i$や$j$を個別的に特定する負担が生じる．
 
 このような負担を回避して，規制類型の存在論を体系的に確定できるようにするには，$\mathcal{W}\fap 2$を超えて階層を上昇させる必要がある．
-この点に関して，$y\in\mathrm{Reg}$と$0\in i\in\mathbb{N}$について，$\arg y\subseteq \mathcal{W}\fap i$であると仮定しよう．すると，$\trgl{y}$の系列要素はそれぞれが$\mathcal{W}\fap i$の部分クラスとなるような対象であることが想定できる．すなわち，$ \trgl{y}\img\univ\subseteq \mathcal{P}(\mathcal{W}\fap i) $．すると$\trgl{y}$自体は，$\mathcal{W}\fap i$の部分クラスと自然数の順序対の有限クラスであるから，ある$n\in\mathbb{N}$について，$ \trgl{y}\in\iter{\mathfrak{P}}{n}\fap(\mathcal{W}\fap i) $．したがって，$\trgl{y}\in \mathcal{W}\fap(\mathrm{S}\fap i)$．そして，$ y $のメンバーは，その1個の$\trgl{y}$と$\mathcal{W}\fap i$のメンバーとの順序対になるから，$ n\subseteq m\in\mathbb{N} $について，$ y\subseteq \iter{\mathfrak{P}}{m}\fap(\mathcal{W}\fap i) $．それゆえ，$y\in \mathcal{W}\fap(\mathrm{S}\fap i)$．
+この点に関して，$y\in\mathrm{Reg}$と$0\in i\in\mathbb{N}$について，$\arg y\subseteq \mathcal{W}\fap i$であると仮定しよう．すると，$\trgl{y}$の系列要素はそれぞれが$\mathcal{W}\fap i$の部分クラスとなるような対象であることが想定できる．すなわち，$ \trgl{y}\img\univ\subseteq \mathcal{P}(\mathcal{W}\fap i) $．すると$\trgl{y}$自体は，$\mathcal{W}\fap i$の部分クラスと自然数との順序対の有限クラスであるから，ある$n\in\mathbb{N}$について，$ \trgl{y}\in\iter{\mathfrak{P}}{n}\fap(\mathcal{W}\fap i) $．したがって，$\trgl{y}\in \mathcal{W}\fap(\mathrm{S}\fap i)$．そして，$ y $のメンバーは，その1個の$\trgl{y}$と$\mathcal{W}\fap i$のメンバーとの順序対になるから，$ n\subseteq m\in\mathbb{N} $について，$ y\subseteq \iter{\mathfrak{P}}{m}\fap(\mathcal{W}\fap i) $．それゆえ，$y\in \mathcal{W}\fap(\mathrm{S}\fap i)$．
 ところで，\ref{ssec:集合論の体系}の体系で，次の(1)(2)が証明可能である．
 \setcounter{equation}{0}
 \begin{gather}
@@ -800,18 +800,18 @@ $ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $�
     x\in\arg y & \case{1}{1}{1}x\in \mathcal{W}\fap i\\
     &\:\,\case{1}{0}{1}x\subseteq \mathcal{W}\fap i.
 \end{align*}
-さらに仮定により，$ x\in \trgl{y}\img\univ\case{1}{1}{1}x\subseteq \mathcal{W}\fap i $．したがって，(1)により，
+また既述の通り，$ x\in \trgl{y}\img\univ\case{1}{1}{1}x\subseteq \mathcal{W}\fap i $．したがって，(1)により，
 \begin{align*}
     x\in\arg y\case{2}{1}{1}x\in \trgl{y}\img\univ & \case{1}{2}{1}x\subseteq\mathcal{W}\fap i\\
     &\:\,\case{1}{0}{1}\trcl{x}\subseteq  \mathcal{W}\fap i.
 \end{align*}
-それゆえ，$v\in\trcl x$である規制類型$v$について，$v\in\mathcal{W}\fap i$．上述したところから，$ v\subseteq \mathcal{W}\fap i\times \mathcal{W}\fap(\brevel{\mathrm{S}}\fap i) $ならば，$v\in\mathcal{W}\fap i $となる．
+それゆえ，$v\in\trcl x$である規制類型$v$について，$v\in\mathcal{W}\fap i$．上述したところから，$ v\subseteq \mathcal{W}\fap i\times \mathcal{W}\fap(\breve{\mathrm{S}}\fap i) $ならば，$v\in\mathcal{W}\fap i $となる．
 
 このような考察を踏まえて，$\mathcal{W}$を拡張した規制類型の階層構造を導入する．
 \begin{df}
 \label{df:規制類型の階層}
 \kagi{$
-    \mathcal{X}^\epsilon
+    \mathcal{X}
 $}は\kagi{$
     (\imath w)[
         \func{w}\con{1}\arg w = \mathbb{N}\con{1}
@@ -821,32 +821,32 @@ $}は\kagi{$
     ]
 $}を表わす．
 \end{df}
-\noindent D \ref{df:階層構造}により，$ \mathcal{W}\fap\Lambda = \Lambda $であるから，$ \mathcal{X}^\epsilon\fap\Lambda = \Lambda $である．
-次に，正規集合$\varSigma^{\epsilon}\alpha$について，内部階層$ \mathrm{inh}_\epsilon\alpha $を定義して，それを$\mathcal{X}^\epsilon$の階層と連動させる．
+\noindent D \ref{df:階層構造}により，$ \mathcal{W}\fap\Lambda = \Lambda $であるから，$ \mathcal{X}\fap\Lambda = \Lambda $である．
+次に，正規集合$\varSigma^{\epsilon}\alpha$について，内部階層$ \mathrm{inh}_\epsilon\alpha $を定義して，それを$\mathcal{X}$の階層と連動させる．
 まず，$y$が$v$のメンバーの内部構造に含まれる$\orp{v,y}\in \timex{(\mathrm{Reg})}{2}$のクラスである内部関係を，
 \begin{df}
 \label{df:内部関係}
 \kagi{$
-    \mathrm{in}^\epsilon
+    \mathrm{in}
 $}は\kagi{$
-    \classab{\orp{v,y}:(\exists z)(z\in v\con{1}y\in\trcl z}\cap\timex{(\mathrm{Reg})}{2}
+    \classab{\orp{v,y}:(\exists z)(z\in v\con{1}y\in\trcl z)}\cap\timex{(\mathrm{Reg})}{2}
 $}を表わす,
 \end{df}
-\noindent と規定する．明らかに$ (\mathrm{in}^\epsilon\resl\mathrm{in}^\epsilon)\subseteq \mathrm{in}^\epsilon $．内部階層は反復の最大値で定義されるため結局同じことになるが，推移性を排除した次の関係（直接の内部関係）を使う方が分かりやすい．
+\noindent と規定する．明らかに$ (\mathrm{in}\resl\mathrm{in})\subseteq \mathrm{in} $．内部階層は反復の最大値で定義されるため結局同じことになるが，推移性を排除した次の関係（直接の内部関係）を使う方が分かりやすい．
 \begin{df}
 \label{df:直接の内部関係}
 \kagi{$
-    \mathrm{int}^\epsilon
+    \mathrm{int}
 $}は\kagi{$
-    \mathrm{in}^\epsilon\cap\barl{(\mathrm{in}^\epsilon\resl\mathrm{in}^\epsilon)}
+    \mathrm{in}\cap\barl{(\mathrm{in}\resl\mathrm{in})}
 $}を表わす．
 \end{df}
 
-\noindent 制定関係または廃止関係に立つ規制$ \orp{u,v} $と$\orp{x,y}$について，$ \orp{v,y} $は直接の内部関係に属する．つまり，
+\noindent 制定関係または廃止関係に立つ規制$ \orp{u,v} $と$\orp{x,y}$について，$ \orp{v,y} $は内部関係に属する．つまり，
 \[
     \classab{\orp{v,y}:(\exists u)(\exists x)(
         \orp{\orp{u,v},\orp{x,y}}\in\mathrm{est}^\epsilon\cup\mathrm{abo}^\epsilon
-    )}\subseteq\mathrm{int}^\epsilon.
+    )}\subseteq\mathrm{in}.
 \]
 次の定義は，正規集合$\varSigma^{\epsilon}\alpha$の包括類型の集合$ \mathrm{anc}_\epsilon\alpha $を導入する．
 \begin{df}
@@ -854,7 +854,7 @@ $}を表わす．
 \kagi{$
     \mathrm{anc}_\epsilon\alpha
 $}は\kagi{$
-    \classab{v:v\in\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ\con{1}v\notin\brevel{(\mathrm{in}^\epsilon)}\img(\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ)}
+    \classab{v:v\in\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ\con{1}v\notin\brevel{(\mathrm{in})}\img(\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ)}
 $}を表わす．
 \end{df}
 \noindent 包括類型は正規集合内の規制類型であり，他の正規集合内のどの規制類型もそれに対して内部関係を持たないような規制類型である．すると，
@@ -871,7 +871,7 @@ $}を表わす．
     \mathrm{inh}_\epsilon\alpha
 $}は\kagi{$
     \classab{
-        \orp{n,y}:n = \union{\classab{i:i\in\mathbb{N}\con{1}(\exists v)(\orp{v,y}\in (\mathrm{anc}_\epsilon\alpha)\uphl\iter{(\mathrm{int}^\epsilon)}{i})
+        \orp{n,y}:n = \union{\classab{i:i\in\mathbb{N}\con{1}(\exists v)(\orp{v,y}\in\mathrm{anc}_\epsilon\alpha\uphl\iter{\mathrm{int}}{i})
         }}
     }
 $}を表わす．
@@ -881,15 +881,15 @@ $}を表わす．
 \[
     m = \union{((\mathrm{inh}_\epsilon\alpha)\img\univ)}\in (\mathrm{inh}_\epsilon\alpha)\img\univ
 \]
-ならば\footnote{実際の物理的システムとしての規制体系で，内部階層が無限に上昇していくようなものは想像できない．}，$ \tildel{(\mathcal{X}^\epsilon \uphr (\iter{\mathrm{S}}{3}\fap m))} $によって，$\iter{\mathrm{S}}{2}\fap m$から始めて，順番に内部階層を下っていくことで，個々の規制類型に特定化された階層を割り当てることができる\footnote{
+ならば\footnote{実際の物理的システムとしての規制体系で，内部階層が無限に上昇していくようなものは想像できない．}，$ \tildel{(\mathcal{X}\uphr (\iter{\mathrm{S}}{3}\fap m))} $によって，$\iter{\mathrm{S}}{2}\fap m$から始めて，順番に内部階層を下っていくことで，個々の規制類型に特定化された階層を割り当てることができる\footnote{
     $ y\in\mathrm{Reg} $について，$ \trgl{y}\fap i = \bar{z}\cap\mathcal{W}\fap n $とすると，$ \trgl{y}\fap i $の中には，$y$に対して直接の内部関係を持つ規制類型が無限定に入り込む．その結果，事実上内部階層を辿ることができなくなるように思われる．高次類型の修正条件なども同様の問題を持つ．そのため，$\mathcal{W}$のある段階ではなく，$ \msec{(\arg y)}{i} $等で制限する方がよい．
 }．すなわち，
 \[
     y\in\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ\case{1}{1}{1}
-   y\subseteq \tildel{(\mathcal{X}^\epsilon \uphr  (\iter{\mathrm{S}}{3}\fap m))}\fap((\mathrm{inh}_\epsilon\alpha)\fap y)
+   y\subseteq \tildel{(\mathcal{X}\uphr(\iter{\mathrm{S}}{3}\fap m))}\fap((\mathrm{inh}_\epsilon\alpha)\fap y)
 \]
 とみなす．
-$ \iter{\mathrm{S}}{2}\fap m $から始める理由は，$ \mathcal{X}^\epsilon\fap 0 = \Lambda $であり，$ \mathcal{X}^\epsilon\fap 1 $でも実際上有意味な規制類型を決定できないであろうから，$ \orp{m,y}\in\mathrm{inh}_\epsilon\alpha $であるような$y$であっても，$ y\subseteq \mathcal{X}^\epsilon\fap 2 $ではある，と考えられるからである．
+$ \iter{\mathrm{S}}{2}\fap m $から始める理由は，$ \mathcal{X}\fap 0 = \Lambda $であり，$ \mathcal{X}\fap 1 $でも実際上有意味な規制類型を決定できないであろうから，$ \orp{m,y}\in\mathrm{inh}_\epsilon\alpha $であるような$y$であっても，$ y\subseteq \mathcal{X}\fap 2 $ではある，と考えられるからである．
 
 さらに，$\epsilon$の不特定性を逆手にとって，$ \varSigma^{\epsilon}\alpha $の内部階層の最大値の特定化を実質的に不要にできる．
 \begin{df}
@@ -905,16 +905,16 @@ $}を表わす,
     m = \union{((\mathrm{inh}_\epsilon\alpha)\img\univ)}\con{1}
     \iter{\mathrm{S}}{2}\fap m \in \mathfrak{w}\epsilon
 \]
-とみなすだけでよい．そして，$ x\in y\in\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ $についての以下の記述を，$y$を言及する規定条件の一部として使用する．
+とみなすだけでよい．そして，$ x\in y\in\brevel{(\varSigma^{\epsilon}\alpha)}\img\univ $についての以下の記述を，$y$を言及する規定条件の一部として使用する．ただし，予め$(\mathrm{inh}_\epsilon\alpha)\fap y$の特定化が必要である．
 \[
-    x\in\tildel{(\mathcal{X}^\epsilon \uphr\mathfrak{w}\epsilon)}\fap((\mathrm{inh}_\epsilon\alpha)\fap y).
+    x\in\tildel{(\mathcal{X} \uphr\mathfrak{w}\epsilon)}\fap((\mathrm{inh}_\epsilon\alpha)\fap y).
 \]
 
-関連して，$\alpha\bkg{\epsilon}\beta$や$\prob{\alpha}{\beta}$も（定義上$\trgl{\arg\epsilon}$等に制限されてはいるものの）そのサイズが大きくなりがちであり，これらを規制類型の内部構造に配置する場合は，そこに含まれる規制類型と同様に$ \mathcal{X}^\epsilon\fap i $等に制限する必要がある．あるいは，規制類型の中ではこれらをなるべく使用せずに，次のようなN類型$y$に還元する方がよいかもしれない．すなわち，
+関連して，$\alpha\bkg{\epsilon}\beta$や$\prob{\alpha}{\beta}$も（定義上$\trgl{\arg\epsilon}$等に制限されてはいるものの）そのサイズが大きくなりがちであり，これらを規制類型の内部構造に配置する場合は，そこに含まれる規制類型と同様に$ \mathcal{X}\fap i $等に制限する必要がある．あるいは，規制類型の中ではこれらをなるべく使用せずに，次のようなN類型$y$に還元する方がよいかもしれない．すなわち，
 \[
    \arg\trgl{y} = 4\con{1}\arg y = \mathcal{W}\fap(\breve{\mathrm{S}}\fap i)
 \]
-ならば，$ \exe{\epsilon}y $によって，実質的に単なる因果的構造を表現することができる．D \ref{df:執行可能性}により危険惹起に限られるが，$ \arg\trgl{y} = 3 $として，$\enf{\epsilon} y$で表現してもよい．
+ならば，$ \exe{\epsilon}y $によって，実質的に単なる因果的構造を表現することができる．または，$ \arg\trgl{y} = 3 $として，$\enf{\epsilon} y$で表現してもよい．
 
 なお，既に述べたように，$\mathrm{anc}_\epsilon\alpha\subseteq\breve{\alpha}\img\univ$であるが，始祖集合の選択によっては逆は成り立たない．
 例えば，始祖の実行を妨害する行動に対するS規制が体系内にあり，かつ，その規制類型の内部構造に始祖類型が含まれる場合，始祖類型であっても包括類型でないものが存在することになる．
