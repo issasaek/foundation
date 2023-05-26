@@ -618,9 +618,9 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \ref{ssec:原初的言語}の原初的言語に有限個の述語を（非限定的に）追加して，包括的な言語$\mathfrak{L}$を構成する．包括的であるというのは，環境を予測し制御するテクノロジーを構成するかその基盤となる言語的装置に寄与する任意の文$p$について，$p$の何らかの形式化が$\mathfrak{L}$の文である，ということである．
 述語を追加する方法は\ref{ssec:原初的言語}におけるのと同様である．つまり，$\mathfrak{L}$の述語として使用する述語記号を，以下の例のような文脈的定義によって指定する．(1)は原初的言語における\kagi{$ \in $}の文脈的定義と同一である．
 \begin{enumerate}[label=(\arabic*)]
-    \item \kagi{$\alpha\in\beta$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
-    \item \kagi{$\alpha$は人間である}の\kagi{$\alpha$}に任意の変項を代入した結果は，\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす．
-    \item \kagi{$\alpha$は$\beta$を愛する}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)'\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$(\alpha$は人間である)}の\kagi{$\alpha$}に任意の変項を代入した結果は，\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$(\alpha$は$\beta$を愛する)}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)'\alpha\beta $}に同一の代入をした結果を表わす．
 \end{enumerate}
 
 また，どのような述語をどれだけ追加するかについては，以下の1〜3の要領に従う\footnote{
@@ -663,7 +663,7 @@ A(a)は次のことを意味する．以下の条件を充たす$m\in\mathrm{MD}
     \kagi{$ \alpha $}，\kagi{$ \beta $}にそれぞれ$n,i$を指示する数字を，\kagi{$ \delta $}に原始式$ \orp{0,\orp{n,i},k} $を代入する．また，任意の$j\in\arg k = n$について，$ k\fap j = j $とする．そして\kagi{$ \gamma $}には，変項$\boldsymbol{v}(0),\dots,\boldsymbol{v}(\breve{\mathrm{S}}\fap n) $から作られる順序対表現を代入する．例えば，
         \begin{enumerate}
             \item $ (\mathcal{R}\fap m)\fap\orp{2,0} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\in x '}. $
-            \item $ (\mathcal{R}\fap m)\fap\orp{1,0} = \timex{(\mathcal{L}\fap m)}{1}\cap\classab{x:x\text{ は人間}}. $
+            \item $ (\mathcal{R}\fap m)\fap\orp{1,0} = \timex{(\mathcal{L}\fap m)}{1}\cap\classab{x:x\text{ は人間である}}. $
             \item $ (\mathcal{R}\fap m)\fap\orp{2,1} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\text{ は }x'\text{ を愛する}}. $
         \end{enumerate}
 \end{enumerate}
