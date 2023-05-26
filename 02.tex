@@ -27,7 +27,7 @@
 そして論理式は，次の3つの規則により再帰的に記述される．
 \begin{enumerate}[label=(\arabic*)]
     \item \kagi{$ R\alpha_1\dots\alpha_n $}の\kagi{$ R $}に$0\neq n$項述語記号の$i$番目を，\kagi{$ \alpha_1\dots\alpha_n $}に$n$個の変項を並べて代入した結果は論理式である．
-    \item \kagi{$\neg P$}と\kagi{$P\supset Q$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は論理式である．
+    \item \kagi{$\neg P$}と\kagi{$(P\supset Q)$}において，\kagi{$P$}と\kagi{$Q$}に任意の論理式を代入した結果は論理式である．
     \item \kagi{$(\alpha)P$}において，\kagi{$\alpha$}に任意の変項を，\kagi{$P$}に任意の論理式を代入した結果は論理式である．
 \end{enumerate}
 他の真理関数は否定と条件法から，存在量化子は普遍量化子から定義される \footnote{
@@ -43,7 +43,7 @@
 
 次に，1個の形式言語は論理式のクラスの部分クラスであり，それは当該言語の述語として使用する述語記号を指定することによって規定できる．本稿の原初的言語では，$2$項述語記号の$0$番目\kagi{$ (F,\!,) $}が，要素関係を表わす\kagi{$ \in $}の形式的な表現であるとみなされる．すなわち，
 \begin{itemize}
-    \item \kagi{$\alpha\in\beta$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
 \end{itemize}
 この文脈的定義により，\kagi{$ (F,\!,) $}は，原初的言語における実質的な原始的述語として（実際上は\kagi{$ \in $}で代用して），使用される．そして，これ以外の述語記号が出現しない論理式が原初的言語の文である．他方，文でない論理式は文の論理構造を表わす図式（量化図式）となる．
 
