@@ -95,7 +95,7 @@ $}を表わす．
     \text{
         任意の$y$について，
         $ x\in w $が$ y $に対して制定関係を持ち，かつ，}\\
-    \text{$y$に対して廃止関係を持つどの$ z\in w $も$x$に依存しないならば，$ y\in w $，
+    \text{$y$に対して廃止関係を持つどの$ z\in w $も$x$に依存しないならば，$ y\in w $
        }
 \end{multline*}
 であるすべての$w$の共通部分に$k$が属するとき，かつそのときに限られる．したがって，
@@ -146,7 +146,7 @@ $}を表わす．
 $ \orp{u,v},\orp{s,t}\in\varSigma^{\epsilon}\alpha $について，$ \orp{\orp{u,v},\orp{a,b}}\in\mathrm{est}^\epsilon\con{1}\orp{\orp{s,t},\orp{a,b}}\in \mathrm{abo}^\epsilon $とすると，定義により，
 \begin{gather*}
     \tilde{u}\fap 0\in \tildel{\trgl{v}}\fap 0\con{1}\tilde{s}\fap 0\in \tildel{\trgl{t}}\fap 0,\\
-    \tilde{u}\fap 0 = \orp{\orp{c,b},i}\con{1}\tilde{s}\fap 0 = \orp{\orp{c',b},i'}\con{1}a\in c\cap c',
+    \tilde{u}\fap 0 = \orp{\orp{c,b},i}\con{1}\tilde{s}\fap 0 = \orp{\orp{c',b},i'}\con{1}a\in c\cap c'
 \end{gather*}
 なる$c,c',i,i'$が存在する．さらに，$i = i' = 1$であると仮定すると，$c\subseteq\enf{\epsilon}b\con{1}c'\subseteq\barl{(\enf{\epsilon}b)}$．それゆえ，$a\in\enf{\epsilon}b\cap\barl{(\enf{\epsilon}b)} $となって矛盾が生じる．したがって，競合する制定実行と廃止実行の修正条件の実現について，その少なくとも一方の蓋然性レベルは$1$未満である．
 
@@ -216,7 +216,7 @@ $\beta\img\univ\subseteq\mathbb{N}\con{1}\breve{\beta}\img\univ\subseteq\zeta_1\
 そして，$w\in\arg\gamma$について，$\gamma\fap w$は，単純に$\beta\img w$のメンバーの合計値でもよいが，$\gamma$が表わす関数によってはさらに制限される．
 例えば，$w$は機能的に関連する修正条件のクラスであり，$\beta\img w$のメンバーの合計値$n$と，$\gamma$に固有の制限値$j$について，
 \[
-   n\leq j\case{1}{1}{1}\gamma\fap w = n\con{2}n > j\case{1}{1}{1}\gamma\fap w = j,
+   n\leq j\case{1}{1}{1}\gamma\fap w = n\con{2}n > j\case{1}{1}{1}\gamma\fap w = j
 \]
 である等\footnote{
     このような評価構造は刑事法の量刑判断の構造と類似する（あるいは後者は評価構造の一種である）．媒介関数は個別の構成要件実現に関する量刑に，評価関数は手続上包括されるそれらのクラスに関する量刑に相当する．そして制限値$j$は，例えば，当該企画で許容される（$\beta$とは限らない）媒介関数が$w\in\arg\gamma$のメンバーに付与する値のクラスの最大元である．これは上記の量刑手続上包括されるクラスについて，そのメンバーに対して可能な最大の量刑に相当する．
@@ -296,9 +296,9 @@ w' = \classab{\orp{\tilde{a}\fap 0,\barl{(\tildel{\trgl{b}}\fap 0)}\cap\mser{(\a
 \]
 そして，この認定システムの制御構造$ a\in\cs{\epsilon}b $もまた，さらに細分化された因果関係へと分解することができ，その中には以下の3個の制御構造が含まれる．あるいは，$ a\in\cs{\epsilon}b $自体をこれらの制御構造を合成した複合的な事態と捉えることもできる（この場合，多分$b$はN類型になる）．
 \begin{enumerate}[label=(\arabic*)]
-    \item $ x\in\exe{\epsilon} y $であることを認定する制御構造．
-    \item $ (\tildel{\trgl{y}}\fap 1\neq\Lambda\case{1}{1}{1}x\in \cty{\epsilon}y) $であることを認定する制御構造．
-    \item $ \orp{x,y}\in\varSigma^{\epsilon}\alpha $であることを認定する制御構造．
+    \item $ x\in\exe{\epsilon} y $であることを認定する制御構造
+    \item $ (\tildel{\trgl{y}}\fap 1\neq\Lambda\case{1}{1}{1}x\in \cty{\epsilon}y) $であることを認定する制御構造
+    \item $ \orp{x,y}\in\varSigma^{\epsilon}\alpha $であることを認定する制御構造
 \end{enumerate}
 (1)は，構成要件該当性の情報を検出してそれを執行システムまで運ぶ仕組みの一部である．修正条件の導入を自然的な因果に頼るのでない限りこのような仕組みが必要になる．
 (2)は，修正条件の有効性を確認するプロセスであるが，規制体系内の他の機能を促進するために省略されることがある．しかし，抑制機能を持つ修正条件の副作用が意識される場合には，修正条件導入のフロー効率を犠牲にしてでも維持される傾向がある．しかし，(2)をさらに分解すると，省略されない要素として，修正条件の実現$\tilde{x}\fap 0\in\tildel{\trgl{y}}\fap 0$を認定する制御構造が含まれると考えられる．これがないと，$\tilde{x}\fap 0\notin \tildel{\trgl{y}}\fap 0$であっても，(1)と(3)により$\orp{x,y}\in\enf{\epsilon}y$を認定することになって問題が生じる．
@@ -737,10 +737,10 @@ $ \mathrm{E}\fap k = \mathrm{E}\fap u' $である任意の制定規制$ \orp{k,v
    )}.
 \]
 
-以上の条件を充たす$v,t$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon $を申込権限，$ \orp{s,t}\in \brevel{(\mathrm{est}^\epsilon)}\img\classab{\orp{u,v}}\cap\mathrm{REG}^\epsilon $を承諾権限と言う．特定の規制体系においてこれらを実装する方法については，立法規制の適用条件か付帯条件によって，$\enf{\epsilon}v$が構築される準拠領域$u\in\app{\epsilon} v$は，例えば，下記(1)(2)のいずれかを充たすものに限定される．すなわち，$ k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $とすると，
+以上の条件を充たす$v,t$について，$ \orp{u,v}\in\mathrm{REG}^\epsilon $を申込権限，$ \orp{s,t}\in \brevel{(\mathrm{est}^\epsilon)}\img\classab{\orp{u,v}}\cap\mathrm{REG}^\epsilon $を承諾権限と言う．特定の規制体系においてこれらを実装する方法については，立法規制の適用条件か付帯条件によって，$\enf{\epsilon}v$が構築される準拠領域$u\in\app{\epsilon} v$は，例えば，下記(1)(2)のいずれかを充たすものに限定される．ただし，$ k = (\mathcal{L}\resl\mathcal{R})\fap(\tilde{u}\fap 3)\bullet\gamma $とする．
 \setcounter{equation}{0}
 \begin{equation}
-    \tilde{u}\fap 1\in\classab{k\fap 3,k\fap 4}\con{1}k\fap 0\in\classab{k\fap 3,k\fap 4}\cap\barl{\classab{\tilde{u}\fap 1}},
+    \tilde{u}\fap 1\in\classab{k\fap 3,k\fap 4}\con{1}k\fap 0\in\classab{k\fap 3,k\fap 4}\cap\barl{\classab{\tilde{u}\fap 1}}.
 \end{equation}
 \begin{multline}
     (\exists u')(\exists k')(\exists u'')(\exists k'')[
@@ -782,7 +782,7 @@ $ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $�
 さらに，
 \begin{gather*}
     (\exists z')(z'\in y'\con{1}y'' \in \trcl z'\cap \mathrm{Reg}),\\
-    (\exists z'')(z''\in y''\con{1}y''' \in \trcl z''\cap \mathrm{Reg}),
+    (\exists z'')(z''\in y''\con{1}y''' \in \trcl z''\cap \mathrm{Reg})
 \end{gather*}
 と階層が続く可能性がある．また，D \ref{df:規制類型}による限定は非常に乏しいため，規制類型の集合は必要以上に大きくなりがちである．\ref{ssec:集合論の体系}の体系では，$\univ$や$\bar{x}$など大きすぎるクラスは存在できない．以上のことから，規制類型の存在論を，その内部構造に含まれる規制類型の階層構造を踏まえて，体系的に明確化する必要が生じる．
 以下では，正規集合$\varSigma^{\epsilon}\alpha$について，制定階層とは異なる階層構造を定義して，D \ref{df:階層構造}の無限系列$ \mathcal{W} $と連動させる形で正規集合内の規制類型の存在論を確定する．
@@ -795,7 +795,7 @@ $ (\mathcal{L}\resl\mathcal{L})\fap(\tilde{u}\fap 0)\subseteq\enf{\epsilon}t $�
 ところで，\ref{ssec:集合論の体系}の体系で，次の(1)(2)が証明可能である．
 \setcounter{equation}{0}
 \begin{gather}
-    (z)(x)(z\subseteq\mathcal{P}(z)\con{1}x\subseteq z\case{1}{1}{1}\trcl x\subseteq z),\\
+    (z)(x)(z\subseteq\mathcal{P}(z)\con{1}x\subseteq z\case{1}{1}{1}\trcl x\subseteq z).\\
     (n)(n\in\mathbb{N}\case{1}{1}{1}\mathcal{W}\fap n\subseteq \mathcal{P}(\mathcal{W}\fap n)).
 \end{gather}
 すると，仮定と(2)により，
@@ -833,7 +833,7 @@ $}を表わす．
     \mathrm{in}
 $}は\kagi{$
     \classab{\orp{v,y}:(\exists z)(z\in v\con{1}y\in\trcl z)}\cap\timex{(\mathrm{Reg})}{2}
-$}を表わす,
+$}を表わす
 \end{df}
 \noindent と規定する．明らかに$ (\mathrm{in}\resl\mathrm{in})\subseteq \mathrm{in} $．内部階層は反復の最大値で定義されるため結局同じことになるが，推移性を排除した次の関係（直接の内部関係）を使う方が分かりやすい．
 \begin{df}
@@ -901,7 +901,7 @@ $ \iter{\mathrm{S}}{2}\fap m $から始める理由は，$ \mathcal{X}\fap 0 = \
     \mathfrak{w}\epsilon
 $}は\kagi{$
     (\imath n)(2\in n \in\mathbb{N}\con{1}\trgl{\arg\epsilon}=\mathcal{W}\fap n)
-$}を表わす,
+$}を表わす
 \end{df}
 \noindent とすると，単に，ある$ m\in\mathbb{N} $について，
 \[
