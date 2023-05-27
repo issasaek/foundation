@@ -12,13 +12,13 @@
 Lewis~\cite{Lewis}によると，まず，反事実的条件文の真理条件は可能世界の比較類似性によって与えられる．
 「もし$A$ならば$B$だろう」を「$ A\text{□→}B$」と書き，これの「$A$」「$B$」にそれぞれ文$p_1,p_2$を代入した結果を$p$と置く．すると，$p$が（世界$w$において）真であるのは，次のいずれかであるときまたそのときに限られる．
 \begin{enumerate}[label=(\arabic*)]
-    \item $p_1$が真であるような（$ w $から）到達可能な世界が存在しない（$p$は空虚に真）,
+    \item $p_1$が真であるような（$ w $から）到達可能な世界が存在しない（$p$は空虚に真）．
     \item $p_1$と$p_2$が共に真である（$ w $から）到達可能な世界$w'$が存在して，$ w' $の方が，$p_1$が真で$p_2$が偽であるどの世界よりも，$ w $に類似している．
 \end{enumerate}
 次に，\kagi{$Oe$}を「（出来事）$e$が生起する」と読むことにすると，出来事間の因果的依存関係は，
 \[
     \text{
-        「$e_2$は$e_1$に因果的に依存する」は\kagi{$Oe_1\text{□→}Oe_2\con{1}\neg Oe_1\text{□→}\neg Oe_2$}を表わす，
+        「$e_2$は$e_1$に因果的に依存する」は\kagi{$Oe_1\text{□→}Oe_2\con{1}\neg Oe_1\text{□→}\neg Oe_2$}を表わす
     }
 \]
 と規定される．そして，因果関係に推移性を持たせるために，$\mathcal{D}=\classab{\orp{e_1,e_2}:\text{$e_2$は$e_1$に因果的に依存する}}$そのものではなく，同一性を除外したそれの祖先関係$\mathcal{D}\resl\ance{\mathcal{D}}$を因果関係とする．
@@ -38,7 +38,7 @@ Lewis~\cite{Lewis}によると，まず，反事実的条件文の真理条件�
 以上を踏まえると，\ref{ssec:論理式とその解釈}以降で定式化される因果概念は次のようなものになる．
 まず，解釈空間$\epsilon$に相対的に論理式$p_2$が論理式$p_1$に反事実的に依存するのは，次の両方が成立するときまたそのときに限られる．
 \begin{enumerate}[label=(\arabic*)]
-    \item $p_1$と$p_2$が共に真であるモデル$w'\in\breve{\epsilon}\img\univ$が存在して，$p_1$が真で$p_2$が偽である任意のモデル$w\in\breve{\epsilon}\img\univ$について，$ \epsilon\fap w'<\epsilon\fap w$，
+    \item $p_1$と$p_2$が共に真であるモデル$w'\in\breve{\epsilon}\img\univ$が存在して，$p_1$が真で$p_2$が偽である任意のモデル$w\in\breve{\epsilon}\img\univ$について，$ \epsilon\fap w'<\epsilon\fap w$．
     \item $p_1$が真で$p_2$が偽であるモデル$w''\in\breve{\epsilon}\img\univ$が存在する．
 \end{enumerate}
 次に，$\epsilon$に相対的に$\orp{b,y}$が$\orp{a,x}$に因果的に依存するのは，下記の条件※を充たす論理式$p_1,p_2$が存在して，$p_2,\mathbf{N}(p_2)$がそれぞれ$p_1,\mathbf{N}(p_1)$に反事実的に依存するときまたそのときに限られる．ただし，論理式$\zeta$の否定を\kagi{$\mathbf{N}\zeta$}と書く．
@@ -72,7 +72,7 @@ $}は\kagi{$
         i\in\mathbb{N}\con{1}\Lambda\neq n=\arg k\con{1}
         k\in\classab{x:x\subseteq\mathbb{N}\uphl\univ}\cap\mathrm{Seq}
     }
-$}を表わす，
+$}を表わす
 \end{df}
 
 \noindent と規定することができる．また，任意の論理式$x,y$と$i\in \mathbb{N}$について，$x$の否定は$\langle 1,x \rangle$，前件$x$と後件$y$による条件法は$ \langle 2,x,y \rangle $，変項$ \boldsymbol{v}_i $に関する$x$の普遍量化は，$\langle 3,i,x \rangle$と同一視できる．そして，論理式のクラス$\mathrm{L}$は，原子式を含み，メンバーの否定，条件法，普遍量化もメンバーであるようなすべてのクラスの共通部分であるから，
@@ -169,7 +169,7 @@ $}を表わす．
     \alpha\tbinom{\beta}{\gamma}
 $}は\kagi{$
     (\alpha\uphr\barl{\classab{\beta}})\cup\classab{\orp{\gamma,\beta}}
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent と定義する．そして，$ n $ 項系列にそれに対応する $ n $ 項順序対を与える関数$ \mathcal{O} $を導入する．
 
@@ -310,7 +310,7 @@ $}は\kagi{$
         (l)(l\in x\case{1}{1}{1}\orp{s,l}\in \mathrm{SR}^m)\case{1}{0}{1}\orp{s,y}\in \mathrm{SR}^m
         )
     }
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent と規定できる．すると妥当式（すべてのモデルのすべての対象列によって充足される論理式）は，$ \brevel{\mathrm{imp}}\img\classab{\Lambda} $のメンバーであり，1個の論理式が含意する関係は，$ \brevel{\lambda_x\classab{x}}\resl\mathrm{imp} $である．
 
@@ -331,7 +331,7 @@ $}は\kagi{$
             )
         }
     }
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent と定義する．次に，論理式$ \beta $に自由出現する変項の「~$'$~」の数を小さい順に並べた系列を導入する．
 
@@ -357,7 +357,7 @@ $}は\kagi{$
     \classab{\mathcal{O}\fap(s\resl v):\Lambda\neq v= \mathrm{var}\,\beta\con{1}
         \orp{s,\beta}\in\mathrm{SR}^\delta
     }
-$}を表わす，
+$}を表わす
 \end{df}
 
 \noindent と規定することができる．$\delta\exten\beta$は，$\delta$で解釈された$\beta$が$x$について真であるような対象$x$のクラスである．
@@ -373,7 +373,7 @@ $}を表わす，
     \trgl{\alpha}
 $}は\kagi{$
     (\imath x)(\alpha\img\univ = \classab{x})
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent とすると，単に，$ \trgl{\arg\epsilon}\neq \Lambda $ということである．この点と関連して，$m_1,m_2$はいずれも，$2$項述語記号の$0$番目に対して同一の解釈を，対象領域上の要素関係を与えるものとする．すなわち，
 \[
@@ -396,7 +396,7 @@ $}を表わす，
     \indx{\epsilon}
 $}は\kagi{$
     (\imath n)(n\in\mathbb{N}\con{1}n\subseteq\epsilon\img\univ\con{1}n\notin\epsilon\img\univ)
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent とすると，$\indx{\epsilon}\neq \Lambda$．さらに，任意の$i\in\epsilon\img\univ$について，$i$より小さい$\indx{\epsilon}$以外の数はすべて$\epsilon\img\univ$のメンバーとなる．
 
@@ -420,7 +420,7 @@ $}を表わす．
     (\exists m)[
         m\in\arg\epsilon\con{1}p_1,p_2\in \mathrm{T}^m\con{1}
         (w)(w\in\arg \epsilon\con{1}p_1,\mathbf{N}p_2\in \mathrm{T}^w\case{1}{1}{1}\epsilon\fap m\in\epsilon\fap w)
-    ],\tag{1}\\
+    ].\tag{1}\\
     (\exists u)(u\in\arg\epsilon\con{1}p_1,\mathbf{N}p_2\in \mathrm{T}^u).\tag{2}
 \end{gather}
 
@@ -431,7 +431,7 @@ $}を表わす．
     \epsilon\dagger\beta
 $}は\kagi{$
     \classab{w:w\in\arg\epsilon\con{1}\beta\in\mathrm{T}^w}
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent と規定する．すると次の定義によって，$\epsilon$に相対的に$t$が$s$に反事実的に依存する$\orp{s,t}$のクラス$\mathfrak{T}^\epsilon$が導入される．
 
@@ -468,7 +468,7 @@ $}は\kagi{$
             z = \mathbf{N}\mathbf{G}_1\mathbf{N}(\mathbf{K}(\mathbf{G}_2 \mathbf{E}\mathbf{F}^{2}_{0}k p) q)
         ]
     }
-$}を表わす，
+$}を表わす
 \end{df}
 
 \noindent と規定する．
@@ -618,8 +618,8 @@ $(\indx{\epsilon}\uphl\epsilon)\dagger s$には，開始点への類似性の度
 \ref{ssec:原初的言語}の原初的言語に有限個の述語を（非限定的に）追加して，包括的な言語$\mathfrak{L}$を構成する．包括的であるというのは，環境を予測し制御するテクノロジーを構成するかその基盤となる言語的装置に寄与する任意の文$p$について，$p$の何らかの形式化が$\mathfrak{L}$の文である，ということである．
 述語を追加する方法は\ref{ssec:原初的言語}におけるのと同様である．つまり，$\mathfrak{L}$の述語として使用する述語記号を，以下の例のような文脈的定義によって指定する．(1)は原初的言語における\kagi{$ \in $}の文脈的定義と同一である．
 \begin{enumerate}[label=(\arabic*)]
-    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす．
-    \item \kagi{$(\alpha$は人間である)}の\kagi{$\alpha$}に任意の変項を代入した結果は，\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす．
+    \item \kagi{$(\alpha\in\beta)$}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)\alpha\beta $}に同一の代入をした結果を表わす，
+    \item \kagi{$(\alpha$は人間である)}の\kagi{$\alpha$}に任意の変項を代入した結果は，\kagi{$ (F,)\alpha\beta $}に同一の代入をした結果を表わす，
     \item \kagi{$(\alpha$は$\beta$を愛する)}の\kagi{$\alpha$}と\kagi{$\beta$}に任意の変項を代入した結果は，\kagi{$ (F,\!,)'\alpha\beta $}に同一の代入をした結果を表わす．
 \end{enumerate}
 
@@ -662,9 +662,9 @@ A(a)は次のことを意味する．以下の条件を充たす$m\in\mathrm{MD}
     \]
     \kagi{$ \alpha $}，\kagi{$ \beta $}にそれぞれ$n,i$を指示する数字を，\kagi{$ \delta $}に原始式$ \orp{0,\orp{n,i},k} $を代入する．また，任意の$j\in\arg k = n$について，$ k\fap j = j $とする．そして\kagi{$ \gamma $}には，変項$\boldsymbol{v}(0),\dots,\boldsymbol{v}(\breve{\mathrm{S}}\fap n) $から作られる順序対表現を代入する．例えば，
         \begin{enumerate}
-            \item $ (\mathcal{R}\fap m)\fap\orp{2,0} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\in x '}. $
-            \item $ (\mathcal{R}\fap m)\fap\orp{1,0} = \timex{(\mathcal{L}\fap m)}{1}\cap\classab{x:x\text{ は人間である}}. $
-            \item $ (\mathcal{R}\fap m)\fap\orp{2,1} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\text{ は }x'\text{ を愛する}}. $
+            \item $ (\mathcal{R}\fap m)\fap\orp{2,0} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\in x '} $，
+            \item $ (\mathcal{R}\fap m)\fap\orp{1,0} = \timex{(\mathcal{L}\fap m)}{1}\cap\classab{x:x\text{ は人間である}} $，
+            \item $ (\mathcal{R}\fap m)\fap\orp{2,1} = \timex{(\mathcal{L}\fap m)}{2}\cap\classab{\orp{x,x'}:x\text{ は }x'\text{ を愛する}} $．
         \end{enumerate}
 \end{enumerate}
 

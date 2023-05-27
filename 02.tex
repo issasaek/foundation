@@ -15,14 +15,14 @@
 本稿の原初的言語は，形式化された文またはその図式である論理式のクラス（量化言語）を規定することを通じて導入される．
 まず原子式を構成する要素として，以下の無限個の変項と述語記号を導入する．
 \begin{enumerate}
-    \item 変項：\kagi{$x$}，\kagi{$x'$}，\kagi{$x''$}，$ \dots $
-    \item 述語記号：\kagi{$ (F,) $}，\kagi{$ (F,)' $}，\kagi{$ (F,)'' $}，$\dots$，\kagi{$ (F,\!,) $}，\kagi{$ (F,\!,)' $}，\kagi{$ (F,\!,)'' $}，$\dots$
+    \item 変項：\kagi{$x$}，\kagi{$x'$}，\kagi{$x''$}，$ \cdots $．
+    \item 述語記号：\kagi{$ (F,) $}，\kagi{$ (F,)' $}，\kagi{$ (F,)'' $}，$\cdots$，\kagi{$ (F,\!,) $}，\kagi{$ (F,\!,)' $}，\kagi{$ (F,\!,)'' $}，$\cdots$．
 \end{enumerate}
 \kagi{$,$}の数が$n$，\kagi{$'$}の数が$i$であるとき，$n$項述語記号の$i$番目を意味する．
 次に，複合表現を構成する手段として，以下の記号を導入する．
 \begin{enumerate}
-    \item 否定及び条件法の真理関数記号：\kagi{$\neg$}及び\kagi{$\supset$}
-    \item 普遍量化子：\kagi{$(x)$}，\kagi{$(x')$}，\kagi{$(x'')$}，$ \dots $
+    \item 否定及び条件法の真理関数記号：\kagi{$\neg$}及び\kagi{$\supset$}．
+    \item 普遍量化子：\kagi{$(x)$}，\kagi{$(x')$}，\kagi{$(x'')$}，$ \cdots $．
 \end{enumerate}
 そして論理式は，次の3つの規則により再帰的に記述される．
 \begin{enumerate}[label=(\arabic*)]
@@ -359,7 +359,7 @@ $}を表わす．
     \arg\alpha
 $}は\kagi{$
     \classab{x:(\exists y)(\alpha\img\classab{x} =\classab{y})}
-$}を表わす，
+$}を表わす
 \end{df}
 \noindent と定義される．また，$y$は$\alpha$による$x$の値$\alpha\fap x$である．
 
@@ -651,7 +651,7 @@ $
 \end{pf}
 
 自然科学で必要とされるような数学的法則は，定義を通じてクラス理論の文に還元可能であり，それらは，上記のような証明を積み重ねて行くことで，\ref{ssec:集合論の体系}の公理から演繹可能である\footnote{
-    自然科学が要求する数学という目的にとっては，ZFCからA \ref{axim:置換}を除いたZCで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，ZCの公理は真となる．この意味で，自然科学の総体が要求する存在論は$ \mathcal{W}\fap 2 $である．
+    自然科学が要求する数学という目的にとっては，ZFCからA \ref{axim:置換}を除いたZCで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，ZCの公理は真となる．
 }．
 このことは，それらの定理が真であるために要求される対象が，それらの公理群によって供給されるということも意味している．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる\footnote{
     クワイン~\cite[pp.\,113--117]{クワインa}．
