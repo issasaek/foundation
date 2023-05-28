@@ -651,13 +651,13 @@ $
 \end{pf}
 
 自然科学で必要とされるような数学的法則は，定義を通じてクラス理論の文に還元可能であり，それらは，上記のような証明を積み重ねて行くことで，\ref{ssec:集合論の体系}の公理から演繹可能である\footnote{
-    自然科学が要求する数学という目的にとっては，ZFCからA \ref{axim:置換}を除いたZCで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，ZCの公理は真となる．
+    自然科学に必要な数学という目的にとっては，ZFCからA \ref{axim:置換}を除いたZCで足りる．この点，（D \ref{df:階層構造}の記法を使って）その対象領域が$\mathcal{W}\fap 2$で，\kagi{$ \in $}を$ \mathfrak{E}\cap\timex{(\mathcal{W}\fap 2)}{2} $と解釈する任意のモデルにおいて，ZCの公理は真となる．
 }．
-このことは，それらの定理が真であるために要求される対象が，それらの公理群によって供給されるということも意味している．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる\footnote{
+この意味で，当該数学的法則が要求する存在者はそれらの公理群によって供給可能である．例えば，実数のクラス$\mathbb{R}$を，$ \mathbb{R}\subseteq\mathcal{P}(\mathbb{N}) $となるように定義することができる\footnote{
     クワイン~\cite[pp.\,113--117]{クワインa}．
-}．すると，個々の実数は$\mathbb{N}$の部分クラスであるから，T \ref{thm:部分クラス}によって存在が供給される．$\mathbb{R}$自体についても，A \ref{axim:無限}とA \ref{axim:一対化，和，冪}により，$ \mathcal{P}(\mathbb{N})\in\univ $だから，同様にT \ref{thm:部分クラス}により，$ \mathbb{R}\in\univ $．
+}．すると，特定可能な個々の実数は$\mathbb{N}$の部分クラスであるから，T \ref{thm:部分クラス}によって供給可能である．$\mathbb{R}$自体についても，A \ref{axim:無限}とA \ref{axim:一対化，和，冪}により，$ \mathcal{P}(\mathbb{N})\in\univ $だから，同様にT \ref{thm:部分クラス}により，$ \mathbb{R}\in\univ $．
 
-ところで，規制$ z $の内部構造，すなわちD \ref{df:クラスの内部構造}に基づく$ \trcl z $のメンバーには，人やその他の物理的対象が含まれる．したがって，物理的対象の存在も供給しなければならない．
+ところで，規制$ z $の内部構造，すなわちD \ref{df:クラスの内部構造}に基づく$ \trcl z $のメンバーには，人やその他の物理的対象が含まれるから，それらの供給可能性が問題となる．
 
 \begin{df}
 \label{df:クラスの内部構造}
@@ -675,9 +675,9 @@ $}を表わす．
 \noindent この点については，$ \mathbb{R}\in\univ $であることから，T \ref{thm:直積}により，$ \timex{\mathbb{R}}{2},\timex{\mathbb{R}}{3},\timex{\mathbb{R}}{4}\in\univ $．そして，$ \timex{\mathbb{R}}{4} $を四次元時空と同一視すれば，その要素を時空点，その任意の部分クラスを時空領域とみなすことができる．
 すると，物理的対象が時空領域を占有する関係$\nu$は，$\nu\img\univ$がすべての物理的対象のクラスであり，$\breve{\nu}\img\univ\subseteq\timex{\mathbb{R}}{4}$であるような関係と考えられる．$\nu$は一対一対応，つまり，$ \func{\nu}\con{1}\func{\breve{\nu}} $であろうから，任意の$x\in\nu\img\univ$はそれが占有する時空領域$\breve{\nu}\fap x$と結局は同一視できる\footnote{
     Quine~\cite{Quine}．
-}．任意の時空領域の存在は，$ \timex{\mathbb{R}}{4} $の部分クラスとして，T \ref{thm:部分クラス}によって供給されるから，これとは区別された物理的対象を用意する必要はない．
+}．つまり，$\nu$は同一性に帰着し，時空領域ではないような物理的対象は存在しない．他方で特定可能な時空領域は，$ \timex{\mathbb{R}}{4} $の部分クラスとして，T \ref{thm:部分クラス}によって供給可能である．
 
-次に，規制$x$の内部構造$\trcl x$に他の規制類型が含まれ得ることから，規制の存在論を明確化する必要が生じる．そのため\ref{ssec:存在論}である種の階層構造を設定するが，そこでは，$\mathcal{W}\fap 0 = \Lambda$であり，$ 0 \in n \in\mathbb{N}$について$\mathcal{W}\fap n$が，$\mathcal{W}\fap (\breve{\mathrm{S}}\fap n)$から冪集合演算を反復して得られるクラス全ての合併，であるような無限系列$\mathcal{W}$を使う\footnote{
+次に，規制自体の供給可能性については特殊な問題がある（詳細は\ref{ssec:存在論}で述べる）．すなわち，規制$z$の内部構造$\trcl z$に他の規制類型が含まれ得ることから，規制の存在論を体系的に明確化する必要が生じる．そのため\ref{ssec:存在論}である種の階層構造を設定するが，そこでは，$\mathcal{W}\fap 0 = \Lambda$であり，$ 0 \in n \in\mathbb{N}$について$\mathcal{W}\fap n$が，$\mathcal{W}\fap (\breve{\mathrm{S}}\fap n)$から冪集合演算を反復して得られるクラス全ての合併，であるような無限系列$\mathcal{W}$を使う\footnote{
     任意の$n\in\mathbb{N}$について，$ \mathcal{W}\fap n $は，いわゆる累積的階層における水準$ \omega\cdot n $の階層と同一である．
 }．
 
@@ -701,7 +701,7 @@ $}は\kagi{$
 $}を表わす．
 \end{df}
 
-\noindent 規制の概念が要求する存在論は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある段階$ \mathcal{W}\fap n $であり，最大でも$\mathcal{W}$の各段階すべての合併$ \union{(\mathcal{W}\img\mathbb{N})} $である．
+\noindent 結論的には，実際的な機能を持つ全ての規制（類型）は，$ \mathcal{W}\fap 0,\mathcal{W}\fap 1,\mathcal{W}\fap 2,\dots $のある段階$ \mathcal{W}\fap n $の要素であるか，または少なくとも，$\mathcal{W}$の各段階すべての合併$ \union{(\mathcal{W}\img\mathbb{N})} $の要素である．
 この点，$\func{\mathcal{W}}$であることが証明可能であり，したがって，A \ref{axim:置換}とA \ref{axim:無限}により，$ \mathcal{W}\img\mathbb{N}\in\univ $．さらに，A \ref{axim:一対化，和，冪}により，$\union{(\mathcal{W}\img\mathbb{N})}\in\univ$．
 この場合，$\mathcal{W}$の各段階についても，任意の$\Lambda\neq n\in\mathbb{N}$に対して，$ \Lambda\neq \mathcal{W}\fap n\in\univ $．
 この点に関連して一般的に言えば，
